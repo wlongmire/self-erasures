@@ -11,7 +11,7 @@ export default function MenuCollapse({title, items, name}) {
             <div className="card card-body">
                 <ul>
                     {
-                        items.map(item=> (<li><a href="#">{item.name}</a></li>))
+                        items.map(item=> (<li key={item.name}><a href="#">{item.name}</a></li>))
                     }
                 </ul>
             </div>
