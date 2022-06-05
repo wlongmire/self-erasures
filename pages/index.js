@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-import MenuCollapse from '../components/MenuCollapse'
 import PoemContainer from '../components/PoemContainer'
-import BackgroundCarousal from '../components/BackgroundCarousal';
+import BackgroundCarousal from '../components/BackgroundCarousal'
+import ErasureControls from '../components/ErasureControls'
+import NavBar from '../components/NavBar'
 
 export default function Home() {
   const uiProps = {
@@ -41,35 +42,13 @@ export default function Home() {
       </Head>
 
       <main className = { styles.main } >
-        <nav className="navbar navbar-expand-lg bg-light">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-              Self-Erasings
-              <p>Heather Bowlan</p>
-            </a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="navbar-nav">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                <a className="nav-link" href="hello">Hello</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-
+        <NavBar />
+      
         <div id="erasurePage" className={styles.container}>
-          <div>
-            <div><a href="#">Last Erase</a> | <a href="#">Next Erase</a> </div>
-            <MenuCollapse {...uiProps.tags}/>
-            <MenuCollapse {...uiProps.erasures}/>
-          </div>
-
+          <ErasureControls tags={uiProps.tags} erasures={uiProps.erasures}/>
           <PoemContainer/>
+          <BackgroundCarousal/>
         </div>
-
-        <BackgroundCarousal/>
       </main>
 
       <footer className = { styles.footer } >

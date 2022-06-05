@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
+
 import Slider from 'react-slick';
 import { Random, Wave } from 'react-animated-text';
 import moment from 'moment';
@@ -44,14 +45,15 @@ export default class PoemContainer extends React.Component {
         const currentStage = stages[stageIndex];
         const versionText = (stageIndex == 0)?"Original":`Version ${stageIndex}`;
         
-        return <div>
+        return <div className="poemContainer">
             <h2>
                 <Random
                     text={currentStage.title}
+                    iterations="1"
                     effect="verticalFadeIn"
                     effectDirection="up"
                     paused={this.state.isSelecting}
-                    effectChange={0.1}/>
+                    effectChange={0.5}/>
             </h2>
             <Slider ref={slider => (this.slider = slider)} {...settings}>
                 {

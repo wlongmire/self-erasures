@@ -14,13 +14,12 @@ a {
     box-sizing: border-box;
 }
 
-.Home_bkCarousal__cYY5_ {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1000;
+.poemContainer {
+    background-color: white;
+    padding: 2em;
 }
 
-.Home_bkCarousal__cYY5_ .slick-slide div span {
-    width: 100% !important;
+.erasureControls {
+    background-color: white;
+    padding: 2em;
 }
