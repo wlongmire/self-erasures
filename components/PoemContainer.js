@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import { Random, Wave } from 'react-animated-text';
 import moment from 'moment';
 
-export default class SlickGoTo extends React.Component {
+export default class PoemContainer extends React.Component {
     state = {
         stageIndex: 0,
         sliderValue: 0,
@@ -33,7 +33,8 @@ export default class SlickGoTo extends React.Component {
         const settings = {
             dots: false,
             fade: true,
-            speed: 1000,
+            arrows:false,
+            speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
             beforeChange: (current, next) => this.setState({ stageIndex: next })
@@ -47,7 +48,6 @@ export default class SlickGoTo extends React.Component {
             <h2>
                 <Random
                     text={currentStage.title}
-                    iterations="1"
                     effect="verticalFadeIn"
                     effectDirection="up"
                     paused={this.state.isSelecting}
@@ -55,24 +55,26 @@ export default class SlickGoTo extends React.Component {
             </h2>
             <Slider ref={slider => (this.slider = slider)} {...settings}>
                 {
-                    stages.map((poem, i) => (<div>
+                    stages.map((poem, i) => (<div key={poem.id} >
                         <Image src={`/poems/poem.1.${i+1}.v${version}.png`} width="650" height="650" alt={i}/>
                     </div>))
                 }
             </Slider>
-            <Wave
-                    text={`${versionText} | ${currentStage.date.format("M.D.YYYY")}`}
-                    iterations="1"
-                    effect="fadeIn"
-                    paused={this.state.isSelecting}
-                    effectDuration={1}/>
+
+            <h4>{`${versionText} | ${currentStage.date.format("M.D.YYYY")}`}</h4>
+
             <input
                 onChange={e => {
                     this.setState({sliderValue:e.target.value})
                     this.slider.slickGoTo(Math.round(e.target.value))
                 }}
                 onMouseDown={e => this.setState({isSelecting:true})}
-                onMouseUp={e => this.setState({isSelecting:false})}
+                onMouseUp={e => {
+                    this.setState({isSelecting:false});
+                    this.setState({
+                        sliderValue: stageIndex
+                    });
+                }}
                 class="form-range"
                 value={this.state.sliderValue}
                 type="range"

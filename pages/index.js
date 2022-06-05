@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 
 import MenuCollapse from '../components/MenuCollapse'
 import PoemContainer from '../components/PoemContainer'
+import BackgroundCarousal from '../components/BackgroundCarousal';
 
 export default function Home() {
   const uiProps = {
@@ -67,6 +68,8 @@ export default function Home() {
 
           <PoemContainer/>
         </div>
+
+        <BackgroundCarousal/>
       </main>
 
       <footer className = { styles.footer } >
