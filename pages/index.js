@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import moment from 'moment'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
@@ -6,26 +9,59 @@ import BackgroundCarousal from '../components/BackgroundCarousal'
 import ErasureControls from '../components/ErasureControls'
 import NavBar from '../components/NavBar'
 
-export default function Home() {
-  const uiProps = {
-    tags:{
-      title:"Tags",
-      name:"tagCollapse",
-      items:[
-        {name:"Hopeful"},
-        {name:"Sad"},
-        {name:"Spaceships"},
-      ]
-    },
-    erasures:{
-      title:"Table of Erasings",
-      name:"erasureCollapse",
-      items:[
-        {name:"Erasure 1"},
-        {name:"Erasure 2"},
-        {name:"Erasure 3"},
+const data = {
+  version: 1,
+  tagsUI: {
+    title:"Tags",
+    name:"tagCollapse",
+    items:[
+      {name:"Hopeful"},
+      {name:"Sad"},
+      {name:"Spaceships"},
+    ]
+  },
+  erasuresUI: {
+    title:"Table of Erasings",
+    name:"erasureCollapse",
+    items:[
+      {name:"Erasure 1"},
+      {name:"Erasure 2"},
+      {name:"Erasure 3"},
+    ]
+  },
+  erasures: [
+    {
+      title:"BOX",
+      tags:[],
+      images: [],
+      audio: "",
+      stages: [
+        {
+          id: 1,
+          title:"Wellness Plan/Mood Episode",
+          date: moment().subtract(5, 'years')
+        },
+        {
+          id: 2,
+          title:"Wellness/Episode",
+          date: moment().subtract(3, 'years')
+        },
+        {
+          id: 3,
+          title:"BOX",
+          date: moment().subtract(1, 'months')
+        }
       ]
     }
+  ]
+}
+
+
+export default function Home() {
+  const [ currentErasure, setCurrentErasure] = useState(0);
+
+  const changeErasure = (inc) => {
+    setCurrentErasure(currentErasure + inc);
   }
 
   return ( <div className = { styles.container } >
@@ -41,18 +77,26 @@ export default function Home() {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
       </Head>
 
-      <main className = { styles.main } >
+      <main className="container">
         <NavBar />
       
-        <div id="erasurePage" className={styles.container}>
-          <ErasureControls tags={uiProps.tags} erasures={uiProps.erasures}/>
-          <PoemContainer/>
-          <BackgroundCarousal/>
+        <div id="erasurePage" className="row">
+          <div className="col-2 sidebar">
+            <ErasureControls changeErasure={changeErasure} tags={data.tagsUI} erasures={data.erasuresUI}/>
+          </div>
+
+          <div className="col-7">
+            <PoemContainer version={data.version} erasure={data.erasures[currentErasure]}/>
+          </div>
+
+          <div className="col-3">
+            <BackgroundCarousal erasure={data.erasures[currentErasure]}/>
+          </div>
         </div>
       </main>
 
       <footer className = { styles.footer } >
-      
+        
       </footer> 
       </div>
   )

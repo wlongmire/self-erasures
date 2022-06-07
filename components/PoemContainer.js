@@ -2,32 +2,18 @@ import React from 'react';
 import Image from 'next/image'
 
 import Slider from 'react-slick';
-import { Random, Wave } from 'react-animated-text';
-import moment from 'moment';
+import { Random } from 'react-animated-text';
+
+import AudioPlayer from 'react-h5-audio-player'
+import 'react-h5-audio-player/lib/styles.css'
+
 
 export default class PoemContainer extends React.Component {
     state = {
         stageIndex: 0,
         sliderValue: 0,
         version:2,
-        isSelecting:false,
-        stages:[
-          {
-            id: 1,
-            title:"Wellness Plan/Mood Episode",
-            date: moment().subtract(5, 'years')
-          },
-          {
-            id: 2,
-            title:"Wellness/Episode",
-            date: moment().subtract(3, 'years')
-          },
-          {
-            id: 3,
-            title:"BOX",
-            date: moment().subtract(1, 'months')
-          }
-      ]
+        isSelecting:false
     };
 
     render() {
@@ -41,7 +27,8 @@ export default class PoemContainer extends React.Component {
             beforeChange: (current, next) => this.setState({ stageIndex: next })
         };
     
-        const { version, stages, stageIndex } = this.state;
+        const { version, stageIndex } = this.state;
+        const { stages }= this.props.erasure;
         const currentStage = stages[stageIndex];
         const versionText = (stageIndex == 0)?"Original":`Version ${stageIndex}`;
         
@@ -84,7 +71,10 @@ export default class PoemContainer extends React.Component {
                 min="0"
                 max={stages.length-1}
             />
-    
+            
+            <AudioPlayer
+                src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+            />
         </div>;
     }
 }

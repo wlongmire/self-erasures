@@ -6,8 +6,11 @@ export default function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
-            <a className="nav-link" href="hello">Hello</a>
+            <a className="nav-link active" aria-current="page" href="#">Erasings</a>
+            <a className="nav-link" href="series">The Series</a>
+            <a className="nav-link" href="poet">The Poet</a>
+            <a className="nav-link" href="developer">The Developer</a>
+            <a className="nav-link" href="contributors">The Contributors</a>
             </div>
         </div>
 

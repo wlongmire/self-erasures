@@ -5,7 +5,10 @@ export default function ErasureControls(props) {
 
     return(<div className="erasureControls">
         <div><a href="#">Last Erase</a> | <a href="#">Next Erase</a> </div>
+        <hr/>
         <MenuCollapse {...tags}/>
+        <hr/>
         <MenuCollapse {...erasures}/>
+        <hr/>
     </div>);
 }
