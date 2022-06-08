@@ -15,7 +15,13 @@
     },
     "jobs": {
         ":items": {
-            "firstJob": {
+            "title": {
+                ":type": "line"
+            },
+            "hours": {
+                ":type": "line"
+            },
+            "image url": {
                 ":type": "line"
             }
         }
