@@ -1,0 +1,51 @@
+{
+    "title":"Table of Erasings",
+    "name":"erasureCollapse",
+    "items":[
+        {
+            "title":"BOX",
+            "tags":["hopeful", "sad", "spaceships"],
+            "stages": [
+                {
+                    "id": 1,
+                    "title":"Wellness Plan/Mood Episode",
+                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
+                    "audio": {
+                        "src":"When-My-Numbers-Up.mp3",
+                        "srcLink":"",
+                        "attribution": {
+                            "firstName":"FirstName",
+                            "lastName":"LastName",
+                            "link":""
+                        }
+                    },
+                    "image": {
+                        "src":"image.1.1.jpg",
+                        "srcLink":"",
+                        "attribution": {
+                            "firstName":"FirstName",
+                            "lastName":"Lastname",
+                            "link":""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "title":"Wellness/Episode",
+                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
+                    "imageSrc": "image.1.2.jpg",
+                    "imageAttribution": {
+                        "firstName":"FirstName",
+                        "lastName":"Lastname",
+                        "link":""
+                    }
+                },
+                {
+                    "id": 3,
+                    "title":"BOX",
+                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400"
+                }
+            ]
+        }
+    ]
+}
