@@ -5,59 +5,10 @@ import tags from './/data/tags.json';
 import PoemContainer from '../components/poemContainer'
 import ErasureControls from '../components/erasureControls'
 
-// const data = {
-//   tags: {
-//     title:"Tags",
-    
-//     items:[
-//       {name:"Hopeful"},
-//       {name:"Sad"},
-//       {name:"Spaceships"},
-//     ]
-//   },
-//   erasures: {
-//     title:"Table of Erasings",
-//     name:"erasureCollapse",
-//     items:[
-//       {
-//         title:"BOX",
-//         tags:["hopeful", "sad", "spaceships"],
-//         audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-//         stages: [
-//           {
-//             id: 1,
-//             title:"Wellness Plan/Mood Episode",
-//             date: "Sat Jul 22 2017 13:46:43 GMT-0400",
-//             imageSrc: "image.1.1.jpg",
-//             imageAttribution: {
-//               firstName:"FirstName",
-//               lastName:"Lastname"
-//             },
-//           },
-//           {
-//             id: 2,
-//             title:"Wellness/Episode",
-//             date: "Sat Jul 22 2018 13:46:43 GMT-0400",
-//             imageSrc: "image.1.2.jpg",
-//             imageAttribution: {
-//               firstName:"FirstName",
-//               lastName:"Lastname"
-//             }
-//           },
-//           {
-//             id: 3,
-//             title:"BOX",
-//             date: "Sat Jul 22 2020 13:46:43 GMT-0400",
-//           }
-//         ]
-//       }
-//     ]
-//   }
-// }
-
+const START_ERASURE = 2;
 
 export default function Home() {
-  const [ currentErasure, setCurrentErasure] = useState(0);
+  const [ currentErasure, setCurrentErasure] = useState(START_ERASURE);
 
   const changeErasure = (inc) => {
     setCurrentErasure(currentErasure + inc);

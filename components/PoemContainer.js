@@ -29,10 +29,12 @@ export default class PoemContainer extends React.Component {
     
         const { stageIndex } = this.state;
 
-        const { stages }= this.props.erasure;
+        const { stages, id }= this.props.erasure;
         const currentStage = stages[stageIndex];
-        const versionText = (stageIndex == 0)?"Original":`Version ${stageIndex}`;
+        const versionText = "";//(stageIndex == 0)?"Original":`Version ${stageIndex}`;
         
+        
+
         return <>
             <div className="col-7">
                 <div className="poemContainer">
@@ -47,7 +49,7 @@ export default class PoemContainer extends React.Component {
                 <Slider ref={slider => (this.slider = slider)} {...settings}>
                     {
                         stages.map((poem, i) => (<div key={poem.id} >
-                            <Image src={`/poems/poem.1.${i+1}.png`} width="650" height="650" alt={i}/>
+                            <Image src={`/poems/poem.${id}.${i+1}.png`} width="650" height="650" alt={i}/>
                         </div>))
                     }
                 </Slider>

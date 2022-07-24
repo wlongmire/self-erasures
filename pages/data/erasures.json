@@ -3,6 +3,7 @@
     "name":"erasureCollapse",
     "items":[
         {
+            "id":1,
             "title":"BOX",
             "tags":["hopeful", "sad", "spaceships"],
             "stages": [
@@ -44,6 +45,69 @@
                     "id": 3,
                     "title":"BOX",
                     "date": "Sat Jul 22 2018 13:46:43 GMT-0400"
+                }
+            ]
+        },
+        {
+            "id":2,
+            "title":"When My Number's Up",
+            "tags":["hopeful", "sad", "spaceships"],
+            "stages": [
+                {
+                    "id": 1,
+                    "title":"When My Number's Up",
+                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
+                    "audio": {
+                        "src":"When-My-Numbers-Up.mp3",
+                        "srcLink":"",
+                        "attribution": {
+                            "firstName":"FirstName",
+                            "lastName":"LastName",
+                            "link":""
+                        }
+                    },
+                    "image": {
+                        "src":"image.1.1.jpg",
+                        "srcLink":"",
+                        "attribution": {
+                            "firstName":"FirstName",
+                            "lastName":"Lastname",
+                            "link":""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "title":"My Guide",
+                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
+                    "imageSrc": "image.1.2.jpg",
+                    "imageAttribution": {
+                        "firstName":"FirstName",
+                        "lastName":"Lastname",
+                        "link":""
+                    }
+                }
+            ]
+        },
+        {
+            "id":3,
+            "title":"Hey baby.",
+            "tags":["hopeful", "sad", "spaceships"],
+            "stages": [
+                {
+                    "id": 1,
+                    "title":"tonight(baby)",
+                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400"
+                },
+                {
+                    "id": 2,
+                    "title":"Tonight I'm your Baby",
+                    "date": "Sat Jul 22 2019 13:46:43 GMT-0400"
+                },
+                {
+                    "id": 3,
+                    "title":"Hey baby.",
+                    "date": "Sat Jul 22 2020 13:46:43 GMT-0400"
                 }
             ]
         }
