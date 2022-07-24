@@ -45,3 +45,9 @@ a {
 .sidebar {
     padding:0;
 }
+
+.disable {
+    pointer-events: none;
+    cursor: default;
+    color: lightgray;
+}

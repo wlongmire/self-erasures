@@ -11,12 +11,19 @@ import 'react-h5-audio-player/lib/styles.css'
 
 export default class PoemContainer extends React.Component {
     state = {
-        stageIndex: 0,
-        sliderValue: 0,
         isSelecting:false
     };
 
+    componentDidUpdate(prevProps) {
+        // if (prevProps.stageIndex !== this.props.stageIndex){
+        //     this.slider.slickGoTo(prevProps.stageIndex);
+        // }
+    }
+
     render() {
+        console.log("current Stage:", this.props.stageIndex);
+        const { stageIndex, setStageIndex,sliderValue, setSliderValue} = this.props;
+        
         const settings = {
             dots: false,
             fade: true,
@@ -24,28 +31,26 @@ export default class PoemContainer extends React.Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            beforeChange: (current, next) => this.setState({ stageIndex: next })
+            initialSlide:0,
+            beforeChange: (current, next) => setStageIndex(next)
         };
-    
-        const { stageIndex } = this.state;
 
         const { stages, id }= this.props.erasure;
         const currentStage = stages[stageIndex];
         const versionText = "";//(stageIndex == 0)?"Original":`Version ${stageIndex}`;
-        
-        
 
         return <>
             <div className="col-7">
                 <div className="poemContainer">
-                <h2><Random
+                <h4>{`Erasure ${id}: `}</h4>
+                <h1><Random
                         text={currentStage.title}
                         iterations="1"
                         effect="verticalFadeIn"
                         effectDirection="up"
                         paused={this.state.isSelecting}
-                        effectChange={0.5}/>
-                </h2>
+                        effectChange={0.2}/>
+                </h1>
                 <Slider ref={slider => (this.slider = slider)} {...settings}>
                     {
                         stages.map((poem, i) => (<div key={poem.id} >
@@ -54,22 +59,20 @@ export default class PoemContainer extends React.Component {
                     }
                 </Slider>
 
-                <h4>{`${versionText} | ${moment(currentStage.date).format("M.D.YYYY")}`}</h4>
+                <h4>{`${versionText} ${moment(currentStage.date).format("M.D.YYYY")}`}</h4>
 
                 <input
                     onChange={e => {
-                        this.setState({sliderValue:e.target.value})
+                        setSliderValue(e.target.value)
                         this.slider.slickGoTo(Math.round(e.target.value))
                     }}
                     onMouseDown={e => this.setState({isSelecting:true})}
                     onMouseUp={e => {
                         this.setState({isSelecting:false});
-                        this.setState({
-                            sliderValue: stageIndex
-                        });
+                        setSliderValue(stageIndex);
                     }}
                     class="form-range"
-                    value={this.state.sliderValue}
+                    value={sliderValue}
                     type="range"
                     step="0.01"
                     min="0"
