@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import MenuCollapse from './menuCollapse';
 
 export default function ErasureControls(props) {
@@ -6,7 +8,7 @@ export default function ErasureControls(props) {
     return(<div  className="col-2 sidebar">
         <div className="erasureControls">
             <div>
-                <a className={(currentErasure <= 0) && "disable"} onClick={()=> changeErasure(-1)} href="#" >Last</a> | <a onClick={()=>changeErasure(1)} className={(currentErasure >= erasures.items.length -1) && "disable"} href="#">Next</a> </div>
+                <Link href={`/blackouts/${currentErasure-1}`}><a className={(currentErasure <= 1) && "disable"}>Last</a></Link> | <Link href={`/blackouts/${currentErasure + 1}`}><a className={(currentErasure >= erasures.items.length-1) && "disable"}>Next</a></Link> </div>
             <hr/>
             <MenuCollapse {...tags} title="Tags"/>
             <hr/>
