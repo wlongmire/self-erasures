@@ -1,9 +1,5 @@
-import { useState } from 'react';
-import tags from '../../data/tags.json';
-import erasures from '../../data/erasures.json';
-
-import PoemContainer from '../../../components/poemContainer'
-import ErasureControls from '../../../components/erasureControls'
+import erasures from './../../data/erasures.json';
+import ErasureSection from './../../../components/ErasureSection';
 
 export const getStaticPaths = async ()=> {
     const paths = [];
@@ -32,34 +28,8 @@ export const getStaticProps = async (context) => {
     }
 }
 
-
-
-const Poem = ({currentErasure, currentStage}) => {
-    const [ stageIndex, setStageIndex] = useState(parseInt(currentStage));
-    const [ sliderValue, setSliderValue] = useState(parseInt(currentStage));
-
-    const changeErasure = (inc) => {
-        if (currentErasure + inc >= 0 && currentErasure + inc < erasures.items.length) {
-          setCurrentErasure(currentErasure + inc);
-          setStageIndex(0);
-          setSliderValue(0);
-        }
-    }
-    
-    const setErasure = ({ id }) => {
-        if (id-1 >= 0 && id-1 < erasures.items.length) {
-            setCurrentErasure(id-1);
-            setStageIndex(0);
-            setSliderValue(0);
-        }
-    }
-
-    return <main className="container">
-        <div id="erasurePage" className="row">
-        <ErasureControls changeErasure={changeErasure} currentErasure={parseInt(currentErasure.id)} setErasure={setErasure} tags={tags} erasures={erasures}/>
-        <PoemContainer erasure={currentErasure} stageIndex={stageIndex} setStageIndex={setStageIndex} sliderValue={sliderValue} setSliderValue={setSliderValue} />
-        </div>
-    </main>
+const StageSelection = ({currentErasure, currentStage}) => {
+    return <ErasureSection currentErasure={currentErasure} currentStage={currentStage} />
 }
 
-export default Poem;
+export default StageSelection;
