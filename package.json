@@ -13,8 +13,10 @@
     "next": "12.1.6",
     "react": "18.1.0",
     "react-animated-text": "^0.1.4",
+    "react-audio-player": "^0.17.0",
     "react-dom": "18.1.0",
     "react-h5-audio-player": "^3.8.4",
+    "react-router": "^6.4.0",
     "react-slick": "^0.29.0"
   },
   "devDependencies": {

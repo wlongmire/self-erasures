@@ -15,8 +15,8 @@ export default function NavBar() {
         </div>
 
         <a className="navbar-brand" href="#">
-            <h2>Self-Erasings</h2>
-            <p>Heather Bowlan</p>
+            <h2>Highlights And Blackouts</h2>
+            <p>by Heather Bowlan</p>
         </a>
         </div>
     </nav>);

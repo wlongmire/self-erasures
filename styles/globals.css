@@ -51,3 +51,7 @@ a {
     cursor: default;
     color: lightgray;
 }
+
+.navbar-brand {
+    text-align: right;
+}

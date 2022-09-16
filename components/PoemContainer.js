@@ -5,8 +5,10 @@ import moment from 'moment'
 import Slider from 'react-slick'
 import { Random } from 'react-animated-text'
 
-import AudioPlayer from 'react-h5-audio-player'
-import 'react-h5-audio-player/lib/styles.css'
+import ReactAudioPlayer from 'react-audio-player';
+
+// import AudioPlayer from 'react-h5-audio-player'
+// import 'react-h5-audio-player/lib/styles.css'
 
 
 export default class PoemContainer extends React.Component {
@@ -15,13 +17,9 @@ export default class PoemContainer extends React.Component {
     };
 
     componentDidUpdate(prevProps) {
-        // if (prevProps.stageIndex !== this.props.stageIndex){
-        //     this.slider.slickGoTo(prevProps.stageIndex);
-        // }
     }
 
     render() {
-        console.log("current Stage:", this.props.stageIndex);
         const { stageIndex, setStageIndex,sliderValue, setSliderValue} = this.props;
         
         const settings = {
@@ -80,7 +78,8 @@ export default class PoemContainer extends React.Component {
                 />
                 {
                     currentStage.audio && <>
-                        <AudioPlayer src={`/audio.${currentStage.audio.src}`} />
+                        <ReactAudioPlayer src={`/audio/${currentStage.audio.src}`} autoPlay controls/>
+                        {/* <AudioPlayer src={`/audio/${currentStage.audio.src}`} /> */}
                     </>
                 }
                 
