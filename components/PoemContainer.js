@@ -7,17 +7,11 @@ import { Random } from 'react-animated-text'
 
 import ReactAudioPlayer from 'react-audio-player';
 
-// import AudioPlayer from 'react-h5-audio-player'
-// import 'react-h5-audio-player/lib/styles.css'
-
 
 export default class PoemContainer extends React.Component {
     state = {
         isSelecting:false
     };
-
-    componentDidUpdate(prevProps) {
-    }
 
     render() {
         const { stageIndex, setStageIndex,sliderValue, setSliderValue} = this.props;
@@ -29,13 +23,13 @@ export default class PoemContainer extends React.Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            initialSlide:0,
+            initialSlide:stageIndex,
             beforeChange: (current, next) => setStageIndex(next)
         };
 
         const { stages, id }= this.props.erasure;
         const currentStage = stages[stageIndex];
-        const versionText = "";//(stageIndex == 0)?"Original":`Version ${stageIndex}`;
+        const versionText = "";
 
         return <>
             <div className="col-7">
@@ -79,7 +73,6 @@ export default class PoemContainer extends React.Component {
                 {
                     currentStage.audio && <>
                         <ReactAudioPlayer src={`/audio/${currentStage.audio.src}`} autoPlay controls/>
-                        {/* <AudioPlayer src={`/audio/${currentStage.audio.src}`} /> */}
                     </>
                 }
                 
