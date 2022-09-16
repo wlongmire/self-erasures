@@ -34,7 +34,7 @@ export default class PoemContainer extends React.Component {
         return <>
             <div className="col-7">
                 <div className="poemContainer">
-                <h4>{`Erasure ${id}: `}</h4>
+                <h4>{`BLACKOUT ${id}: `}</h4>
                 <h1><Random
                         text={currentStage.title}
                         iterations="1"
