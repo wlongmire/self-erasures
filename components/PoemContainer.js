@@ -63,7 +63,7 @@ export default class PoemContainer extends React.Component {
                         this.setState({isSelecting:false});
                         setSliderValue(stageIndex);
                     }}
-                    class="form-range"
+                    className="form-range"
                     value={sliderValue}
                     type="range"
                     step="0.01"
