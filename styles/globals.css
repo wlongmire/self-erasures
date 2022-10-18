@@ -14,6 +14,10 @@ a {
     box-sizing: border-box;
 }
 
+.container {
+    background: grey;
+}
+
 .poemContainer {
     background-color: white;
     padding: 2em;
@@ -55,3 +59,4 @@ a {
 .navbar-brand {
     text-align: right;
 }
+

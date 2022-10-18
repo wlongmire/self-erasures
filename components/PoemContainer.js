@@ -35,14 +35,7 @@ export default class PoemContainer extends React.Component {
             <div className="col-7">
                 <div className="poemContainer">
                 <h4>{`BLACKOUT ${id}: `}</h4>
-                <h1><Random
-                        text={currentStage.title}
-                        iterations="1"
-                        effect="verticalFadeIn"
-                        effectDirection="up"
-                        paused={this.state.isSelecting}
-                        effectChange={0.2}/>
-                </h1>
+                <h1>{currentStage.title}</h1>
                 <Slider ref={slider => (this.slider = slider)} {...settings}>
                     {
                         stages.map((poem, i) => (<div key={poem.id} >
