@@ -14,20 +14,12 @@
                     "audio": {
                         "src":"When-My-Numbers-Up.mp3",
                         "srcLink":"",
-                        "attribution": {
-                            "firstName":"FirstName",
-                            "lastName":"LastName",
-                            "link":""
-                        }
+                        "contributor": 7
                     },
                     "image": {
                         "src":"image.1.1.jpg",
                         "srcLink":"",
-                        "attribution": {
-                            "firstName":"FirstName",
-                            "lastName":"Lastname",
-                            "link":""
-                        }
+                        "contributor": 3
                     }
                 },
                 {
@@ -35,11 +27,7 @@
                     "title":"Wellness/Episode",
                     "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
                     "imageSrc": "image.1.2.jpg",
-                    "imageAttribution": {
-                        "firstName":"FirstName",
-                        "lastName":"Lastname",
-                        "link":""
-                    }
+                    "contributor": 5
                 },
                 {
                     "id": 3,
@@ -60,20 +48,12 @@
                     "audio": {
                         "src":"When-My-Numbers-Up.mp3",
                         "srcLink":"",
-                        "attribution": {
-                            "firstName":"FirstName",
-                            "lastName":"LastName",
-                            "link":""
-                        }
+                        "contributor": 0
                     },
                     "image": {
                         "src":"image.1.1.jpg",
                         "srcLink":"",
-                        "attribution": {
-                            "firstName":"FirstName",
-                            "lastName":"Lastname",
-                            "link":""
-                        }
+                        "contributor": 0
                     }
                 },
                 {
@@ -81,11 +61,7 @@
                     "title":"My Guide",
                     "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
                     "imageSrc": "image.1.2.jpg",
-                    "imageAttribution": {
-                        "firstName":"FirstName",
-                        "lastName":"Lastname",
-                        "link":""
-                    }
+                    "contributor": 0
                 }
             ]
         },

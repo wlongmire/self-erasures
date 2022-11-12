@@ -14,11 +14,8 @@ a {
     box-sizing: border-box;
 }
 
-.layout {
-    background: url("https://www.tilingtextures.com/wp-content/uploads/2018/11/0068-1-512x512.jpg");
-}
+
 .container {
-    /* background: grey; */
     padding: 1em;
 }
 
@@ -63,4 +60,3 @@ a {
 .navbar-brand {
     text-align: right;
 }
-

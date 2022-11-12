@@ -1,17 +1,22 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import moment from 'moment'
 
 import Slider from 'react-slick'
-import { Random } from 'react-animated-text'
 
 import ReactAudioPlayer from 'react-audio-player';
-
+import contributions from './../pages/data/contributions';
 
 export default class PoemContainer extends React.Component {
     state = {
         isSelecting:false
     };
+
+    getContributorLink = (contributorId, type) => {
+        const {first, last} = contributions[contributorId]
+        return <p><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
+    }
 
     render() {
         const { stageIndex, setStageIndex,sliderValue, setSliderValue} = this.props;
@@ -29,6 +34,8 @@ export default class PoemContainer extends React.Component {
 
         const { stages, id }= this.props.erasure;
         const currentStage = stages[stageIndex];
+        const { image } = currentStage;
+        const { audio } = currentStage;
         const versionText = "";
 
         return <>
@@ -64,8 +71,9 @@ export default class PoemContainer extends React.Component {
                     max={stages.length-1}
                 />
                 {
-                    currentStage.audio && <>
-                        <ReactAudioPlayer src={`/audio/${currentStage.audio.src}`} autoPlay controls/>
+                    audio && <>
+                        <ReactAudioPlayer src={`/audio/${audio.src}`} autoPlay controls/>
+                        {this.getContributorLink(audio.contributor, "Audio")}
                     </>
                 }
                 
@@ -73,10 +81,10 @@ export default class PoemContainer extends React.Component {
             <div className="col-3">
                 <div id="BackgroundCarousal" >
                     {
-                        currentStage.image && <div>
-                            <a href={currentStage.image.srcLink}><Image src={`/images/${currentStage.image.src}`} width="400" height="400" alt={currentStage.imageSrc}/></a>
-                            <p><a href={currentStage.image.attribution.link}>Image By {currentStage.image.attribution.firstName} {currentStage.image.attribution.lastName}</a></p>
-                        </div>
+                        image && <>
+                            <a href={image.srcLink}><Image src={`/images/${image.src}`} width="400" height="400" alt={image.imageSrc}/></a>
+                            {this.getContributorLink(image.contributor, "Image")}
+                        </>
                     }
                 </div>
             </div>
