@@ -60,3 +60,8 @@ a {
 .navbar-brand {
     text-align: right;
 }
+
+.backgroundImage {
+    position:fixed !important;
+    z-index: -1000;
+}

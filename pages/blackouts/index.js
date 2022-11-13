@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Plock } from 'react-plock';
 import Link from 'next/link';
 import erasures from './../data/erasures.json';
+import contributors from './../data/contributions';
 
 const Container = styled.div`
   width: 100%;
@@ -12,19 +13,6 @@ const Container = styled.div`
 const ListElement = styled.li`
   display:block;
 `
-
-const ErasureStages = ({currentErasure, stages})=> {
-    return <>
-        {
-            stages.map((stage, stageIdx)=> {
-                return <>
-                    <Link href={`/blackouts/${currentErasure}/${stageIdx+1}`}><a>Stage {stageIdx}: {stage.title}</a></Link>
-                    <br/>
-                </>
-            })
-        }
-    </>
-}
 
 
 const Home = () => {
@@ -42,9 +30,9 @@ const Home = () => {
       <Container>
         <h3>The Series</h3>
         <ul>
-          <ListElement><Link href="/series">Poems</Link></ListElement>
-          <ListElement><Link href="/series">Colaborations</Link></ListElement>
-          <ListElement><Link href="/series">Technical Design</Link></ListElement>
+          <ListElement><Link href="/series">The Writing Process</Link></ListElement>
+          <ListElement><Link href="/series#colaborations">Colaborations</Link></ListElement>
+          <ListElement><Link href="/series#tech_design">Technical Design</Link></ListElement>
         </ul>
       </Container>
       <Container>
@@ -61,12 +49,9 @@ const Home = () => {
       <Container>
         <h3>The Contributors</h3>
         <ul>
-          <ListElement>
-            <Link href="/contributors">Heather Bowlan</Link>
-          </ListElement>
-          <ListElement>
-            <Link href="/contributors">Warren C. Longmire</Link>
-          </ListElement>
+          {
+            contributors.map(contrib => <ListElement><a href={`/contributors#${contrib.first}-${contrib.last}`}>{contrib.first} {contrib.last}</a></ListElement>)
+          }
         </ul>
       </Container>
       <Container>
@@ -90,30 +75,7 @@ const Home = () => {
         }
       </Container>
     </Plock>
-    <div>
-      developed by alongmirewriter 2022
-    </div>
   </>
 }
-
-
-// const Home = () => {
-//     return <>
-//         <h1>BLACKOUTS AND HIGHLIGHTS</h1>
-//         <div>
-//             {
-//                 erasures.items.map((erasure, idx) => {
-//                     return(<>
-//                         <hr/>
-//                         <Link href={`/blackouts/${idx+1}`}><a>BLACKOUT {idx+1}</a></Link>
-//                         <br/>
-//                         <ErasureStages currentErasure={idx+1} stages={erasure.stages}/>
-//                         <hr/>
-//                     </>)
-//                 })
-//             }
-//         </div>
-//     </>
-// }
 
 export default Home;
