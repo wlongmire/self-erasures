@@ -115,13 +115,13 @@ const Header = styled.header`
     font-family: 'Rubik Mono One', sans-serif !important;
     font-size: calc(1.525rem + 6.5vw);
     display:block;
-    line-height:0.8em;
+    line-height:1;
   }
   span#blackouts {
     font-family: 'Rubik Mono One', sans-serif !important;
     font-size: calc(1.525rem + 6.5vw);
     display:block;
-    line-height:0.8em;
+    line-height:1;
   }
   
   p {
@@ -135,10 +135,20 @@ const Header = styled.header`
 const TreeNode = (props) => {
   const { title, type, href} = props;
   const renderTypes = {
-    "header":<TreeHeader>{title}</TreeHeader>,
-    "link":<LinkTitle><Link href={href}>{title}</Link></LinkTitle>,
-    "erasureTitle":<ErasureTitle><Link href={href}>{title}</Link></ErasureTitle>,
-    "poemTitle":<PoemTitle><Link href={href}>{title}</Link></PoemTitle>,
+    "header":<TreeHeader>
+      {title}
+    </TreeHeader>,
+    "link":<LinkTitle>
+      <Link href={href}>{title}</Link>
+    </LinkTitle>,
+    "erasureTitle":<ErasureTitle>
+      <Link href={href}>{title}</Link>
+    </ErasureTitle>,
+    "poemTitle":<PoemTitle>
+      <Link href={href}>{title}</Link>
+    </PoemTitle>,
+    "contributors":<></>,
+    "poem":<></>
   }
   return renderTypes[type] || <p>{title}</p>
 }
@@ -148,7 +158,7 @@ const Home = () => {
   return <>
     <Header>
       <span id="highlights">HIGHLIGHTS</span>
-      <span id="blackouts">&BLACKOUTS</span>
+      <span id="blackouts">&<span className="black">BLACKOUTS</span></span>
 
       <p>A Self-Erasure Series By Heather Bowlan & Warren C. Longmire</p>
     </Header>
