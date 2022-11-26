@@ -1,7 +1,8 @@
 
 import styled from 'styled-components';
-import { DownOutlined } from '@ant-design/icons';
 import { Tree } from 'antd';
+const { DirectoryTree } = Tree;
+
 import Link from 'next/link';
 
 import erasures from './../data/erasures.json';
@@ -108,20 +109,39 @@ const PoemTitle = styled.div`
   font-size: 1.2em;
 `
 
+const B = styled.span`
+  color:black;
+  background:black;
+  transition: background-color 500ms;
+  cursor: ${props => props.link? 'pointer':'inherit'};
+
+  &:hover {
+    color:black !important;
+    background:white;
+    text-decoration: ${props => props.link? 'underline':'inherit'};;
+  }
+`
+
+
 const Header = styled.header`
   padding-bottom: 1em;
 
   span#highlights {
     font-family: 'Rubik Mono One', sans-serif !important;
     font-size: calc(1.525rem + 6.5vw);
-    display:block;
-    line-height:1;
+    display:inline-block;
+    line-height:1.1;
+    padding:0;
+    margin:0;
   }
+
   span#blackouts {
     font-family: 'Rubik Mono One', sans-serif !important;
     font-size: calc(1.525rem + 6.5vw);
-    display:block;
-    line-height:1;
+    display:inline-block;
+    line-height:1.1;
+    padding:0;
+    margin:0;
   }
   
   p {
@@ -146,27 +166,33 @@ const TreeNode = (props) => {
     </ErasureTitle>,
     "poemTitle":<PoemTitle>
       <Link href={href}>{title}</Link>
-    </PoemTitle>,
-    "contributors":<></>,
-    "poem":<></>
+    </PoemTitle>
   }
   return renderTypes[type] || <p>{title}</p>
 }
 
 
 const Home = () => {
+  const handleSelect = (keys, info)=> {
+    console.log(info)
+
+  }
+
   return <>
     <Header>
-      <span id="highlights">HIGHLIGHTS</span>
-      <span id="blackouts">&<span className="black">BLACKOUTS</span></span>
+      <span id="highlights">H<B>IG</B>HLIGHTS</span>
+      <span id="blackouts">&BLACK<B>OU</B>TS</span>
 
-      <p>A Self-Erasure Series By Heather Bowlan & Warren C. Longmire</p>
+      <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
     </Header>
-    <Tree
+    <DirectoryTree
       showLine
-      switcherIcon={<DownOutlined />}
-      defaultExpandedKeys={['0-0-0']}
+      autoExpandParent={true}
+      switcherIcon={<></>}
+      showIcon={false}
+      selectable={false}
       treeData={treeData}
+      onSelect={handleSelect}
       titleRender={(data)=> <TreeNode {...data}/>}
     />
   </>
