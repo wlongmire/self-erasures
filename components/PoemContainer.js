@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
 import Image from 'next/image'
-import moment from 'moment'
 
 import Slider from 'react-slick'
 
@@ -47,7 +46,7 @@ export default class PoemContainer extends React.Component {
                     }
                 </Slider>
 
-                <h4>{`${moment(currentStage.date).format("M.D.YYYY")}`}</h4>
+                {/* <h4>{`${moment(currentStage.date).format("M.D.YYYY")}`}</h4> */}
                 {
                     stages.map(stage => <button className={`btn btn-outline-dark p-3 m-3`} onClick={()=> { 
                         setSliderValue(stage.id-1);
