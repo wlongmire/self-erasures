@@ -87,14 +87,14 @@ const treeData = [
 
 const TreeHeader = styled.h2`
   font-family: 'Sorts Mill Goudy', serif;
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.5em;
 `
 
 const LinkTitle = styled.div`
   font-family: 'Sorts Mill Goudy', serif;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 1.5em;
 `
 
@@ -106,7 +106,7 @@ const ErasureTitle = styled.div`
 
 const PoemTitle = styled.div` 
   font-family: 'Sorts Mill Goudy', serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
 `
 
 const B = styled.span`
@@ -163,7 +163,7 @@ const TreeNode = (props) => {
       <Link href={href}>{title}</Link>
     </LinkTitle>,
     "erasureTitle":<ErasureTitle>
-      <Link href={href}>{title}</Link>
+      <Link href={href}>></Link>{title}
     </ErasureTitle>,
     "poemTitle":<PoemTitle>
       <Link href={href}>{title}</Link>
@@ -180,15 +180,17 @@ const Home = () => {
 
       <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
     </Header>
-    <DirectoryTree
-      showLine
-      autoExpandParent={true}
-      switcherIcon={<></>}
-      showIcon={false}
-      selectable={false}
-      treeData={treeData}
-      titleRender={(data)=> <TreeNode {...data}/>}
-    />
+    <div>
+      <DirectoryTree
+        showLine
+        autoExpandParent={true}
+        switcherIcon={<></>}
+        showIcon={false}
+        selectable={false}
+        treeData={treeData}
+        titleRender={(data)=> <TreeNode {...data}/>}
+      />
+    </div>
   </div>
 }
 
