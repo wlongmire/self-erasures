@@ -1,10 +1,11 @@
-import styled from 'styled-components';
 import Head from 'next/head'
 import NavBar from './NavBar';
 
 export default function Layout({children}) {
     const { name } = children.type;
-
+    console.log("children:", children);
+    console.log("name:", name);
+    
     return(
         <div className="layout">
             <Head >
