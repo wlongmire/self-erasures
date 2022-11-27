@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import MenuCollapse from './menuCollapse';
+import MenuCollapse from './MenuCollapse';
 
 export default function ErasureControls(props) {
     const {tags, erasures, changeErasure, setErasure, currentErasure} = props;
