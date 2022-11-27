@@ -125,6 +125,7 @@ const B = styled.span`
 
 const Header = styled.header`
   padding-bottom: 1em;
+  text-align: center;
 
   span#highlights {
     font-family: 'Rubik Mono One', sans-serif !important;
