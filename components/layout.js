@@ -1,10 +1,10 @@
 import Head from 'next/head'
+import { useRouter } from "next/router"
+
 import NavBar from './NavBar';
 
 export default function Layout({children}) {
-    const { name } = children.type;
-    console.log("children:", children);
-    console.log("name:", name);
+    const { pathname } = useRouter()
     
     return(
         <div className="layout">
@@ -24,7 +24,7 @@ export default function Layout({children}) {
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossOrigin="anonymous"></script>
             </Head>
             {
-                (name !== "Home") && <NavBar/>
+                (pathname !== "/blackouts") && <NavBar/>
             }
             <main className="container">{children}</main>
             
