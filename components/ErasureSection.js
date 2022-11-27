@@ -3,7 +3,7 @@ import tags from './../pages/data/tags.json';
 import erasures from './../pages/data/erasures.json';
 
 import PoemContainer from './PoemContainer';
-import ErasureControls from './erasureControls';
+import ErasureControls from './ErasureControls';
 
 const ErasureSection = ({currentErasure, currentStage}) => {
     const [ stageIndex, setStageIndex] = useState(parseInt(currentStage));
