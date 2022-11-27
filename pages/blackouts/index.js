@@ -171,14 +171,8 @@ const TreeNode = (props) => {
   return renderTypes[type] || <p>{title}</p>
 }
 
-
 const Home = () => {
-  const handleSelect = (keys, info)=> {
-    console.log(info)
-
-  }
-
-  return <>
+  return <div>
     <Header>
       <span id="highlights">H<B>IG</B>HLIGHTS</span>
       <span id="blackouts">&BLACK<B>OU</B>TS</span>
@@ -192,10 +186,9 @@ const Home = () => {
       showIcon={false}
       selectable={false}
       treeData={treeData}
-      onSelect={handleSelect}
       titleRender={(data)=> <TreeNode {...data}/>}
     />
-  </>
+  </div>
 }
 
 export default Home;
