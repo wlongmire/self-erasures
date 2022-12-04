@@ -123,6 +123,7 @@ const Header = styled.header`
     span#highlights, span#blackouts {
       font-size: calc(1rem + 7vw);
     }
+  }
 
   @media only screen and (max-width : 800px) {
     span#highlights, span#blackouts {
@@ -142,11 +143,9 @@ const TreeNode = (props) => {
     "header":<TreeHeader>
       {title}
     </TreeHeader>,
-    "link":<LinkTitle>
-      <Link href={href}>{title}</Link>
-    </LinkTitle>,
+    "link":<LinkTitle><Link href={href}>{title}</Link></LinkTitle>,
     "erasureTitle":<ErasureTitle>
-      <Link href={href}>></Link>{title}
+      <Link href={href}>{title}</Link>
     </ErasureTitle>,
     "poemTitle":<PoemTitle>
       <Link href={href}>{title}</Link>
@@ -201,7 +200,6 @@ const home = () => {
 
         <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
       </Header>
-
       <Collapse ghost>
         <Panel header="Series" key="1">
           <DirectoryTree
@@ -211,6 +209,8 @@ const home = () => {
             showIcon={false}
             selectable={false}
             treeData={treeData.series}
+            blockNode={true}
+            titleRender={(data)=> <TreeNode {...data}/>}
           />
         </Panel>
         <Panel header="The Artists" key="2">
@@ -221,6 +221,7 @@ const home = () => {
             showIcon={false}
             selectable={false}
             treeData={treeData.artists}
+            titleRender={(data)=> <TreeNode {...data}/>}
           />
         </Panel>
         <Panel header="The Contributors" key="3">
@@ -234,6 +235,7 @@ const home = () => {
                   showIcon={false}
                   selectable={false}
                   treeData={group}
+                  titleRender={(data)=> <TreeNode {...data}/>}
                 />      
               </div>)
             }
@@ -250,6 +252,7 @@ const home = () => {
                     showIcon={false}
                     selectable={false}
                     treeData={group}
+                    titleRender={(data)=> <TreeNode {...data}/>}
                   />      
                 </div>)
               }
@@ -260,4 +263,4 @@ const home = () => {
   </div>
 }
 
-export default home;
+export default home
