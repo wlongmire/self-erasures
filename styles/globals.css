@@ -54,10 +54,15 @@ a {
     font-family: 'Sorts Mill Goudy', serif;
 }
 
+.ant-collapse-item.poem {
+    font-size: 0.5em !important;
+    border-bottom: 0px solid black;
+}
+
 .ant-tree-node-content-wrapper {
-    border-top: 5px solid black;
+    border-bottom: 1px solid black;
 }
 
 .ant-collapse-header-text {
-    border-bottom: 5px solid black;
+    border-bottom: 2px solid black;
 }

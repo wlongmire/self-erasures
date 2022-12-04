@@ -77,6 +77,7 @@ const ErasureTitle = styled.div`
 const PoemTitle = styled.div` 
   font-family: 'Sorts Mill Goudy', serif;
   font-size: 1.1em;
+  line-height: 5em;
 `
 
 const B = styled.span`
@@ -93,10 +94,11 @@ const B = styled.span`
 `
 
 const TreeCardGroup = styled.div`
-  display:flex;
+    display:flex;
 `
 
 const TreeCard = styled.div`
+    flex-grow:1;
 `
 
 const Header = styled.header`
@@ -143,12 +145,12 @@ const TreeNode = (props) => {
     "header":<TreeHeader>
       {title}
     </TreeHeader>,
-    "link":<LinkTitle><Link href={href}>{title}</Link></LinkTitle>,
+    "link":<LinkTitle><Link href={href}><span>0-{title}</span></Link></LinkTitle>,
     "erasureTitle":<ErasureTitle>
-      <Link href={href}>{title}</Link>
+      <Link href={href}>0 - </Link>{title}
     </ErasureTitle>,
     "poemTitle":<PoemTitle>
-      <Link href={href}>{title}</Link>
+      <Link href={href}><span>0 - {title}</span></Link>
     </PoemTitle>
   }
   return renderTypes[type] || <p>{title}</p>
@@ -228,21 +230,23 @@ const home = () => {
           <TreeCardGroup>
             {
               contrib_groups.map(group => <div>
-                <DirectoryTree
-                  showLine
-                  autoExpandParent={true}
-                  switcherIcon={<></>}
-                  showIcon={false}
-                  selectable={false}
-                  treeData={group}
-                  titleRender={(data)=> <TreeNode {...data}/>}
-                />      
+                <TreeCard>
+                    <DirectoryTree
+                    showLine
+                    autoExpandParent={true}
+                    switcherIcon={<></>}
+                    showIcon={false}
+                    selectable={false}
+                    treeData={group}
+                    titleRender={(data)=> <TreeNode {...data}/>}
+                    />
+                </TreeCard>
               </div>)
             }
           </TreeCardGroup>
         </Panel>
         <Panel header="The Poems" key="4">
-          <TreeCardGroup>
+            <TreeCardGroup>
             {
                 poem_groups.map(group => <div>
                   <DirectoryTree
