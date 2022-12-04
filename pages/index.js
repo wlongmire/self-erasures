@@ -66,12 +66,14 @@ const LinkTitle = styled.div`
   font-weight: bold;
   font-size: 1.1em;
   line-height: 1.5em;
+  line-height: 5em;
 `
 
 const ErasureTitle = styled.div`
   font-family: 'Sorts Mill Goudy', serif;
   font-weight: bold;
   font-size: 1.3em;
+  line-height: 5em;
 `
 
 const PoemTitle = styled.div` 
@@ -102,7 +104,7 @@ const TreeCard = styled.div`
 `
 
 const Header = styled.header`
-  padding-bottom: 1em;
+  padding: 3em;
   text-align: center;
 
   span#highlights, span#blackouts {
@@ -122,12 +124,16 @@ const Header = styled.header`
   }
 
   @media only screen and (max-width : 1200px) {
+    padding: 1em 0 ;
+
     span#highlights, span#blackouts {
       font-size: calc(1rem + 7vw);
     }
   }
 
   @media only screen and (max-width : 800px) {
+    padding: 1em 0 ;
+
     span#highlights, span#blackouts {
       font-family: 'Rubik Mono One', sans-serif !important;
       font-size: calc(1.525rem + 6vw);
