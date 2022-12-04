@@ -38,3 +38,22 @@ a {
     position: relative !important;
     top: -30px;
 }
+
+.ant-layout {
+    background-color: white;
+    margin: 0 8rem;
+}
+
+@media only screen and (max-width : 800px) {
+    .ant-layout {
+        margin: 0 1rem;
+    }
+}
+
+.ant-tree-title {
+    font-family: 'Sorts Mill Goudy', serif;
+}
+
+.ant-tree-node-content-wrapper {
+    border-top: 5px solid black;
+}

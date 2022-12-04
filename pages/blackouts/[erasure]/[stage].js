@@ -1,5 +1,5 @@
-import erasures from './../../data/erasures.json';
-import ErasureSection from './../../../components/ErasureSection';
+import erasures from '../../data/erasures.json';
+import ErasureSection from '../../../components/ErasureSection';
 
 export const getStaticPaths = async ()=> {
     const paths = [];

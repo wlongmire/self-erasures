@@ -2,13 +2,14 @@
 import styled from 'styled-components';
 import { Tree } from 'antd';
 import { Collapse } from 'antd';
-const { Panel } = Collapse;
+import { Breadcrumb, Layout, Menu } from "antd";
 
+const { Panel } = Collapse;
 const { DirectoryTree } = Tree;
 
 import Link from 'next/link';
 
-import erasures from './../data/erasures.json';
+import erasures from '../data/erasures.json';
 import contributors from './../data/contributions';
 
 
@@ -55,83 +56,6 @@ const treeData = {
   })),
   poems:[]
 }
-
-// const treeData = [
-//   {
-//     title: 'The Series',
-//     type: "header",
-//     key: '0-0',
-//     children:[
-//       {
-//         title: 'The Writing Process',
-//         href:"/series",
-//         type: "link",
-//         key: '0-0-0'
-//       },
-//       {
-//         title: 'Collaborations',
-//         href:"/series#collaborations",
-//         type: "link",
-//         key: '0-0-1'
-//       },
-//       {
-//         title: 'The Writing Process',
-//         href:"/series#tech_design",
-//         type: "link",
-//         key: '0-0-2'
-//       }
-//     ]
-//   },
-//   {
-//     title: 'The Artists',
-//     type: "header",
-//     key: '0-1',
-//     children:[
-//       {
-//         title: 'Heather Bowlan',
-//         href:"/poet",
-//         type: "link",
-//         key: '0-1-0'
-//       },
-//       {
-//         title: 'Warren C. Longmire',
-//         href:"/developer",
-//         type: "link",
-//         key: '0-1-1'
-//       }
-//     ]
-//   },
-//   {
-//     title: 'The Contributors',
-//     type: "header",
-//     key: '0-2',
-//     children: contributors.map((contrib, id) => ({
-//       title: `${contrib.first} ${contrib.last}`,
-//       href: `/contributors#${contrib.first}-${contrib.last}`,
-//       type: "link",
-//       key: `0-2-${id}`
-//     }))
-//   },
-//   {
-//     title: 'The Poems',
-//     type: "header",
-//     key: '0-3',
-//     children: erasures.items.map(item => (
-//       {
-//         title: item.title,
-//         type: "erasureTitle",
-//         href:`/blackouts/${item.id}`,
-//         key:`0-3-${item.id}`,
-//         children: item.stages.map(stage => ({
-//           title: stage.title,
-//           type: "poemTitle",
-//           key:`0-3-${item.id}-${stage.id}`,
-//           href: `/blackouts/${item.id}/${stage.id}`
-//         }))
-//       }
-//     ))
-//   }
-// ];
 
 const TreeHeader = styled.h2`
   font-family: 'Sorts Mill Goudy', serif;
@@ -181,29 +105,36 @@ const Header = styled.header`
   padding-bottom: 1em;
   text-align: center;
 
-  span#highlights {
+  span#highlights, span#blackouts {
     font-family: 'Rubik Mono One', sans-serif !important;
-    font-size: calc(1.525rem + 6.5vw);
+    font-size: calc(1.525rem + 8vw);
     display:inline-block;
     line-height:1.1;
     padding:0;
     margin:0;
   }
 
-  span#blackouts {
-    font-family: 'Rubik Mono One', sans-serif !important;
-    font-size: calc(1.525rem + 6.5vw);
-    display:inline-block;
-    line-height:1.1;
-    padding:0;
-    margin:0;
-  }
-  
   p {
     font-family: 'Sorts Mill Goudy', serif;
     text-align:center;
     font-size: calc(0.5rem + 0.8vw);
     padding-top: 1em;
+  }
+
+  @media only screen and (max-width : 1200px) {
+    span#highlights, span#blackouts {
+      font-size: calc(1rem + 7vw);
+    }
+
+  @media only screen and (max-width : 800px) {
+    span#highlights, span#blackouts {
+      font-family: 'Rubik Mono One', sans-serif !important;
+      font-size: calc(1.525rem + 6vw);
+      display:inline-block;
+      line-height:1.1;
+      padding:0;
+      margin:0;
+    }
   }
 `
 
@@ -266,13 +197,14 @@ const Home = () => {
   )
 
   return <div>
-    <Header>
-      <span id="highlights">H<B>IG</B>HLIGHTS</span>
-      <span id="blackouts">&BLACK<B>OU</B>TS</span>
+    <Layout>
+      <Header>
+        <span id="highlights">H<B>IG</B>HLIGHTS</span>
+        <span id="blackouts">&BLACK<B>OU</B>TS</span>
 
-      <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
-    </Header>
-    <div>
+        <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
+      </Header>
+
       <Collapse ghost>
         <Panel header="Series" key="1">
           <DirectoryTree
@@ -327,17 +259,7 @@ const Home = () => {
             </TreeCardGroup>
         </Panel>
       </Collapse>
-
-      {/* <DirectoryTree
-        showLine
-        autoExpandParent={true}
-        switcherIcon={<></>}
-        showIcon={false}
-        selectable={false}
-        treeData={treeData}
-        titleRender={(data)=> <TreeNode {...data}/>}
-      /> */}
-    </div>
+    </Layout>
   </div>
 }
 
