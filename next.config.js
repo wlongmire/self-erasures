@@ -3,15 +3,6 @@ const nextConfig = {
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  redirects: async ()=> {
-    return [
-      {
-        source: '/',
-        destination: '/blackouts',
-        permanent: true
-      }
-    ]
   }
 }
 

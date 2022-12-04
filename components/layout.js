@@ -15,7 +15,7 @@ export default function Layout({children}) {
                 <link rel = "icon" href = "/favicon.ico" />
             </Head>
             {
-                (pathname !== "/blackouts") && <NavBar/>
+                (pathname !== "/blackouts" && pathname !== "/") && <NavBar/>
             }
             <main className="container">{children}</main>
             

@@ -57,3 +57,7 @@ a {
 .ant-tree-node-content-wrapper {
     border-top: 5px solid black;
 }
+
+.ant-collapse-header-text {
+    border-bottom: 5px solid black;
+}
