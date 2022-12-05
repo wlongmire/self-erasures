@@ -14,10 +14,6 @@ a {
     box-sizing: border-box;
 }
 
-.container {
-    /* padding: 0 2em; */
-}
-
 .ant-collapse-header-text {
     font-family: 'Sorts Mill Goudy', serif;
     font-size: 2em;
@@ -63,6 +59,7 @@ a {
 
 .ant-tree-node-content-wrapper {
     border-bottom: 1px solid black;
+    border-right:  1px solid black;
 }
 
 .ant-collapse-header-text {
