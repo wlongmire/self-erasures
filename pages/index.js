@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Tree } from 'antd';
 import { Collapse } from 'antd';
-import {Layout} from "antd";
+import { Layout } from "antd";
 
 const { Panel } = Collapse;
 const { DirectoryTree } = Tree;
@@ -97,6 +97,7 @@ const B = styled.span`
 
 const TreeCardGroup = styled.div`
     display:flex;
+    flex-flow: row nowrap;
 `
 
 const TreeCard = styled.div`
@@ -109,7 +110,7 @@ const Header = styled.header`
 
   span#highlights, span#blackouts {
     font-family: 'Rubik Mono One', sans-serif !important;
-    font-size: calc(1.525rem + 8vw);
+    font-size: calc(1.525rem + 7vw);
     display:inline-block;
     line-height:1.1;
     padding:0;
@@ -127,7 +128,7 @@ const Header = styled.header`
     padding: 1em 0 ;
 
     span#highlights, span#blackouts {
-      font-size: calc(1rem + 7vw);
+      font-size: calc(1rem + 6.5vw);
     }
   }
 
@@ -136,7 +137,7 @@ const Header = styled.header`
 
     span#highlights, span#blackouts {
       font-family: 'Rubik Mono One', sans-serif !important;
-      font-size: calc(1.525rem + 6vw);
+      font-size: calc(1.525rem + 4vw);
       display:inline-block;
       line-height:1.1;
       padding:0;
@@ -178,7 +179,7 @@ const home = () => {
     return groups
   }
 
-  const contrib_groups = generateGroups(5, contributors, (c, g_idx, idx)=> ({
+  const contrib_groups = generateGroups(contributors.length, contributors, (c, g_idx, idx)=> ({
       title: `${c.first} ${c.last}`,
       href: `/contributors#${c.first}-${c.last}`,
       type: "link",
@@ -186,7 +187,7 @@ const home = () => {
     })
   )
 
-  const poem_groups = generateGroups(2, erasures.items, (c, g_idx, idx)=> ({
+  const poem_groups = generateGroups(erasures.items.length, erasures.items, (c, g_idx, idx)=> ({
       title: c.title,
       type: "erasureTitle",
       href:`/blackouts/${c.id}`,
@@ -235,26 +236,24 @@ const home = () => {
         <Panel header="The Contributors" key="3">
           <TreeCardGroup>
             {
-              contrib_groups.map(group => <div>
-                <TreeCard>
-                    <DirectoryTree
-                    showLine
-                    autoExpandParent={true}
-                    switcherIcon={<></>}
-                    showIcon={false}
-                    selectable={false}
-                    treeData={group}
-                    titleRender={(data)=> <TreeNode {...data}/>}
-                    />
-                </TreeCard>
-              </div>)
+              contrib_groups.map(group => <TreeCard width={`${String(100/contrib_groups.length)}%`}>
+                <DirectoryTree
+                showLine
+                autoExpandParent={true}
+                switcherIcon={<></>}
+                showIcon={false}
+                selectable={false}
+                treeData={group}
+                titleRender={(data)=> <TreeNode {...data}/>}
+                />
+              </TreeCard>)
             }
           </TreeCardGroup>
         </Panel>
         <Panel header="The Poems" key="4">
             <TreeCardGroup>
             {
-                poem_groups.map(group => <div>
+                poem_groups.map(group => <TreeCard width={`${String(100)}%`}>
                   <DirectoryTree
                     showLine
                     autoExpandParent={true}
@@ -264,12 +263,13 @@ const home = () => {
                     treeData={group}
                     titleRender={(data)=> <TreeNode {...data}/>}
                   />      
-                </div>)
+                </TreeCard>)
               }
             </TreeCardGroup>
         </Panel>
       </Collapse>
     </Layout>
+    
   </div>
 }
 
