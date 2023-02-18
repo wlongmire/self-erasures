@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import tags from './../pages/data/tags.json';
-import erasures from './../pages/data/erasures.json';
+import tags from './../data/tags.json';
+import erasures from './../data/erasures.json';
 
 import PoemContainer from './PoemContainer';
 import ErasureControls from './ErasureControls';

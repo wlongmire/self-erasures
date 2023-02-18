@@ -1,4 +1,4 @@
-import contributors from './data/contributions';
+import contributors from './../data/contributions';
 
 export default function contributorsPage() {
     return(<div>

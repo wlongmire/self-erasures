@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 
 import ReactAudioPlayer from 'react-audio-player';
-import contributions from './../pages/data/contributions';
+import contributions from './../data/contributions';
 
 export default class PoemContainer extends React.Component {
     getContributorLink = (contributorId, type) => {
