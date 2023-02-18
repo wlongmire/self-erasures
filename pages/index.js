@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 import erasures from './data/erasures.json';
 import contributors from './data/contributions';
-import treeData from './data/navigation';
+import { treeData } from './data/navigation';
 
 const TreeNode = (props) => {
   const { title, type, href} = props;

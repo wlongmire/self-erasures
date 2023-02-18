@@ -1,6 +1,6 @@
 import contributors from './contributions';
 
-const treeData = {
+export const treeData = {
     series:[
       {
         title: 'The Writing Process',
@@ -44,4 +44,4 @@ const treeData = {
     poems:[]
   }
 
-  export default treeData
+  
