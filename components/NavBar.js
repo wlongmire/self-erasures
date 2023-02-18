@@ -66,7 +66,7 @@ const Header = styled.header`
 
             p {
                 font-family: 'Sorts Mill Goudy', serif;
-                font-size: 0.4em;
+                font-size: 0.6em;
                 padding: 0;
                 margin: 0;
             }
