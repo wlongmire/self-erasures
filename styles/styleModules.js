@@ -23,6 +23,14 @@ export const Footer = styled.div`
 export const ContributorContainer = styled.div`
     padding: 1em 0 ;
     display:flex;
+
+    .imgContainer {
+        flex-basis: 200px;
+        img {
+            object-fit: cover;
+        }
+    }
+    
     h2 {
         font-size: 1.2em;
         font-weight: bold;
@@ -35,6 +43,6 @@ export const ContributorContainer = styled.div`
     }
 
     .contributorInfo {
-        padding: 1em;
+        padding: 1em
     }
 `

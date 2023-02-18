@@ -8,8 +8,11 @@ export default function contributorsPage() {
         <hr/>
         {
             contributors.map(contributor => <ContributorContainer id={`${contributor.first}-${contributor.last}`}>
+                
+                <div className="imgContainer">
+                    <img src="http://via.placeholder.com/200x200"/>
+                </div>
 
-                <img src="https://source.unsplash.com/WLUHO9A_xik/200x200"/>
                 <div className="contributorInfo">
                     <h2>{contributor.first} {contributor.last}</h2>
                     <p>{contributor.blurb}</p>
