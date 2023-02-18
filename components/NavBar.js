@@ -39,7 +39,7 @@ const Header = styled.header`
 
         p {
             font-family: 'Sorts Mill Goudy', serif;
-            font-size: 0.7em;
+            font-size: 0.6em;
             padding: 0;
             margin: 0;
         }
@@ -62,12 +62,12 @@ const Header = styled.header`
     @media (max-width: 540px){
         .navbar-brand {
             h2 {
-                font-size:0.8em
+                font-size:0.9em
             }
 
             p {
                 font-family: 'Sorts Mill Goudy', serif;
-                font-size: 0.4em;
+                font-size: 0.5em;
                 padding: 0;
                 margin: 0;
             }
