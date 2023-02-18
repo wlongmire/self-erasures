@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const CommonContainer = styled.div`
     main {
+        min-height: 100vh;
         padding-top: 6em;
         font-family: 'Sorts Mill Goudy', serif;
 
