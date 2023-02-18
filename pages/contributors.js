@@ -1,12 +1,16 @@
-import contributors from './../data/contributions';
+import contributors from './../data/contributions.json';
+import { ContributorContainer }  from './../styles/styleModules'
 
 export default function contributorsPage() {
     return(<div>
         <h1>The Contributors</h1>
         <p>This project would be impossible with the generous contributions of the following artists.</p>
-        
-            {
-                contributors.map(contributor => <div id={`${contributor.first}-${contributor.last}`}>
+        <hr/>
+        {
+            contributors.map(contributor => <ContributorContainer id={`${contributor.first}-${contributor.last}`}>
+
+                <img src="https://source.unsplash.com/WLUHO9A_xik/200x200"/>
+                <div className="contributorInfo">
                     <h2>{contributor.first} {contributor.last}</h2>
                     <p>{contributor.blurb}</p>
                     
@@ -19,7 +23,8 @@ export default function contributorsPage() {
                     {contributor.website && <>
                         <p>Website: <a href={contributor.website.url}> {contributor.website.title}</a></p>
                     </>}
-                </div>)
-            }
+                </div>
+            </ContributorContainer>)
+        }
     </div>);
 }

@@ -19,3 +19,22 @@ export const Footer = styled.div`
     color: white;
     padding: 1em;
 `
+
+export const ContributorContainer = styled.div`
+    padding: 1em 0 ;
+    display:flex;
+    h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 0.9em;
+        padding: 0;
+        margin: 0.5em 0;
+    }
+
+    .contributorInfo {
+        padding: 1em;
+    }
+`
