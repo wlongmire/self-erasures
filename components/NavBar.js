@@ -32,13 +32,14 @@ const Header = styled.header`
         color: white;
         font-family: 'Rubik Mono One', sans-serif !important;
         h2 {
+            font-size: 1.1em;
             padding: 0;
             margin: 0;
         }
 
         p {
             font-family: 'Sorts Mill Goudy', serif;
-            font-size: 0.8em;
+            font-size: 0.6em;
             padding: 0;
             margin: 0;
         }
@@ -58,32 +59,10 @@ const Header = styled.header`
         }
     }
 
-    @media (max-width: 540px){
-        .navbar-brand {
-            h2 {
-                font-size:0.8em
-            }
 
-            p {
-                font-family: 'Sorts Mill Goudy', serif;
-                font-size: 0.6em;
-                padding: 0;
-                margin: 0;
-            }
+    .navbar-nav {
+        .nav-link{
+            padding: 10px;
         }
-
-        .navbar-nav {
-            text-align: right;
-
-            .nav-link{
-                padding: 10px;
-            }
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-        }
-
     }
-
 `
