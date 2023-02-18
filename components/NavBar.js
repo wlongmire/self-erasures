@@ -39,7 +39,7 @@ const Header = styled.header`
 
         p {
             font-family: 'Sorts Mill Goudy', serif;
-            font-size: 0.6em;
+            font-size: 0.7em;
             padding: 0;
             margin: 0;
         }
