@@ -22,8 +22,6 @@ export default function NavBar() {
                         <a className="nav-link" href="/contributors">The Contributors</a>
                     </div>
                 </div>
-
-                
             </div>
         </nav>
     </Header>);
@@ -59,4 +57,28 @@ const Header = styled.header`
             background-color: white;
         }
     }
+
+    @media (max-width: 540px){
+        .navbar-brand {
+            h2 {
+                font-size:1.1em
+            }
+
+            p {
+                font-family: 'Sorts Mill Goudy', serif;
+                font-size: 0.6em;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .navbar-nav {
+            text-align: right;
+
+            .nav-link{
+                padding: 10px;
+            }
+        }
+    }
+
 `
