@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default function NavBar() {
     return (<Header>
-        <nav className="navbar navbar-expand-lg bg-dark">
+        <nav className="navbar fixed-top navbar-expand-lg bg-dark">
             <div className="container">
                 <div className="navbar-brand">
                     <a href="/"><h2>Highlights&Blackouts</h2></a>

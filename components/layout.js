@@ -1,7 +1,8 @@
-import styled from 'styled-components';
 import Head from 'next/head'
 import { useRouter } from "next/router"
 import NavBar from './NavBar';
+
+import { CommonContainer, Footer } from './../styles/styleModules'
 
 export default function Layout({children}) {
     const { pathname } = useRouter()
@@ -16,8 +17,16 @@ export default function Layout({children}) {
             {
                 (pathname !== "/blackouts" && pathname !== "/") && <NavBar/>
             }
-        
-            <main className="container">{children}</main>
+            <CommonContainer>
+                <main className="container">{children}</main>
+            </CommonContainer>
+            
+            <Footer>
+                <footer className="container">
+                    Highlights&Blackouts 2023
+                </footer>
+                
+            </Footer>
         </div>
     );
 }
