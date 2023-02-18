@@ -10,50 +10,138 @@ import Link from 'next/link';
 
 import erasures from './data/erasures.json';
 import contributors from './data/contributions';
+import treeData from './data/navigation';
 
-const treeData = {
-  series:[
-    {
-      title: 'The Writing Process',
-      href:"/series",
-      type: "link",
-      key: '0-0-0'
-    },
-    {
-      title: 'Collaborations',
-      href:"/series#collaborations",
-      type: "link",
-      key: '0-0-1'
-    },
-    {
-      title: 'The Writing Process',
-      href:"/series#tech_design",
-      type: "link",
-      key: '0-0-2'
-    }
-  ],
-  artists:[
-    {
-      title: 'Heather Bowlan',
-      href:"/poet",
-      type: "link",
-      key: '0-1-0'
-    },
-    {
-      title: 'Warren C. Longmire',
-      href:"/developer",
-      type: "link",
-      key: '0-1-1'
-    }
-  ],
-  contributors:contributors.map((contrib, id) => ({
-    title: `${contrib.first} ${contrib.last}`,
-    href: `/contributors#${contrib.first}-${contrib.last}`,
-    type: "link",
-    key: `0-2-${id}`
-  })),
-  poems:[]
+const TreeNode = (props) => {
+  const { title, type, href} = props;
+  const renderTypes = {
+    "header":<TreeHeader>
+      {title}
+    </TreeHeader>,
+    "link":<LinkTitle><Link href={href}><span>0-{title}</span></Link></LinkTitle>,
+    "erasureTitle":<ErasureTitle>
+      <Link href={href}>0 - </Link>{title}
+    </ErasureTitle>,
+    "poemTitle":<PoemTitle>
+      <Link href={href}><span>0 - {title}</span></Link>
+    </PoemTitle>
+  }
+  return renderTypes[type] || <p>{title}</p>
 }
+
+const home = () => {
+  const generateGroups = (numCards, content, bundleFn) => {
+    const groups = []
+    let g_idx = 0
+
+    content.forEach((c, idx)=> {
+      g_idx = Math.floor(idx / numCards)
+      if (!groups[g_idx])
+        groups.push([])
+  
+      groups[g_idx].push(bundleFn(c, g_idx, idx))
+    })
+
+    return groups
+  }
+
+  const contrib_groups = generateGroups(contributors.length, contributors, (c, g_idx, idx)=> ({
+      title: `${c.first} ${c.last}`,
+      href: `/contributors#${c.first}-${c.last}`,
+      type: "link",
+      key: `0-2-${g_idx}-${idx}`
+    })
+  )
+
+  const poem_groups = generateGroups(erasures.items.length, erasures.items, (c, g_idx, idx)=> ({
+      title: c.title,
+      type: "erasureTitle",
+      href:`/blackouts/${c.id}`,
+      key:`0-3-${c.id}`,
+      children: c.stages.map(stage => ({
+        title: stage.title,
+        type: "poemTitle",
+        key:`0-3-${c.id}-${stage.id}`,
+        href: `/blackouts/${c.id}/${stage.id}`
+      }))
+    })
+  )
+
+  return <div>
+    <Layout>
+      <Header>
+        <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
+        <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
+        <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
+      </Header>
+
+      <Collapse ghost>
+        <Panel header="Series" key="1">
+          <DirectoryTree
+            showLine
+            autoExpandParent={true}
+            switcherIcon={<></>}
+            showIcon={false}
+            selectable={false}
+            treeData={treeData.series}
+            blockNode={true}
+            titleRender={(data)=> <TreeNode {...data}/>}
+          />
+        </Panel>
+
+        <Panel header="The Artists" key="2">
+          <DirectoryTree
+            showLine
+            autoExpandParent={true}
+            switcherIcon={<></>}
+            showIcon={false}
+            selectable={false}
+            treeData={treeData.artists}
+            titleRender={(data)=> <TreeNode {...data}/>}
+          />
+        </Panel>
+
+        <Panel header="The Contributors" key="3">
+          <TreeCardGroup>
+            {
+              contrib_groups.map(group => <TreeCard width={`${String(100/contrib_groups.length)}%`}>
+                <DirectoryTree
+                showLine
+                autoExpandParent={true}
+                switcherIcon={<></>}
+                showIcon={false}
+                selectable={false}
+                treeData={group}
+                titleRender={(data)=> <TreeNode {...data}/>}
+                />
+              </TreeCard>)
+            }
+          </TreeCardGroup>
+        </Panel>
+
+        <Panel header="The Poems" key="4">
+            <TreeCardGroup>
+            {
+                poem_groups.map(group => <TreeCard width={`${String(100)}%`}>
+                  <DirectoryTree
+                    showLine
+                    autoExpandParent={true}
+                    switcherIcon={<></>}
+                    showIcon={false}
+                    selectable={false}
+                    treeData={group}
+                    titleRender={(data)=> <TreeNode {...data}/>}
+                  />      
+                </TreeCard>)
+              }
+            </TreeCardGroup>
+        </Panel>
+      </Collapse>
+    </Layout>
+  </div>
+}
+
+export default home
 
 const TreeHeader = styled.h2`
   font-family: 'Sorts Mill Goudy', serif;
@@ -145,132 +233,3 @@ const Header = styled.header`
     }
   }
 `
-
-const TreeNode = (props) => {
-  const { title, type, href} = props;
-  const renderTypes = {
-    "header":<TreeHeader>
-      {title}
-    </TreeHeader>,
-    "link":<LinkTitle><Link href={href}><span>0-{title}</span></Link></LinkTitle>,
-    "erasureTitle":<ErasureTitle>
-      <Link href={href}>0 - </Link>{title}
-    </ErasureTitle>,
-    "poemTitle":<PoemTitle>
-      <Link href={href}><span>0 - {title}</span></Link>
-    </PoemTitle>
-  }
-  return renderTypes[type] || <p>{title}</p>
-}
-
-const home = () => {
-  const generateGroups = (numCards, content, bundleFn) => {
-    const groups = []
-    let g_idx = 0
-
-    content.forEach((c, idx)=> {
-      g_idx = Math.floor(idx / numCards)
-      if (!groups[g_idx])
-        groups.push([])
-  
-      groups[g_idx].push(bundleFn(c, g_idx, idx))
-    })
-
-    return groups
-  }
-
-  const contrib_groups = generateGroups(contributors.length, contributors, (c, g_idx, idx)=> ({
-      title: `${c.first} ${c.last}`,
-      href: `/contributors#${c.first}-${c.last}`,
-      type: "link",
-      key: `0-2-${g_idx}-${idx}`
-    })
-  )
-
-  const poem_groups = generateGroups(erasures.items.length, erasures.items, (c, g_idx, idx)=> ({
-      title: c.title,
-      type: "erasureTitle",
-      href:`/blackouts/${c.id}`,
-      key:`0-3-${c.id}`,
-      children: c.stages.map(stage => ({
-        title: stage.title,
-        type: "poemTitle",
-        key:`0-3-${c.id}-${stage.id}`,
-        href: `/blackouts/${c.id}/${stage.id}`
-      }))
-    })
-  )
-
-  return <div>
-    <Layout>
-      <Header>
-        <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
-        <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
-
-        <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
-      </Header>
-      <Collapse ghost>
-        <Panel header="Series" key="1">
-          <DirectoryTree
-            showLine
-            autoExpandParent={true}
-            switcherIcon={<></>}
-            showIcon={false}
-            selectable={false}
-            treeData={treeData.series}
-            blockNode={true}
-            titleRender={(data)=> <TreeNode {...data}/>}
-          />
-        </Panel>
-        <Panel header="The Artists" key="2">
-          <DirectoryTree
-            showLine
-            autoExpandParent={true}
-            switcherIcon={<></>}
-            showIcon={false}
-            selectable={false}
-            treeData={treeData.artists}
-            titleRender={(data)=> <TreeNode {...data}/>}
-          />
-        </Panel>
-        <Panel header="The Contributors" key="3">
-          <TreeCardGroup>
-            {
-              contrib_groups.map(group => <TreeCard width={`${String(100/contrib_groups.length)}%`}>
-                <DirectoryTree
-                showLine
-                autoExpandParent={true}
-                switcherIcon={<></>}
-                showIcon={false}
-                selectable={false}
-                treeData={group}
-                titleRender={(data)=> <TreeNode {...data}/>}
-                />
-              </TreeCard>)
-            }
-          </TreeCardGroup>
-        </Panel>
-        <Panel header="The Poems" key="4">
-            <TreeCardGroup>
-            {
-                poem_groups.map(group => <TreeCard width={`${String(100)}%`}>
-                  <DirectoryTree
-                    showLine
-                    autoExpandParent={true}
-                    switcherIcon={<></>}
-                    showIcon={false}
-                    selectable={false}
-                    treeData={group}
-                    titleRender={(data)=> <TreeNode {...data}/>}
-                  />      
-                </TreeCard>)
-              }
-            </TreeCardGroup>
-        </Panel>
-      </Collapse>
-    </Layout>
-    
-  </div>
-}
-
-export default home

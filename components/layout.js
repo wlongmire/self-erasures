@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Head from 'next/head'
 import { useRouter } from "next/router"
-
 import NavBar from './NavBar';
 
 export default function Layout({children}) {
@@ -17,8 +16,8 @@ export default function Layout({children}) {
             {
                 (pathname !== "/blackouts" && pathname !== "/") && <NavBar/>
             }
+        
             <main className="container">{children}</main>
-            
         </div>
     );
 }
