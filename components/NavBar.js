@@ -61,12 +61,12 @@ const Header = styled.header`
     @media (max-width: 540px){
         .navbar-brand {
             h2 {
-                font-size:1.1em
+                font-size:0.8em
             }
 
             p {
                 font-family: 'Sorts Mill Goudy', serif;
-                font-size: 0.6em;
+                font-size: 0.4em;
                 padding: 0;
                 margin: 0;
             }
