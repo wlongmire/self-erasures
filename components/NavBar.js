@@ -62,7 +62,7 @@ const Header = styled.header`
     @media (max-width: 540px){
         .navbar-brand {
             h2 {
-                font-size:0.9em
+                font-size:0.8em
             }
 
             p {
