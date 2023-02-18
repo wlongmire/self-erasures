@@ -9,10 +9,6 @@ export default function contributorsPage() {
         {
             contributors.map(contributor => <ContributorContainer id={`${contributor.first}-${contributor.last}`}>
                 
-                <div className="imgContainer">
-                    <img src="http://via.placeholder.com/200x200"/>
-                </div>
-
                 <div className="contributorInfo">
                     <h2>{contributor.first} {contributor.last}</h2>
                     <p>{contributor.blurb}</p>

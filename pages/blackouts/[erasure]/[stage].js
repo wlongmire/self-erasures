@@ -9,7 +9,6 @@ export const getStaticPaths = async ()=> {
             paths.push({ params: { erasure: (eIdx + 1).toString(), stage: (sIdx + 1).toString()}})
         })
     });
-
     
     return({
         paths,
