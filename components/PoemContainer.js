@@ -1,13 +1,15 @@
-import styled from 'styled-components'
 import React from 'react'
 import Image from 'next/image'
 
 import Slider from 'react-slick'
-
 import ReactAudioPlayer from 'react-audio-player';
+
+import { PoemStyle } from './../styles/styleModules';
+
 import contributions from './../data/contributions';
 
 export default class PoemContainer extends React.Component {
+    
     getContributorLink = (contributorId, type) => {
         const {first, last} = contributions[contributorId]
         return <p><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
@@ -33,27 +35,20 @@ export default class PoemContainer extends React.Component {
         const { image } = currentStage;
         const { audio } = currentStage;
 
-        return <>
-            <div className="col-7">
-                <div className="poemContainer">
-                <h4>{`BLACKOUT ${id}: `}</h4>
-                <h1>{currentStage.title}</h1>
-                <Slider ref={slider => (this.slider = slider)} {...settings}>
-                    {
-                        stages.map((poem, i) => (<div key={poem.id}>
-                            <Image src={`/poems/poem.${id}.${i+1}.png`} width="650" height="650" alt={i}/>
-                        </div>))
-                    }
-                </Slider>
+        return <PoemStyle>
+                <h4>{currentStage.title} : Blackout 1.1</h4>
+                <h1>{currentStage.title} : Blackout 1.1</h1>
+                
+                <Image src={`/poems/poem.${id}.1.png`} width="500" height="500"/>
 
-                {/* <h4>{`${moment(currentStage.date).format("M.D.YYYY")}`}</h4> */}
                 {
                     stages.map(stage => <button className={`btn btn-outline-dark p-3 m-3`} onClick={()=> { 
-                        setSliderValue(stage.id-1);
-                        setStageIndex(stage.id-1);
-                        this.slider.slickGoTo(stage.id-1);
+                        // setSliderValue(stage.id-1);
+                        // setStageIndex(stage.id-1);
+                        // this.slider.slickGoTo(stage.id-1);
                     } }>{stage.title}</button>)
                 }
+
 
                 {
                     audio && <>
@@ -69,7 +64,39 @@ export default class PoemContainer extends React.Component {
                         <Image className="backgroundImage" src={`/images/${image.src}`} width="100" height="1" alt={image.imageSrc}/>
                     </>
                 }
-            </div>
-        </div>
-    </>;}
+
+                {/* <Slider ref={slider => (this.slider = slider)} {...settings}>
+                    {
+                        stages.map((poem, i) => (<div key={poem.id}>
+                            <Image src={`/poems/poem.${id}.${i+1}.png`} layout="fill" alt={i}/>
+                        </div>))
+                    }
+                </Slider> */}
+        </PoemStyle>;
+    }
 }
+
+
+// {
+//     stages.map(stage => <button className={`btn btn-outline-dark p-3 m-3`} onClick={()=> { 
+//         setSliderValue(stage.id-1);
+//         setStageIndex(stage.id-1);
+//         this.slider.slickGoTo(stage.id-1);
+//     } }>{stage.title}</button>)
+// }
+
+
+// {
+//     audio && <>
+//         <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>  {/* autoPlay */}
+//         {this.getContributorLink(audio.contributor, "Audio")}
+//     </>
+// }
+// {
+//     image && this.getContributorLink(image.contributor, "Image")
+// }
+// {
+//     image && <>
+//         <Image className="backgroundImage" src={`/images/${image.src}`} width="100" height="1" alt={image.imageSrc}/>
+//     </>
+// }

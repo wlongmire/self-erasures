@@ -25,12 +25,10 @@ const ErasureSection = ({currentErasure, currentStage}) => {
         }
     }
 
-    return <main className="container">
-        <div id="erasurePage" className="row">
-            {/* <ErasureControls changeErasure={changeErasure} currentErasure={parseInt(currentErasure.id)} setErasure={setErasure} tags={tags} erasures={erasures}/>
-            <PoemContainer erasure={currentErasure}  setStageIndex={setStageIndex} stageIndex={stageIndex} setStageIndex={setStageIndex} sliderValue={sliderValue} setSliderValue={setSliderValue} /> */}
-        </div>
-    </main>
+    return <div>
+        {/* <ErasureControls changeErasure={changeErasure} currentErasure={parseInt(currentErasure.id)} setErasure={setErasure} tags={tags} erasures={erasures}/> */}
+        <PoemContainer erasure={currentErasure}  setStageIndex={setStageIndex} stageIndex={stageIndex} setStageIndex={setStageIndex} sliderValue={sliderValue} setSliderValue={setSliderValue} />
+    </div>
 }
 
 export default ErasureSection;

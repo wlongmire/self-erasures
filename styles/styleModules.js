@@ -46,3 +46,10 @@ export const ContributorContainer = styled.div`
         padding: 1em
     }
 `
+export const PoemStyle = styled.div`
+    font-family: 'Sorts Mill Goudy', serif;
+    
+    h1 {
+        font-family: 'Rubik Mono One', sans-serif !important;
+    }
+`
