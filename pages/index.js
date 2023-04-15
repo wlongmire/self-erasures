@@ -15,6 +15,7 @@ import { treeData } from '../data/navigation';
 
 const TreeNode = (props) => {
   const { title, type, href} = props;
+  
   const renderTypes = {
     "header":<TreeHeader>
       {title}
@@ -77,66 +78,66 @@ const home = () => {
       </Header>
 
       <Collapse ghost>
-      <Panel header="The Poems" key="1">
+        <Panel header="The Poems" key="1">
+              <TreeCardGroup>
+              {
+                  poem_groups.map(group => <TreeCard width={`${String(100)}%`}>
+                    <DirectoryTree
+                      showLine
+                      autoExpandParent={true}
+                      switcherIcon={<></>}
+                      showIcon={false}
+                      selectable={false}
+                      treeData={group}
+                      titleRender={(data)=> <TreeNode {...data}/>}
+                    />      
+                  </TreeCard>)
+                }
+              </TreeCardGroup>
+          </Panel>
+
+          <Panel header="The Series" key="2">
+            <DirectoryTree
+              showLine
+              autoExpandParent={true}
+              switcherIcon={<></>}
+              showIcon={false}
+              selectable={false}
+              treeData={treeData.series}
+              blockNode={true}
+              titleRender={(data)=> <TreeNode {...data}/>}
+            />
+          </Panel>
+
+          <Panel header="The Artists" key="3">
+            <DirectoryTree
+              showLine
+              autoExpandParent={true}
+              switcherIcon={<></>}
+              showIcon={false}
+              selectable={false}
+              treeData={treeData.artists}
+              titleRender={(data)=> <TreeNode {...data}/>}
+            />
+          </Panel>
+
+          <Panel header="The Contributors" key="4">
             <TreeCardGroup>
-            {
-                poem_groups.map(group => <TreeCard width={`${String(100)}%`}>
+              {
+                contrib_groups.map(group => <TreeCard key={group.id} width={`${String(100/contrib_groups.length)}%`}>
                   <DirectoryTree
-                    showLine
-                    autoExpandParent={true}
-                    switcherIcon={<></>}
-                    showIcon={false}
-                    selectable={false}
-                    treeData={group}
-                    titleRender={(data)=> <TreeNode {...data}/>}
-                  />      
+                  showLine
+                  autoExpandParent={true}
+                  switcherIcon={<></>}
+                  showIcon={false}
+                  selectable={false}
+                  treeData={group}
+                  titleRender={(data)=> <TreeNode {...data}/>}
+                  />
                 </TreeCard>)
               }
             </TreeCardGroup>
-        </Panel>
-
-        <Panel header="The Series" key="2">
-          <DirectoryTree
-            showLine
-            autoExpandParent={true}
-            switcherIcon={<></>}
-            showIcon={false}
-            selectable={false}
-            treeData={treeData.series}
-            blockNode={true}
-            titleRender={(data)=> <TreeNode {...data}/>}
-          />
-        </Panel>
-
-        <Panel header="The Artists" key="3">
-          <DirectoryTree
-            showLine
-            autoExpandParent={true}
-            switcherIcon={<></>}
-            showIcon={false}
-            selectable={false}
-            treeData={treeData.artists}
-            titleRender={(data)=> <TreeNode {...data}/>}
-          />
-        </Panel>
-
-        <Panel header="The Contributors" key="4">
-          <TreeCardGroup>
-            {
-              contrib_groups.map(group => <TreeCard width={`${String(100/contrib_groups.length)}%`}>
-                <DirectoryTree
-                showLine
-                autoExpandParent={true}
-                switcherIcon={<></>}
-                showIcon={false}
-                selectable={false}
-                treeData={group}
-                titleRender={(data)=> <TreeNode {...data}/>}
-                />
-              </TreeCard>)
-            }
-          </TreeCardGroup>
-        </Panel>
+          </Panel>
 
         
       </Collapse>

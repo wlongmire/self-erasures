@@ -1,102 +1,136 @@
 import React from 'react'
 import Image from 'next/image'
+import { Carousel } from 'antd';
 
-import Slider from 'react-slick'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-svg-icons'
+
 import ReactAudioPlayer from 'react-audio-player';
 
 import { PoemStyle } from './../styles/styleModules';
 
-import contributions from './../data/contributions';
+import { Layout } from "antd";
 
-export default class PoemContainer extends React.Component {
-    
-    getContributorLink = (contributorId, type) => {
+import contributions from './../data/contributions';
+import erasures from './../data/erasures.json';
+
+const range = (start, stop, step = 1) =>
+  Array.from({ length: Math.ceil((stop - start) / step) }, (_, i) => start + i * step);
+
+
+const ImageHTML = ({image}) => {
+    return (image.video) ? 
+        <iframe width="500" height="500" src={`${image.src}?autoplay=1&mute=1&rel=0&loop=1`} title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>:
+        <Image className="sideImage" src={`/images/${image.src}`} width="500" height="500" alt={image.src}/>
+}
+
+const ImageHandler = ({image}) => {
+    const getContributorLink = (contributorId, type) => {
         const {first, last} = contributions[contributorId]
-        return <p><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
+        return <p className="image_contributor"><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
+    }
+    
+    if (!image) {
+        return <>
+             <Image className="sideImage" src={`/images/paper_background.jpeg`} width="500" height="500" alt={"image"}/>
+        </>
+    } else if (image.length === 1) {
+        return <>
+            <ImageHTML image={image[0]}/>
+            <span>{getContributorLink(image[0].contributor, "Image")}</span>
+        </>
+    } else {
+        return <Carousel dotPosition="right" className="imageCarousel" effect="fade">
+            {
+                image.map(i => <div>
+                    <ImageHTML image={i}/>
+                    <span>{getContributorLink(i.contributor, "Image")}</span>
+                </div>)
+            }
+        </Carousel>   
+    }
+}
+
+const BlackoutDisplay = ({id, currentStage}) => {
+    if (currentStage.pages) {
+        return <Carousel dotPosition="bottom" dots="dotClass" className="imageCarousel">
+            {
+                range(1, currentStage.pages + 1).map(page => <div>
+                    <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500" height="500"/>
+                </div>)
+            }
+        </Carousel>   
+    } else {
+        return <>
+            {
+                <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.png`} width="500" height="500"/>
+            }
+        </>
+    }
+}
+
+const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
+    const currentErasure = erasures.items[erasureIdx - 1]
+    const currentStage = currentErasure.stages[stageIdx - 1]
+
+    const { stages, id } = currentErasure;
+    const { image, audio } = currentStage;
+    
+    const handleScrub = (e) => {
+        const inc = parseInt(e.target.dataset.direction)
+        const { type } = e.target.dataset
+        
+        if (type === "poem") {
+            setPoem(erasureIdx + inc, 1)
+        } else {
+            setPoem(erasureIdx, stageIdx + inc)
+        }
     }
 
-    render() {
-        const { stageIndex, setStageIndex, setSliderValue} = this.props;
-        
-        const settings = {
-            dots: false,
-            fade: true,
-            arrows:false,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            initialSlide:stageIndex,
-            cssEase: "ease-in-out",
-            beforeChange: (current, next) => setStageIndex(next)
-        };
-
-        const { stages, id }= this.props.erasure;
-        const currentStage = stages[stageIndex];
-        const { image } = currentStage;
-        const { audio } = currentStage;
-
-        return <PoemStyle>
-                <h4>{currentStage.title} : Blackout 1.1</h4>
-                <h1>{currentStage.title} : Blackout 1.1</h1>
+    return <Layout>
+            <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
+                <div class="header">
+                    <h4>{currentStage.title}</h4>
+                    <div class="scrubs">
+                        <span>
+                            <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
+                            Blackout {id}
+                            <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
+                        </span>
+                        <span>
+                            <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
+                            Stage {currentStage.id}
+                            <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
+                        </span>    
+                    </div>
+                </div >
                 
-                <Image src={`/poems/poem.${id}.1.png`} width="500" height="500"/>
 
+                <div className="poemContainer">
+                    <BlackoutDisplay id={id} currentStage={currentStage} />
+                    
+                    <div className="sideImageContainer">
+                        <ImageHandler image={image}/>
+                        <h1 className="sideImageTitle">{currentStage.title}</h1>
+                    </div>
+
+                </div>
+                        
                 {
-                    stages.map(stage => <button className={`btn btn-outline-dark p-3 m-3`} onClick={()=> { 
-                        // setSliderValue(stage.id-1);
-                        // setStageIndex(stage.id-1);
-                        // this.slider.slickGoTo(stage.id-1);
+                    stages.map(stage => <button key={stage.id} className={`btn btn-outline-dark p-3 m-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> { 
+                        setPoem(erasureIdx, stage.id);
                     } }>{stage.title}</button>)
                 }
-
 
                 {
                     audio && <>
                         <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>  {/* autoPlay */}
-                        {this.getContributorLink(audio.contributor, "Audio")}
+                        {/* {getContributorLink(audio.contributor, "Audio")} */}
                     </>
-                }
-                {
-                    image && this.getContributorLink(image.contributor, "Image")
-                }
-                {
-                    image && <>
-                        <Image className="backgroundImage" src={`/images/${image.src}`} width="100" height="1" alt={image.imageSrc}/>
-                    </>
-                }
+                }               
+        </PoemStyle>
+    </Layout>;
 
-                {/* <Slider ref={slider => (this.slider = slider)} {...settings}>
-                    {
-                        stages.map((poem, i) => (<div key={poem.id}>
-                            <Image src={`/poems/poem.${id}.${i+1}.png`} layout="fill" alt={i}/>
-                        </div>))
-                    }
-                </Slider> */}
-        </PoemStyle>;
-    }
 }
 
-
-// {
-//     stages.map(stage => <button className={`btn btn-outline-dark p-3 m-3`} onClick={()=> { 
-//         setSliderValue(stage.id-1);
-//         setStageIndex(stage.id-1);
-//         this.slider.slickGoTo(stage.id-1);
-//     } }>{stage.title}</button>)
-// }
-
-
-// {
-//     audio && <>
-//         <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>  {/* autoPlay */}
-//         {this.getContributorLink(audio.contributor, "Audio")}
-//     </>
-// }
-// {
-//     image && this.getContributorLink(image.contributor, "Image")
-// }
-// {
-//     image && <>
-//         <Image className="backgroundImage" src={`/images/${image.src}`} width="100" height="1" alt={image.imageSrc}/>
-//     </>
-// }
+export default PoemContainer;

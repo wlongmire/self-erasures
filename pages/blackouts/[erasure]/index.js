@@ -15,19 +15,22 @@ export const getStaticPaths = async ()=> {
 }
 
 export const getStaticProps = async (context) => {
-    const currentErasure = erasures.items[parseInt(context.params.erasure)-1];
 
     return {
         props: {
-            currentErasure
+            erasureIdx: parseInt(context.params.erasure),
+            stageIdx: parseInt(context.params.stage),
         }
     }
 }
 
-const ErasureSelector = ({currentErasure})=> {
-  return <>
-    <ErasureSection currentErasure={currentErasure} currentStage={0}/>
-  </>
+const ErasureSelector = ({erasureIdx, stageIdx})=> {
+    // const currentErasure = erasures.items[parseInt(context.params.erasure)-1];
+    // const currentStage = erasures.items[parseInt(context.params.erasure)-1].stages[parseInt(context.params.stage)-1];
+
+    return <>
+        <ErasureSection erasureIdx={parseInt(erasureIdx)} stageIdx={parseInt(stageIdx)}/>
+    </>
 }
 
 export default ErasureSelector;

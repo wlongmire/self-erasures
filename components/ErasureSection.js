@@ -1,33 +1,31 @@
 import { useState } from 'react';
 import tags from './../data/tags.json';
+import { useRouter } from 'next/router'
+import PoemContainer from './PoemContainer';
 import erasures from './../data/erasures.json';
 
-import PoemContainer from './PoemContainer';
-import ErasureControls from './ErasureControls';
 
-const ErasureSection = ({currentErasure, currentStage}) => {
-    const [ stageIndex, setStageIndex] = useState(parseInt(currentStage));
-    const [ sliderValue, setSliderValue] = useState(parseInt(currentStage));
+const ErasureSection = ({erasureIdx, stageIdx}) => {
+    let router= useRouter()
 
-    const changeErasure = (inc) => {
-        if (currentErasure + inc >= 0 && currentErasure + inc < erasures.items.length) {
-          setCurrentErasure(currentErasure + inc);
-          setStageIndex(0);
-          setSliderValue(0);
-        }
+    const incPoem = (erasureInc = 0, stageInc = 0) => {
+        setPoem(erasureIdx + erasureInc, stageIdx + stageInc)
     }
-    
-    const setErasure = ({ id }) => {
-        if (id-1 >= 0 && id-1 < erasures.items.length) {
-            setCurrentErasure(id-1);
-            setStageIndex(0);
-            setSliderValue(0);
+
+    const setPoem = (erasureValue, stageValue) => {
+        if (erasureValue && stageValue) {
+            erasureValue = (erasureValue <= 1) ? 1 : erasureValue
+            erasureValue = (erasureValue >= erasures.length)?erasures.length:erasureValue
+            
+            stageValue = (stageValue <= 1) ? 1 : stageValue
+            stageValue = (stageValue >= erasures.items[erasureValue-1].stages.length) ? erasures.items[erasureValue-1].stages.length:stageValue
+
+            router.push(`/blackouts/${erasureValue}/${stageValue}`)
         }
     }
 
     return <div>
-        {/* <ErasureControls changeErasure={changeErasure} currentErasure={parseInt(currentErasure.id)} setErasure={setErasure} tags={tags} erasures={erasures}/> */}
-        <PoemContainer erasure={currentErasure}  setStageIndex={setStageIndex} stageIndex={stageIndex} setStageIndex={setStageIndex} sliderValue={sliderValue} setSliderValue={setSliderValue} />
+        <PoemContainer erasureIdx={erasureIdx}  stageIdx={stageIdx} incPoem={incPoem}  setPoem={setPoem}/>
     </div>
 }
 
