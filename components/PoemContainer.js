@@ -74,7 +74,8 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const currentStage = currentErasure.stages[stageIdx - 1]
 
 
-    const { stages, id } = currentErasure;
+    const stages = currentErasure?.stages;
+    const id = currentErasure?.id;
     const image = currentStage?.image;
     const audio = currentStage?.audio;
     
