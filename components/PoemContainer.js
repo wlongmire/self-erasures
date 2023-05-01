@@ -74,8 +74,8 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const currentStage = currentErasure.stages[stageIdx - 1]
 
     const { stages, id } = currentErasure;
-    // const image = currentStage.image;
-    // const audio = currentStage.audio;
+    const image = currentStage.image;
+    const audio = currentStage.audio;
     
     const handleScrub = (e) => {
         const inc = parseInt(e.target.dataset.direction)
@@ -89,56 +89,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     }
 
     return <Layout>
-            {/* <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}> */}
-            <PoemStyle titleColor={"black"} titlePosition={-8.9}>
-                <div class="header">
-                    <div class="scrubs">
-                        <span>
-                            <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
-                            Blackout {id}
-                            <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
-                        </span>
-                        <span>
-                            <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
-                            Stage {currentStage.id}
-                            <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
-                        </span>    
-                    </div>
-                </div >
-                
-
-                <div className="poemContainer">
-                    <BlackoutDisplay id={id} currentStage={currentStage} />
-                    
-                    <div className="sideImageContainer">
-                        {/* <ImageHandler image={image}/> */}
-                        
-                        <h1 className="sideImageTitle">{currentStage.title}</h1>
-                    </div>
-
-                </div>
-                
-                <div class="footer">
-                    <div>
-                        {
-                            stages.map(stage => <button key={stage.id} className={`btn btn-outline-dark p-3 m-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> { 
-                                setPoem(erasureIdx, stage.id);
-                            } }>
-                                <div>{stage.title}</div>
-                                <div><em>{stage.season}</em></div>
-                            </button>)
-                        }
-                    </div>
-                    <div>
-                        {
-                            // audio && <>
-                                // <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>  {/* autoPlay */}
-                                {/* {getContributorLink(audio.contributor, "Audio")} */}
-                            // </>
-                        } 
-                    </div>   
-                </div>           
-        </PoemStyle>
+            
     </Layout>;
 
 }
