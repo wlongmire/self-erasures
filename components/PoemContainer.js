@@ -70,9 +70,10 @@ const BlackoutDisplay = ({id, currentStage}) => {
 }
 
 const PoemContainer = ({ erasureIdx, stageIdx=0, setPoem }) => {
+    console.log("currentErasure, currentStage:", erasureIdx, stageIdx)
+
     const currentErasure = erasures.items[erasureIdx - 1]
     const currentStage = currentErasure.stages[stageIdx - 1]
-
 
     const stages = currentErasure?.stages;
     const id = currentErasure?.id;
@@ -89,8 +90,6 @@ const PoemContainer = ({ erasureIdx, stageIdx=0, setPoem }) => {
             setPoem(erasureIdx, stageIdx + inc)
         }
     }
-
-    console.log("currentErasure, currentStage:", erasureIdx - 1, stageIdx - 1)
     
     return <Layout>
         <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
