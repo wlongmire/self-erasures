@@ -25,7 +25,7 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
     }
 
     return <div>
-        {/* <PoemContainer erasureIdx={erasureIdx}  stageIdx={stageIdx} incPoem={incPoem}  setPoem={setPoem}/> */}
+        <PoemContainer erasureIdx={erasureIdx}  stageIdx={stageIdx} incPoem={incPoem}  setPoem={setPoem}/>
     </div>
 }
 
