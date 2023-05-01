@@ -90,7 +90,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
         }
     }
 
-    console.log("currentErasure id:", id)
+    console.log("currentErasure, currentStage:", erasureIdx - 1, stageIdx - 1)
     
     return <Layout>
         <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
