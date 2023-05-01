@@ -90,7 +90,6 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     return <Layout>
             <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
                 <div class="header">
-                    {/* <h4>{currentStage.title}</h4> */}
                     <div class="scrubs">
                         <span>
                             <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
@@ -121,7 +120,10 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                         {
                             stages.map(stage => <button key={stage.id} className={`btn btn-outline-dark p-3 m-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> { 
                                 setPoem(erasureIdx, stage.id);
-                            } }>{stage.title}</button>)
+                            } }>
+                                <div>{stage.title}</div>
+                                <div><em>{stage.season}</em></div>
+                            </button>)
                         }
                     </div>
                     <div>
