@@ -5,7 +5,7 @@ export const getStaticPaths = async ()=> {
     const paths = [];
 
     erasures.items.forEach( (erasure, eIdx) => {
-        paths.push({ params: { erasure: (eIdx + 1).toString(), stage: 1}})
+        paths.push({ params: { erasure: (eIdx + 1).toString()}})
     });
 
     return({
@@ -19,7 +19,7 @@ export const getStaticProps = async (context) => {
     return {
         props: {
             erasureIdx: parseInt(context.params.erasure),
-            stageIdx: parseInt(context.params.stage),
+            stageIdx: 1
         }
     }
 }
