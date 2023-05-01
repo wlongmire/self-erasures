@@ -121,7 +121,10 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                         {
                             stages.map(stage => <button key={stage.id} className={`btn btn-outline-dark p-3 m-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> { 
                                 setPoem(erasureIdx, stage.id);
-                            } }>{stage.title}</button>)
+                            } }>
+                                <div>{stage.title}</div>
+                                <div><em>{stage.season}</em></div>
+                            </button>)
                         }
                     </div>
                     <div>
