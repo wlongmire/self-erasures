@@ -3,7 +3,7 @@ import { TreeHeader, LinkTitle, ErasureTitle, PoemTitle, B,  TreeCardGroup, Tree
 import { Tree } from 'antd';
 import { Collapse } from 'antd';
 import { Layout } from "antd";
-
+import { useRouter } from 'next/router'
 const { Panel } = Collapse;
 const { DirectoryTree } = Tree;
 
@@ -68,6 +68,8 @@ const home = () => {
       }))
     })
   )
+
+  let router= useRouter()
 
   return <div>
     <Layout>
@@ -139,7 +141,10 @@ const home = () => {
             </TreeCardGroup>
           </Panel>
 
-        
+          <Panel onClick={()=> {
+            router.push(`/playlist`)
+          }} header="The Playlist" key="5"></Panel>
+          
       </Collapse>
     </Layout>
   </div>
