@@ -9,17 +9,23 @@
                 {
                     "id": 1,
                     "title":"Wellness Plan/Mood Episode",
-                    "season": "Fall 2016"
+                    "season": "Fall 2016",
+                    "image":[],
+                    "audio":{}
                 },
                 {
                     "id": 2,
                     "title":"Wellness/Episode",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[],
+                    "audio":{}
                 },
                 {
                     "id": 3,
                     "title":"BOX",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[],
+                    "audio":{}
                 }
             ]
         },
@@ -30,12 +36,16 @@
                 {
                     "id": 1,
                     "title":"When My Number's Up",
-                    "season": "Winter 2013"
+                    "season": "Winter 2013",
+                    "image":[],
+                    "audio":{}
                 },
                 {
                     "id": 2,
                     "title":"My Guide",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[],
+                    "audio":{}
                 }
             ]
         },
@@ -46,17 +56,23 @@
                 {
                     "id": 1,
                     "title":"tonight(baby)",
-                    "season": "Winter 2019"
+                    "season": "Winter 2019",
+                    "image":[],
+                    "audio":{}
                 },
                 {
                     "id": 2,
                     "title":"Tonight I'm your Baby",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[],
+                    "audio":{}
                 },
                 {
                     "id": 3,
                     "title":"Hey baby.",
-                    "season": "Winter 2021"
+                    "season": "Winter 2021",
+                    "image":[],
+                    "audio":{}
                 }
             ]
         },
