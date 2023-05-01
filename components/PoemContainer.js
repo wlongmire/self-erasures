@@ -74,8 +74,8 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const currentStage = currentErasure.stages[stageIdx - 1]
 
     const { stages, id } = currentErasure;
-    const image = currentStage.image;
-    const audio = currentStage.audio;
+    // const image = currentStage.image;
+    // const audio = currentStage.audio;
     
     const handleScrub = (e) => {
         const inc = parseInt(e.target.dataset.direction)
@@ -89,7 +89,8 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     }
 
     return <Layout>
-            <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
+            {/* <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}> */}
+            <PoemStyle titleColor={"black"} titlePosition={-8.9}>
                 <div class="header">
                     <div class="scrubs">
                         <span>
@@ -110,9 +111,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                     <BlackoutDisplay id={id} currentStage={currentStage} />
                     
                     <div className="sideImageContainer">
-                        {
-                            image && <ImageHandler image={image}/>
-                        }
+                        {/* <ImageHandler image={image}/> */}
                         
                         <h1 className="sideImageTitle">{currentStage.title}</h1>
                     </div>
@@ -132,10 +131,10 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                     </div>
                     <div>
                         {
-                            audio && <>
-                                <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>  {/* autoPlay */}
+                            // audio && <>
+                                // <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>  {/* autoPlay */}
                                 {/* {getContributorLink(audio.contributor, "Audio")} */}
-                            </>
+                            // </>
                         } 
                     </div>   
                 </div>           
