@@ -75,8 +75,8 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
 
 
     const { stages, id } = currentErasure;
-    const image = currentStage.image;
-    const audio = currentStage.audio;
+    const image = currentStage?.image;
+    const audio = currentStage?.audio;
     
     // const handleScrub = (e) => {
     //     const inc = parseInt(e.target.dataset.direction)
