@@ -92,7 +92,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
 
     return <Layout>
         <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
-        <div class="header">
+        {/* <div class="header">
             <div class="scrubs">
                 <span>
                     <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
@@ -105,7 +105,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                     <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
                 </span>    
             </div>
-        </div >
+        </div > */}
 
         </PoemStyle>
     </Layout>
