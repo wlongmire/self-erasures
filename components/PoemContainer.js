@@ -74,7 +74,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const currentStage = currentErasure.stages[stageIdx - 1]
 
     const { stages, id } = currentErasure;
-    const { image, audio} = currentStage;
+    const { image, audio } = currentStage;
     
     const handleScrub = (e) => {
         const inc = parseInt(e.target.dataset.direction)
@@ -109,7 +109,10 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                     <BlackoutDisplay id={id} currentStage={currentStage} />
                     
                     <div className="sideImageContainer">
-                        <ImageHandler image={image}/>
+                        {
+                            image && <ImageHandler image={image}/>
+                        }
+                        
                         <h1 className="sideImageTitle">{currentStage.title}</h1>
                     </div>
 
