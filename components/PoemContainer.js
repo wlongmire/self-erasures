@@ -78,16 +78,16 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const image = currentStage?.image;
     const audio = currentStage?.audio;
     
-    // const handleScrub = (e) => {
-    //     const inc = parseInt(e.target.dataset.direction)
-    //     const { type } = e.target.dataset
+    const handleScrub = (e) => {
+        const inc = parseInt(e.target.dataset.direction)
+        const { type } = e.target.dataset
         
-    //     if (type === "poem") {
-    //         setPoem(erasureIdx + inc, 1)
-    //     } else {
-    //         setPoem(erasureIdx, stageIdx + inc)
-    //     }
-    // }
+        if (type === "poem") {
+            setPoem(erasureIdx + inc, 1)
+        } else {
+            setPoem(erasureIdx, stageIdx + inc)
+        }
+    }
 
     return <Layout>
             
