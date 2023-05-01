@@ -17,6 +17,7 @@ export default function Layout({children}) {
             {
                 (pathname !== "/blackouts" && pathname !== "/") && <NavBar/>
             }
+            
             <CommonContainer>
                 <main className="container">{children}</main>
             </CommonContainer>

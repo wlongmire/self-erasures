@@ -20,6 +20,7 @@ export default function NavBar() {
                         <a className="nav-link" href="/poet">The Poet</a>
                         <a className="nav-link" href="/developer">The Developer</a>
                         <a className="nav-link" href="/contributors">The Contributors</a>
+                        <a className="nav-link" href="/playlist">The Playlist</a>
                     </div>
                 </div>
             </div>

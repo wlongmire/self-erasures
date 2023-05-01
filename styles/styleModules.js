@@ -82,6 +82,13 @@ export const PoemStyle = styled.div`
 
     .header {
         display: flex;
+        justify-content: end;
+        align-items: center;
+        margin:1em;
+    }
+
+    .footer {
+        display: flex;
         justify-content: space-between;
         align-items: center;
     }

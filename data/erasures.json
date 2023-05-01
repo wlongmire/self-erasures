@@ -10,29 +10,29 @@
                 {
                     "id": 1,
                     "title":"Wellness Plan/Mood Episode",
-                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
+                    "season": "Fall 2016",
                     "audio": {
                         "src":"When-My-Numbers-Up.mp3",
                         "srcLink":"",
                         "contributor": 7
-                    },
-                    "image": [{
-                        "src":"image.1.1.jpg",
-                        "srcLink":"",
-                        "contributor": 3
-                    }]
+                    }
                 },
                 {
                     "id": 2,
                     "title":"Wellness/Episode",
-                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400",
+                    "season": "Summer 2021",
                     "imageSrc": "image.1.2.jpg",
                     "contributor": 5
                 },
                 {
                     "id": 3,
                     "title":"BOX",
-                    "date": "Sat Jul 22 2018 13:46:43 GMT-0400"
+                    "date": "Summer 2021",
+                    "image": [{
+                        "src":"image.1.1.jpg",
+                        "srcLink":"",
+                        "contributor": 3
+                    }]
                 }
             ]
         },

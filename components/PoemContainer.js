@@ -20,7 +20,7 @@ const range = (start, stop, step = 1) =>
 
 const ImageHTML = ({image}) => {
     return (image.video) ? 
-        <iframe width="500" height="500" src={`${image.src}?autoplay=1&mute=1&rel=0&loop=1`} title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>:
+        <iframe width="500" height="500" src={`${image.src}?loop=1&autoplay=1&mute=1&rel=0`} title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>:
         <Image className="sideImage" src={`/images/${image.src}`} width="500" height="500" alt={image.src}/>
 }
 
@@ -90,7 +90,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     return <Layout>
             <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
                 <div class="header">
-                    <h4>{currentStage.title}</h4>
+                    {/* <h4>{currentStage.title}</h4> */}
                     <div class="scrubs">
                         <span>
                             <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
@@ -116,7 +116,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
 
                 </div>
                 
-                <div class="header">
+                <div class="footer">
                     <div>
                         {
                             stages.map(stage => <button key={stage.id} className={`btn btn-outline-dark p-3 m-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> { 
