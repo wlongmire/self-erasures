@@ -69,7 +69,7 @@ const BlackoutDisplay = ({id, currentStage}) => {
     }
 }
 
-const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
+const PoemContainer = ({ erasureIdx, stageIdx=0, setPoem }) => {
     const currentErasure = erasures.items[erasureIdx - 1]
     const currentStage = currentErasure.stages[stageIdx - 1]
 
