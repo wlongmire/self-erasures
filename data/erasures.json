@@ -634,10 +634,10 @@
                     "pages": 3,
                     "title":"Visible Future",
                     "season": "Fall 2021",
-                    "image":{
+                    "image":[{
                         "src":"VISIBLE_FUTURE.jpeg",
                         "contributor": 1
-                    }
+                    }]
                 },
                 {
                     "id": 3,

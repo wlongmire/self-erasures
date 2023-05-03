@@ -40,7 +40,7 @@ const ImageHandler = ({image}) => {
             <span>{getContributorLink(image[0].contributor, "Image")}</span>
         </>
     } else {
-        return <Carousel dotPosition="right" className="imageCarousel" effect="fade">
+        return <Carousel dotPosition="right" className="imageCarousel" autoplay="true" draggable autoplaySpeed={5000} effect="fade">
             {
                 image.map(i => <div>
                     <ImageHTML image={i}/>
@@ -53,13 +53,13 @@ const ImageHandler = ({image}) => {
 
 const BlackoutDisplay = ({id, currentStage}) => {
     if (currentStage.pages) {
-        return <Carousel dotPosition="bottom" dots="dotClass" className="imageCarousel">
+        return <Carousel dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
             {
                 range(1, currentStage.pages + 1).map(page => <div>
                     <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500" height="500"/>
                 </div>)
             }
-        </Carousel>   
+        </Carousel>
     } else {
         return <>
             {
