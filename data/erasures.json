@@ -14,12 +14,29 @@
                 {
                     "id": 2,
                     "title":"Wellness/Episode",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image": [{
+                        "src": "WELLNESS_EPISODE.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
                     "title":"BOX",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src": "BOX/box_1.jpg",
+                        "contributor": 1
+                    },{
+                        "src": "BOX/box_2.jpg",
+                        "contributor": 1
+                    },{
+                        "src": "BOX/box_3.jpg",
+                        "contributor": 1
+                    },{
+                        "src": "BOX/box_4.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -30,7 +47,11 @@
                 {
                     "id": 1,
                     "title":"When My Number's Up",
-                    "season": "Winter 2013"
+                    "season": "Winter 2013",
+                    "audio": {
+                        "src":"When-My-Numbers-Up.mp3",
+                        "contributor": 1
+                    }
                 },
                 {
                     "id": 2,
@@ -50,8 +71,12 @@
                 },
                 {
                     "id": 2,
-                    "title":"Tonight I'm your Baby",
-                    "season": "Fall 2021"
+                    "title":"Tonight I'm your baby",
+                    "season": "Fall 2021",
+                    "image": [{
+                        "src": "TONIGHT_I_M_YOUR_BABY.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
@@ -72,12 +97,22 @@
                 {
                     "id": 2,
                     "title":"Diamond",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image": [{
+                        "src": "DIAMOND.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
                     "title":"Diamond Garden",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image": [{
+                        "video":true,
+                        "src":"https://www.youtube.com/embed/78j184jkouI",
+                        "srcLink":" https://youtu.be/78j184jkouI",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -93,7 +128,20 @@
                 {
                     "id": 2,
                     "title":"Baseline",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image": [{
+                        "src":"BASELINE/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BASELINE/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BASELINE/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BASELINE/4.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -111,7 +159,20 @@
                     "id": 2,
                     "pages":2,
                     "title":"Before Your Mother",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image": [{
+                        "src":"BEFORE_YOUR_MOTHER/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BEFORE_YOUR_MOTHER/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BEFORE_YOUR_MOTHER/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BEFORE_YOUR_MOTHER/4.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -134,7 +195,11 @@
                 {
                     "id": 3,
                     "title":"Swing, HUM",
-                    "season": "Winter 2021"
+                    "season": "Winter 2021",
+                    "image": [{
+                        "src":"swing_hum.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -150,7 +215,20 @@
                 {
                     "id": 2,
                     "title":"Panther",
-                    "season": "Winter 2021"
+                    "season": "Winter 2021",
+                    "image": [{
+                        "src":"PANTHER/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"PANTHER/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"PANTHER/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"PANTHER/4.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
@@ -187,7 +265,20 @@
                 {
                     "id": 2,
                     "title":"Orchard",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"ORCHARD/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"ORCHARD/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"ORCHARD/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"ORCHARD/4.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -210,7 +301,14 @@
                 {
                     "id": 3,
                     "title":"THE DAY I TOLD",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image": [{
+                        "src":"THE_DAY_I_TOLD/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"THE_DAY_I_TOLD/2.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -226,7 +324,17 @@
                 {
                     "id": 2,
                     "title":"Wanting",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"wanting/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"wanting/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"wanting/3.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
@@ -252,7 +360,14 @@
                 {
                     "id": 3,
                     "title":"The Stilled Sweetness",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"THE_STILLED_SWEETNESS/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"THE_STILLED_SWEETNESS/2.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -271,7 +386,11 @@
                     "id": 2,
                     "pages":2,
                     "title":"Scissored",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"scissored.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -292,7 +411,17 @@
                 {
                     "id": 2,
                     "title":"OUR FIRST",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"OUR_FIRST/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"OUR_FIRST/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"OUR_FIRST/3.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -330,7 +459,13 @@
                 {
                     "id": 2,
                     "title":"Feburary Thaw",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "video":true,
+                        "src":"https://www.youtube.com/embed/VzGWutL8m-E?autoplay=1&showinfo=0&loop=1",
+                        "srcLink":"https://www.youtube.com/shorts/LMK1B-F-QdE",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -346,7 +481,17 @@
                 {
                     "id": 2,
                     "title":"Breathe. Machine",
-                    "season": "Fall 2022"
+                    "season": "Fall 2022",
+                    "image":[{
+                        "src":"BREATHE_MACHINE/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BREATHE_MACHINE/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"BREATHE_MACHINE/3.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -362,10 +507,15 @@
                 {
                     "id": 2,
                     "title":"Inheritance",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "video":true,
+                        "src": "https://www.youtube.com/embed/9N_r4LPndFs?autoplay=1&showinfo=0&loop=1",
+                        "contributor": 1
+                    }]
                 },
                 {
-                    "id": 2,
+                    "id": 3,
                     "title":"Guilded",
                     "season": "Fall 2021"
                 }
@@ -385,7 +535,17 @@
                     "id": 2,
                     "pages":2,
                     "title":"Rival",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"RIVAL/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RIVAL/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RIVAL/3.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 2,
@@ -424,7 +584,11 @@
                 {
                     "id": 5,
                     "title":"THIS SHUT TUNNEL MY BODY",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"this_shut_tunnel_my_body.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -442,7 +606,11 @@
                     "id": 2,
                     "pages":2,
                     "title":"Blind Spot",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"BLIND_SPOT.jpeg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
@@ -465,7 +633,11 @@
                     "id": 2,
                     "pages": 3,
                     "title":"Visible Future",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":{
+                        "src":"VISIBLE_FUTURE.jpeg",
+                        "contributor": 1
+                    }
                 },
                 {
                     "id": 3,
@@ -487,12 +659,26 @@
                 {
                     "id": 2,
                     "title":"Ode to Taxidermy",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"ODE_TO_TAXIDERMY.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
                     "title":"Ode to Aperture",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"ODE_TO_APERTURE/1.jpg",
+                        "contributor": 1  
+                    },{
+                        "src":"ODE_TO_APERTURE/2.jpg",
+                        "contributor": 1  
+                    },{
+                        "src":"ODE_TO_APERTURE/3.jpg",
+                        "contributor": 1  
+                    }]
                 }
             ]
         },
@@ -516,7 +702,11 @@
                     "id": 3,
                     "pages": 2,
                     "title":"PHONE JUMP",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"phone_jump.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -537,7 +727,13 @@
                 {
                     "id": 3,
                     "title":"Compass/Pinwheel",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "video":true,
+                        "src":"https://www.youtube.com/embed/sIlyU866Gpw",
+                        "srcLink":"https://www.youtube.com/watch?v=sIlyU866Gpw",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -558,7 +754,14 @@
                 {
                     "id": 3,
                     "title":"Offshore Diamonds",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"OFFSHORE_DIAMONDS/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"OFFSHORE_DIAMONDS/2.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -574,12 +777,22 @@
                 {
                     "id": 2,
                     "title":"Main Line Medusa",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "video":true,
+                        "src":"https://www.youtube.com/embed/s8B6c9JBdnE",
+                        "srcLink":"https://www.youtube.com/watch?v=s8B6c9JBdnE",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
                     "title":"MEDUSA IN A YELLOW DRESS",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"medusa_in_a_yellow_dress.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -589,18 +802,28 @@
             "stages": [
                 {
                     "id": 1,
+                    "pages":2,
                     "title":"Fabled",
                     "season": "Fall 2014"
                 },
                 {
                     "id": 2,
+                    "pages":2,
                     "title":"FABLED",
-                    "season": "Summer 2021"
-                },
-                {
-                    "id": 3,
-                    "title":"The Goodbye Twist",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"FABLED/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"FABLED/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"FABLED/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"FABLED/4.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -618,12 +841,38 @@
                     "id": 2,
                     "pages": 2,
                     "title":"AUTOMATON",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"AUTOMATON/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"AUTOMATON/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"AUTOMATON/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"AUTOMATON/4.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
                     "title":"Ragged tailgate beat",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"RAGGED_TAILGATE_BEAT/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RAGGED_TAILGATE_BEAT/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RAGGED_TAILGATE_BEAT/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RAGGED_TAILGATE_BEAT/4.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -641,12 +890,32 @@
                     "id": 2,
                     "pages": 2,
                     "title":"BENEDICTION",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"RAGGED_TAILGATE_BEAT/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RAGGED_TAILGATE_BEAT/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RAGGED_TAILGATE_BEAT/3.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"RAGGED_TAILGATE_BEAT/4.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
                     "title":"The first word blurs as it forms and I bite my tougue",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"THE_FIRST_WORD_BLURS/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"THE_FIRST_WORD_BLURS/2.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -669,7 +938,17 @@
                 {
                     "id": 3,
                     "title":"At camp I remembered a story",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "image":[{
+                        "src":"AT_CAMP/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"AT_CAMP/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"AT_CAMP/3.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 4,
@@ -698,7 +977,17 @@
                     "id": 3,
                     "title":"Desahogar",
                     "after": "(for Luna)",
-                    "season": "Fall 2021"
+                    "season": "Fall 2021",
+                    "image": [{
+                        "src":"DESAHOGAR/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"DESAHOGAR/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"DESAHOGAR/3.jpg",
+                        "contributor": 1
+                    }]
                 }
             ]
         },
@@ -740,7 +1029,17 @@
                     "id": 2,
                     "pages": 2,
                     "title":"Self-Care in the Off Season",
-                    "season": "Summer 2022"
+                    "season": "Summer 2022",
+                    "image":[{
+                        "src":"SELF-CARE_IN_THE_OFF_SEASON/1.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"SELF-CARE_IN_THE_OFF_SEASON/2.jpg",
+                        "contributor": 1
+                    },{
+                        "src":"SELF-CARE_IN_THE_OFF_SEASON/3.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
@@ -764,7 +1063,11 @@
                     "id": 2,
                     "pages": 2,
                     "title":"Who Says Don't Go",
-                    "season": "Summer 2022"
+                    "season": "Summer 2022",
+                    "image": [{
+                        "src":"WHO_SAYS_DON_T_GO.jpg",
+                        "contributor": 1
+                    }]
                 },
                 {
                     "id": 3,
@@ -802,7 +1105,11 @@
                 {
                     "id": 2,
                     "title":"Found on the Pavement",
-                    "season": "Summer 2022"
+                    "season": "Summer 2022",
+                    "image":[{
+                        "src":"FOUND_ON_THE_PAVEMENT.jpg",
+                        "contributor":1
+                    }]
                 }
             ]
         },
