@@ -109,7 +109,7 @@
                     "season": "Summer 2021",
                     "image": [{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/78j184jkouI",
+                        "src":"https://www.youtube.com/embed/78j184jkouI?playlist=78j184jkouI&autoplay=1&mute=1&loop=1&controls=0",
                         "srcLink":" https://youtu.be/78j184jkouI",
                         "contributor": 1
                     }]
@@ -350,12 +350,14 @@
                 {
                     "id": 1,
                     "title":"Sweeter",
-                    "season": "Winter 2016"
+                    "season": "Winter 2016",
+                    "pages":2
                 },
                 {
                     "id": 2,
                     "title":"Sweet",
-                    "season": "Summer 2021"
+                    "season": "Summer 2021",
+                    "pages":2
                 },
                 {
                     "id": 3,
@@ -409,17 +411,17 @@
                     "season": "Summer 2021"
                 },
                 {
-                    "id": 2,
+                    "id": 3,
                     "title":"OUR FIRST",
                     "season": "Fall 2021",
                     "image":[{
-                        "src":"OUR_FIRST/1.jpg",
+                        "src":"OUR_FIRST/1.png",
                         "contributor": 1
                     },{
-                        "src":"OUR_FIRST/2.jpg",
+                        "src":"OUR_FIRST/2.png",
                         "contributor": 1
                     },{
-                        "src":"OUR_FIRST/3.jpg",
+                        "src":"OUR_FIRST/3.png",
                         "contributor": 1
                     }]
                 }
@@ -462,7 +464,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/VzGWutL8m-E?autoplay=1&showinfo=0&loop=1",
+                        "src":"https://www.youtube.com/embed/VzGWutL8m-E?playlist=VzGWutL8m-E&autoplay=1&mute=1&loop=1&controls=0",
                         "srcLink":"https://www.youtube.com/shorts/LMK1B-F-QdE",
                         "contributor": 1
                     }]
@@ -510,7 +512,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src": "https://www.youtube.com/embed/9N_r4LPndFs?autoplay=1&showinfo=0&loop=1",
+                        "src": "https://www.youtube.com/embed/WZ4SZ_jnYmc?playlist=WZ4SZ_jnYmc&autoplay=1&mute=1&loop=1&controls=0",
                         "contributor": 1
                     }]
                 },
@@ -537,18 +539,18 @@
                     "title":"Rival",
                     "season": "Fall 2021",
                     "image":[{
-                        "src":"RIVAL/1.jpg",
+                        "src":"RIVAL/1.jpeg",
                         "contributor": 1
                     },{
-                        "src":"RIVAL/2.jpg",
+                        "src":"RIVAL/2.jpeg",
                         "contributor": 1
                     },{
-                        "src":"RIVAL/3.jpg",
+                        "src":"RIVAL/3.jpeg",
                         "contributor": 1
                     }]
                 },
                 {
-                    "id": 2,
+                    "id": 3,
                     "title":"The Rival",
                     "season": "Winter 2021"
                 }
@@ -730,8 +732,8 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/sIlyU866Gpw",
-                        "srcLink":"https://www.youtube.com/watch?v=sIlyU866Gpw",
+                        "src":"https://www.youtube.com/embed/3bMRt1eWAcQ?playlist=3bMRt1eWAcQ&autoplay=1&mute=1&loop=1&controls=0",
+                        "srcLink":"https://www.youtube.com/watch?v=3bMRt1eWAcQ",
                         "contributor": 1
                     }]
                 }
@@ -780,7 +782,7 @@
                     "season": "Summer 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/s8B6c9JBdnE",
+                        "src":"https://www.youtube.com/embed/s8B6c9JBdnE?playlist=s8B6c9JBdnE&autoplay=1&mute=1&loop=1&controls=0",
                         "srcLink":"https://www.youtube.com/watch?v=s8B6c9JBdnE",
                         "contributor": 1
                     }]

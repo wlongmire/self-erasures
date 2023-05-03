@@ -20,7 +20,7 @@ const range = (start, stop, step = 1) =>
 
 const ImageHTML = ({image}) => {
     return (image.video) ? 
-        <iframe width="500" height="500" src={`${image.src}?loop=1&autoplay=1&mute=1&rel=0`} title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>:
+        <iframe width="500" height="500" src={`${image.src}`} title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>:
         <Image className="sideImage" src={`/images/${image.src}`} width="500" height="500" alt={image.src}/>
 }
 
