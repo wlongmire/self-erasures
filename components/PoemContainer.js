@@ -7,7 +7,7 @@ import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-s
 
 import ReactAudioPlayer from 'react-audio-player';
 
-import { PoemStyle } from './../styles/styleModules';
+import { PoemStyle, PoemIndex } from './../styles/styleModules';
 
 import { Layout } from "antd";
 
@@ -70,6 +70,7 @@ const BlackoutDisplay = ({id, currentStage}) => {
 }
 
 const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
+    const totalErasures = erasures.items.length;
     const currentErasure = erasures.items[erasureIdx - 1]
     const currentStage = currentErasure.stages[stageIdx - 1]
 
@@ -80,18 +81,14 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
         const inc = parseInt(e.target.dataset.direction)
         const { type } = e.target.dataset
         
-        if (type === "poem") {
-            setPoem(erasureIdx + inc, 1)
-        } else {
-            setPoem(erasureIdx, stageIdx + inc)
-        }
+        setPoem(erasureIdx + inc, 1)
     }
 
     return <Layout>
             <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
                 <div className="header">
                     {/* <h4>{currentStage.title}</h4> */}
-                    <div className="scrubs">
+                    {/* <div className="scrubs">
                         <span>
                             <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
                             Blackout {id}
@@ -102,7 +99,8 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                             Stage {currentStage.id}
                             <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
                         </span>    
-                    </div>
+                    </div> */}
+                    <PoemIndex>{id} / {totalErasures}</PoemIndex>
                 </div >
                 
 
@@ -117,7 +115,12 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                 </div>
                 
                 <div className="footer">
-                    <div>
+                    
+                        <button className="btn btn-outline-dark p-3 m-3" onClick={()=> {
+                            setPoem(erasureIdx - 1, 1)
+                        }} data-type="blackout" data-direction="-1" >
+                            <FontAwesomeIcon className="arrow" icon={faSquareCaretLeft} />
+                        </button>
                         {
                             stages.map(stage => <button key={stage.id} className={`btn btn-outline-dark p-3 m-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> { 
                                 setPoem(erasureIdx, stage.id);
@@ -126,15 +129,19 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                                 <div><em>{stage.season}</em></div>
                             </button>)
                         }
-                    </div>
-                    <div>
+                        <button className="btn btn-outline-dark p-3 m-3"  onClick={()=> {
+                            setPoem(erasureIdx + 1, 1)
+                        }} data-type="stage" data-direction="1" >
+                            <FontAwesomeIcon className="arrow" icon={faSquareCaretRight} />
+                        </button>
+                    {/* <div>
                         {
                             audio && <>
-                                <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>  {/* autoPlay */}
-                                {/* {getContributorLink(audio.contributor, "Audio")} */}
+                                <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>
+                                {getContributorLink(audio.contributor, "Audio")}
                             </>
                         } 
-                    </div>   
+                    </div>    */}
                 </div>           
         </PoemStyle>
     </Layout>;

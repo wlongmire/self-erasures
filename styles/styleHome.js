@@ -25,6 +25,10 @@ export const PoemTitle = styled.div`
   font-family: 'Sorts Mill Goudy', serif;
   font-size: 1.1em;
   line-height: 5em;
+  width: 100%;
+  margin: -10px;
+  display: flex;
+  justify-content: space-between;
 `
 
 export const B = styled.span`
@@ -43,6 +47,7 @@ export const B = styled.span`
 export const TreeCardGroup = styled.div`
     display:flex;
     flex-flow: row nowrap;
+    width: 100%;
 `
 
 export const TreeCard = styled.div`

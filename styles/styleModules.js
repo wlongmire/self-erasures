@@ -47,6 +47,15 @@ export const ContributorContainer = styled.div`
         padding: 1em
     }
 `
+
+
+export const PoemIndex = styled.div`
+  padding:0;
+  margin:0;
+  font-weight: bolder;
+  font-size: 1.3em;
+`
+
 export const PoemStyle = styled.div`
     font-family: 'Sorts Mill Goudy', serif;
     width:1000px;
@@ -84,7 +93,7 @@ export const PoemStyle = styled.div`
         display: flex;
         justify-content: end;
         align-items: center;
-        margin:1em;
+        margin:1em 0;
     }
 
     .footer {

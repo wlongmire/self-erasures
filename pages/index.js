@@ -14,7 +14,7 @@ import contributors from '../data/contributions';
 import { treeData } from '../data/navigation';
 
 const TreeNode = (props) => {
-  const { title, type, href} = props;
+  const { title, type, href, poem_id, stage_id, season }= props;
   
   const renderTypes = {
     "header":<TreeHeader>
@@ -22,12 +22,16 @@ const TreeNode = (props) => {
     </TreeHeader>,
     "link":<LinkTitle><Link href={href}><span>0-{title}</span></Link></LinkTitle>,
     "erasureTitle":<ErasureTitle>
-      <Link href={href}>0 - </Link>{title}
+      {poem_id} | {title}
     </ErasureTitle>,
     "poemTitle":<PoemTitle>
-      <Link href={href}><span>0 - {title}</span></Link>
+      <Link href={href}>
+          <span>{poem_id} | {stage_id} | {title} </span>
+      </Link>
+      <span><em>{season}</em></span> 
     </PoemTitle>
   }
+  
   return renderTypes[type] || <p>{title}</p>
 }
 
@@ -57,11 +61,15 @@ const home = () => {
 
   const poem_groups = generateGroups(erasures.items.length, erasures.items, (c, g_idx, idx)=> ({
       title: c.title,
+      poem_id: c.id,
       type: "erasureTitle",
       href:`/blackouts/${c.id}`,
       key:`0-3-${c.id}`,
       children: c.stages.map(stage => ({
         title: stage.title,
+        poem_id: c.id,
+        stage_id: stage.id,
+        season: stage.season,
         type: "poemTitle",
         key:`0-3-${c.id}-${stage.id}`,
         href: `/blackouts/${c.id}/${stage.id}`
@@ -83,15 +91,16 @@ const home = () => {
         <Panel header="The Poems" key="1">
               <TreeCardGroup>
               {
-                  poem_groups.map(group => <TreeCard width={`${String(100)}%`}>
+                  poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
                     <DirectoryTree
                       showLine
+                      width={"100%"}
                       autoExpandParent={true}
                       switcherIcon={<></>}
                       showIcon={false}
                       selectable={false}
                       treeData={group}
-                      titleRender={(data)=> <TreeNode {...data}/>}
+                      titleRender={(data)=> <TreeNode {...data} group={group}/>}
                     />      
                   </TreeCard>)
                 }
@@ -126,7 +135,7 @@ const home = () => {
           <Panel header="The Contributors" key="4">
             <TreeCardGroup>
               {
-                contrib_groups.map(group => <TreeCard key={group.id} width={`${String(100/contrib_groups.length)}%`}>
+                contrib_groups.map((group,index) => <TreeCard key={group.id} width={`${String(100/contrib_groups.length)}%`}>
                   <DirectoryTree
                   showLine
                   autoExpandParent={true}
@@ -134,7 +143,7 @@ const home = () => {
                   showIcon={false}
                   selectable={false}
                   treeData={group}
-                  titleRender={(data)=> <TreeNode {...data}/>}
+                  titleRender={(data)=> <TreeNode {...data} index={index}/>}
                   />
                 </TreeCard>)
               }
