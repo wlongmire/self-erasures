@@ -52,6 +52,7 @@ export const ContributorContainer = styled.div`
 export const PoemIndex = styled.div`
   padding:0;
   margin:0;
+  margin-bottom: 0.5em;
   font-weight: bolder;
   font-size: 1.3em;
 `
@@ -79,7 +80,9 @@ export const ArrowContainer = styled.div`
 
 export const PoemStyle = styled.div`
     font-family: 'Sorts Mill Goudy', serif;
+    margin-top: 2em;
     width:1000px;
+
     h4 {
         padding-left: 15px;
     }
@@ -126,7 +129,7 @@ export const PoemStyle = styled.div`
         flex:1
         height:140px;
         gap: 1em;
-        padding-top: 1em;
+        padding-top: 2em;
     }
 
     .poemScrub {
@@ -142,7 +145,6 @@ export const PoemStyle = styled.div`
     .imageCarousel {
         width:500px
     }
-
 
     .arrow {
         padding: 0 2px;

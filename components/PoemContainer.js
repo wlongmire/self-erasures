@@ -7,7 +7,7 @@ import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-s
 
 import ReactAudioPlayer from 'react-audio-player';
 
-import { PoemStyle, PoemIndex, PoemButton, ArrowContainer } from './../styles/styleModules';
+import { PoemStyle, PoemIndex, PoemButton, ArrowContainer, PoemCenterContainer } from './../styles/styleModules';
 
 import { Layout } from "antd";
 
@@ -85,46 +85,46 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     }
     
     return <Layout>
-            <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
-                <div className="header">
-                    <PoemIndex>{id} / {totalErasures}</PoemIndex>
-                </div >
+        <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
+            <div className="header">
+                <PoemIndex>{id} / {totalErasures}</PoemIndex>
+            </div >
+            
+
+            <div className="poemContainer">
+                <BlackoutDisplay id={id} currentStage={currentStage} />
                 
-
-                <div className="poemContainer">
-                    <BlackoutDisplay id={id} currentStage={currentStage} />
-                    
-                    <div className="sideImageContainer">
-                        <ImageHandler image={image}/>
-                        <h1 className="sideImageTitle">{currentStage.title}</h1>
-                    </div>
-
+                <div className="sideImageContainer">
+                    <ImageHandler image={image}/>
+                    <h1 className="sideImageTitle">{currentStage.title}</h1>
                 </div>
-                
-                <div className="footer">
-                        <ArrowContainer>
-                            <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
-                        </ArrowContainer>
 
-                        {
-                            stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> setPoem(erasureIdx, stage.id)}>
-                                <h5 className="m-0 p-0">{stage.title}</h5>
-                                <div><em>{stage.season}</em></div>
-                            </PoemButton>)
-                        }
-                        <ArrowContainer>
-                            <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
-                        </ArrowContainer>
-                        
-                    {/* <div>
-                        {
-                            audio && <>
-                                <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>
-                                {getContributorLink(audio.contributor, "Audio")}
-                            </>
-                        } 
-                    </div>    */}
-                </div>           
+            </div>
+            
+            <div className="footer">
+                    <ArrowContainer>
+                        <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
+                    </ArrowContainer>
+
+                    {
+                        stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> setPoem(erasureIdx, stage.id)}>
+                            <h5 className="m-0 p-0">{stage.title}</h5>
+                            <div><em>{stage.season}</em></div>
+                        </PoemButton>)
+                    }
+                    <ArrowContainer>
+                        <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
+                    </ArrowContainer>
+                    
+                {/* <div>
+                    {
+                        audio && <>
+                            <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>
+                            {getContributorLink(audio.contributor, "Audio")}
+                        </>
+                    } 
+                </div>    */}
+            </div>           
         </PoemStyle>
     </Layout>;
 
