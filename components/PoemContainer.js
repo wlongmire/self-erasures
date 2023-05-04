@@ -7,7 +7,7 @@ import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-s
 
 import ReactAudioPlayer from 'react-audio-player';
 
-import { PoemStyle, PoemIndex } from './../styles/styleModules';
+import { PoemStyle, PoemIndex, PoemButton, ArrowContainer } from './../styles/styleModules';
 
 import { Layout } from "antd";
 
@@ -83,23 +83,10 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
         
         setPoem(erasureIdx + inc, 1)
     }
-
+    
     return <Layout>
             <PoemStyle titleColor={image ? "white" : "black"} titlePosition={image ? -9.5:-8.9}>
                 <div className="header">
-                    {/* <h4>{currentStage.title}</h4> */}
-                    {/* <div className="scrubs">
-                        <span>
-                            <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
-                            Blackout {id}
-                            <FontAwesomeIcon onClick={handleScrub} data-type="blackout" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
-                        </span>
-                        <span>
-                            <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="-1" className="arrow" icon={faSquareCaretLeft} />
-                            Stage {currentStage.id}
-                            <FontAwesomeIcon onClick={handleScrub} data-type="stage" data-direction="1" className="arrow"  icon={faSquareCaretRight} />
-                        </span>    
-                    </div> */}
                     <PoemIndex>{id} / {totalErasures}</PoemIndex>
                 </div >
                 
@@ -115,25 +102,20 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                 </div>
                 
                 <div className="footer">
-                    
-                        <button className="btn btn-outline-dark p-3 m-3" onClick={()=> {
-                            setPoem(erasureIdx - 1, 1)
-                        }} data-type="blackout" data-direction="-1" >
-                            <FontAwesomeIcon className="arrow" icon={faSquareCaretLeft} />
-                        </button>
+                        <ArrowContainer>
+                            <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
+                        </ArrowContainer>
+
                         {
-                            stages.map(stage => <button key={stage.id} className={`btn btn-outline-dark p-3 m-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> { 
-                                setPoem(erasureIdx, stage.id);
-                            } }>
-                                <div>{stage.title}</div>
+                            stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> setPoem(erasureIdx, stage.id)}>
+                                <h5 className="m-0 p-0">{stage.title}</h5>
                                 <div><em>{stage.season}</em></div>
-                            </button>)
+                            </PoemButton>)
                         }
-                        <button className="btn btn-outline-dark p-3 m-3"  onClick={()=> {
-                            setPoem(erasureIdx + 1, 1)
-                        }} data-type="stage" data-direction="1" >
-                            <FontAwesomeIcon className="arrow" icon={faSquareCaretRight} />
-                        </button>
+                        <ArrowContainer>
+                            <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
+                        </ArrowContainer>
+                        
                     {/* <div>
                         {
                             audio && <>
