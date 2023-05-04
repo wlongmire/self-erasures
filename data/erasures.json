@@ -884,13 +884,11 @@
             "stages": [
                 {
                     "id": 1,
-                    "pages":2,
                     "title":"Benediction",
                     "season": "Spring 2015"
                 },
                 {
                     "id": 2,
-                    "pages": 2,
                     "title":"BENEDICTION",
                     "season": "Summer 2021",
                     "image":[{
@@ -939,6 +937,7 @@
                 },
                 {
                     "id": 3,
+                    "pages": 2,
                     "title":"At camp I remembered a story",
                     "season": "Summer 2021",
                     "image":[{
@@ -951,11 +950,6 @@
                         "src":"AT_CAMP/3.jpg",
                         "contributor": 1
                     }]
-                },
-                {
-                    "id": 4,
-                    "title":"[]",
-                    "season": "Summer 2021"
                 }
             ]
         },
@@ -965,13 +959,11 @@
             "stages": [
                 {
                     "id": 1,
-                    "pages":2,
                     "title":"The Human Season",
                     "season": "Spring 2014"
                 },
                 {
                     "id": 2,
-                    "pages": 2,
                     "title":"Human",
                     "season": "Summer 2021"
                 },
