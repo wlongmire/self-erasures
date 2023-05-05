@@ -59,11 +59,11 @@ export const ContributorContainer = styled.div`
 
 
 export const PoemIndex = styled.div`
-  padding:0;
-  margin:0;
-  margin-bottom: 0.5em;
-  font-weight: bolder;
-  font-size: 1.3em;
+    font-family: 'Sorts Mill Goudy', serif;
+    padding:0;
+    margin:0;
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
 `
 
 export const PoemButton = styled.button`

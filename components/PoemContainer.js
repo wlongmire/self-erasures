@@ -7,7 +7,7 @@ import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-s
 
 import ReactAudioPlayer from 'react-audio-player';
 
-import { PoemStyle, PoemIndex, PoemButton, ArrowContainer, PoemCenterContainer } from './../styles/styleModules';
+import { PoemStyle, PoemIndex, PoemButton, ArrowContainer } from './../styles/styleModules';
 
 import { Layout } from "antd";
 
@@ -53,7 +53,7 @@ const ImageHandler = ({image}) => {
 
 const BlackoutDisplay = ({id, currentStage}) => {
     if (currentStage.pages) {
-        return <Carousel dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
+        return <Carousel changeSlide={(e)=>{console.log(e)}}dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
             {
                 range(1, currentStage.pages + 1).map(page => <div>
                     <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500" height="500"/>
@@ -102,19 +102,25 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
             </div>
             
             <div className="footer">
-                    <ArrowContainer>
-                        <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
-                    </ArrowContainer>
+                <ArrowContainer>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
+                </ArrowContainer>
 
-                    {
-                        stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} onClick={()=> setPoem(erasureIdx, stage.id)}>
-                            <h5 className="m-0 p-0">{stage.title}</h5>
-                            <div><em>{stage.season}</em></div>
-                        </PoemButton>)
-                    }
-                    <ArrowContainer>
-                        <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
-                    </ArrowContainer>
+                {
+                    stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} 
+                        onClick={
+                            ()=> {
+                                console.log(erasureIdx)
+                                setPoem(erasureIdx, stage.id)
+                            }
+                        }>
+                        <h5 className="m-0 p-0">{stage.title}</h5>
+                        <div><em>{stage.season}</em></div>
+                    </PoemButton>)
+                }
+                <ArrowContainer>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
+                </ArrowContainer>
                     
                 {/* <div>
                     {
