@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const CommonContainer = styled.div`
     main {
-        min-height: 100vh;
+        min-height: 95vh;
         padding-top: 6em;
         font-family: 'Sorts Mill Goudy', serif;
 
@@ -19,6 +19,15 @@ export const Footer = styled.div`
     background-color:black;
     color: white;
     padding: 1em;
+
+    .container {
+        display:flex;
+        justify-content: space-between;
+
+        .publisher {
+            font-family: 'Sorts Mill Goudy', serif;
+        }
+    }
 `
 
 export const ContributorContainer = styled.div`

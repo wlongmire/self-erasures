@@ -23,10 +23,10 @@ export default function Layout({children}) {
             </CommonContainer>
             
             <Footer>
-                <footer className="container">
-                    Highlights&Blackouts 2023
-                </footer>
-                
+                <div className="container">
+                    <div>Highlights&Blackouts</div>
+                    <div class="publisher">_mix_lit 2023</div>
+                </div>
             </Footer>
         </div>
     );

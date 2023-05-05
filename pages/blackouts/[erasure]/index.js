@@ -25,9 +25,6 @@ export const getStaticProps = async (context) => {
 }
 
 const ErasureSelector = ({erasureIdx, stageIdx})=> {
-    // const currentErasure = erasures.items[parseInt(context.params.erasure)-1];
-    // const currentStage = erasures.items[parseInt(context.params.erasure)-1].stages[parseInt(context.params.stage)-1];
-
     return <>
         <ErasureSection erasureIdx={parseInt(erasureIdx)} stageIdx={parseInt(stageIdx)}/>
     </>
