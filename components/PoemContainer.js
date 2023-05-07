@@ -26,8 +26,13 @@ const ImageHTML = ({image}) => {
 
 const ImageHandler = ({image}) => {
     const getContributorLink = (contributorId, type) => {
-        const {first, last} = contributions[contributorId]
-        return <p className="image_contributor"><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
+        if (contributorId) {
+            const {first, last} = contributions[contributorId]
+            return <p className="image_contributor"><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
+        } else {
+            return <p className="image_contributor"><a href={`/poet`}>{type} By Heather Bowlan</a></p>
+        }
+        
     }
     
     if (!image) {
@@ -44,7 +49,9 @@ const ImageHandler = ({image}) => {
             {
                 image.map(i => <div>
                     <ImageHTML image={i}/>
-                    <span>{getContributorLink(i.contributor, "Image")}</span>
+                    {
+                        <span>{getContributorLink(i.contributor, "Image")}</span>
+                    }
                 </div>)
             }
         </Carousel>   
@@ -55,7 +62,7 @@ const BlackoutDisplay = ({id, currentStage}) => {
     if (currentStage.pages) {
         return <Carousel changeSlide={(e)=>{console.log(e)}}dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
             {
-                range(1, currentStage.pages + 1).map(page => <div>
+                range(1, currentStage.pages + 1).map(page => <div key={page}>
                     <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500" height="500"/>
                 </div>)
             }
@@ -110,7 +117,6 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                     stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} 
                         onClick={
                             ()=> {
-                                console.log(erasureIdx)
                                 setPoem(erasureIdx, stage.id)
                             }
                         }>

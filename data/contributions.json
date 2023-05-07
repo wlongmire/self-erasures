@@ -1,98 +1,184 @@
 [
     {
         "id":0,
-        "first": "Warren C.",
-        "last": "Longmire",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "first": "Dante A.",
+        "last": "Ciampaglia",
+        "insta": "etnadac",
+        "blurb": "Dante A. Ciampaglia is an editor and culture journalist in Brooklyn. He has been on staff at Sports Illustrated, Newsweek, and Time, and his writing has been published by The Paris Review, Los Angeles Review of Books, Metropolis, and Architectural Digest, among other publications. (He also spent a few years managing, editing, and mentoring 60 young journalists as part of Scholastic’s Kid Reporter program.)",
         "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
+            "title":"etnadac.com",
+            "url":"https://www.etnadac.com/"
         }
     }, 
     {
         "id":1,
-        "first": "Allison",
-        "last": "Lloyd",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "first": "Melissa",
+        "last": "Ginsburg",
+        "insta": "chickenpoet",
+        "twitter": "ginsburgmelissa",
+        "blurb": "Melissa Ginsburg is the author of the poetry collections Doll Apollo and Dear Weather Ghost, the novels The House Uptown and Sunset City, and three poetry chapbooks, Arbor, Double Blind, and Apollo. Her poems have appeared in the New Yorker, Image, Guernica, Kenyon Review, Fence, Southwest Review, and other magazines. Originally from Houston, Texas, Melissa studied poetry at the Iowa Writers' Workshop. She is Associate Professor of Creative Writing and Literature at the University of Mississippi, and serves as Associate Editor of Tupelo Quarterly. She lives in Oxford, Mississippi.",
         "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
+            "title":"melissaginsburg.net",
+            "url":"https://www.melissaginsburg.net/"
         }
     },
     {
         "id":2,
-        "first": "Chris",
-        "last": "Adams",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "first": "Robert",
+        "last": "Isenberg",
+        "blurb": "Robert Isenberg is a writer and multimedia producer based in Providence. He was named the 2022 Scriptwriting Fellow by the Rhode Island State Council on the Arts and recently received awards for Best Director (Documentary) and Best Actor (Narrative) at the Block Island Film Festival. He is the author of several books, including the poetry collection Wander (Six Gallery Press) and the chapbook How to Ride a Bike in Pittsburgh (Half Letter Press).",
         "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
+            "title":"robertisenberg.net",
+            "url":"https://www.robertisenberg.net/"
         }
     },
     {
         "id":3,
-        "first": "Yevete",
-        "last": "Williams",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-        "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
-        }
+        "first": "Matt",
+        "last": "Kreisher",
+        "insta": "mkreisher",
+        "blurb": "Matt Kreisher lives in Philly with his dog, his books, and too many bikes. When he’s not riding an unhealthy number of miles in the hot sun, wondering why the hell he didn’t wear sunscreen, he’s usually cooking or defending the careers of Keanu Reeves, Nic Cage, and Carly Rae Jepson. Matt spends his day working in marketing while getting his daily dose of anxiety by doom scrolling twitter. His belief system is based on the fact that LeBron James is probably a better basketball player than Michael Jordan and that tennis is the best sport to watch hungover."
     },
     {
         "id":4,
-        "first": "Mark",
-        "last": "Twain",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "first": "Dorianne",
+        "last": "Laux",
+        "blurb": "Pulitzer Prize finalist Dorianne Laux’s most recent collection is Only As The Day Is Long: New and Selected, W.W. Norton. She is also author of The Book of Men, winner of the Paterson Poetry Prize and Facts about the Moon, winner of the Oregon Book Award.  Two new books are forthcoming: Finger Exercises for Poets, and a volume of poems, Life on Earth, both from W.W. Norton. Laux is founding faculty at Pacific University and a Chancellor of the Academy of American Poets.",
         "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
+            "title":"doriannelaux.net",
+            "url":"https://www.doriannelaux.net/"
         }
     },
     {
         "id":5,
-        "first": "Angie",
-        "last": "Davis",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "first": "Laura",
+        "last": "Luna",
+        "insta": "laura_luna",
+        "blurb": "Laura Luna (she/her) is a queer fat femme living and loving in LA. Find her curating the perfect Instagram stories and learn more about her and her nearly two decades of work in queer community at her website. ",
         "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
+            "title":"www.xolauraluna.com",
+            "url":"https://www.xolauraluna.com/"
         }
     },
     {
         "id":6,
-        "first": "Charles",
-        "last": "Walker",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "first": "Victoria",
+        "last": "Mier",
+        "twitter": "by_victoriamier",
+        "blurb": "Victoria Mier (she/they) is a queer, disabled writer, independent bookstore owner, and suspected changeling. Her work can be found in Del Sol SFF Review, The Raven Review, Fifth Wheel Press and SORTES.",
         "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
+            "title":"victoriamier.com",
+            "url":"https://www.victoriamier.com"        
         }
     },
     {
         "id":7,
-        "first": "Erykah",
-        "last": "Badu",
-        "insta": "alongmirewriter",
-        "twitter": "jackcurran49",
-        "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "first": "Melinda",
+        "last": "Rice",
+        "insta": "melindamyrrh",
+        "blurb": "Melinda Rice is a violinist and songwriter interested in creating space for genuine reaction. Melinda returned to Pennsylvania in 2020 after a decade and a half exploring music in southern California with ensembles including the Craft in America House Band, A Tribute Ensemble, Isaura String Quartet, Wild Up, and The Industry. Melinda has two albums of original works, and wrote the libretto for an opera called Bonnie and Clyde. Melinda leads the string ensemble at Ursinus College and is working on an album project tentatively titled murmurations.",
         "website": {
-            "title":"alongmirewriter.com",
-            "url":"https://www.alongmirewriter.com/"
+            "title":"melinda-rice.com",
+            "url":"https://www.melinda-rice.com/"
         }
+    },
+    {
+        "id":8,
+        "first": "Myron",
+        "last": "Silberstein",
+        "blurb": "Myron Silberstein (b. 1974) is a composer and pianist whose writing falls within the tradition of the overlooked composers whose works he has premiered and recorded. Vittorio Giannini, Ernest Bloch, Nicolas Flagello, and Paul Creston are among Myron’s greatest influences, and he embraces the unabashed emotionalism, melodic and harmonic warmth, and structural rigor of these composers. Myron’s output includes a large number of songs, works for solo piano, and duo-sonatas. He particularly enjoys collaborating with living poets. His most recent album presents  first recordings of several major pieces by Paul Creston.",
+        "website": {
+            "title":"myronsilberstein.com/",
+            "url":"https://www.myronsilberstein.com/"
+        }
+    },
+    {
+        "id":9,
+        "first": "Jae",
+        "last": "Steinbacher",
+        "insta": "JaeSteinbacher",
+        "twitter": "JaeSteinbacher",
+        "blurb": "Jae Steinbacher is a queer nonbinary trans writer and editor living on unceded Duwamish lands. Their work appears in The Magazine of Fantasy & Science Fiction, Beneath Ceaseless Skies, and Baffling Magazine. Jae is a graduate of the Clarion West Writers Workshop and North Carolina State University’s MFA program.",
+        "website": {
+            "title":"JaeSteinbacher.com",
+            "url":"https://www.JaeSteinbacher.com/"
+        }
+    },
+    {
+        "id":10,
+        "first": "Mattilda Bernstein",
+        "last": "Sycamore",
+        "insta": "mbsycamore",
+        "blurb": "Mattilda Bernstein Sycamore (mattildabernsteinsycamore.com) is the author, most recently, of The Freezer Door, a New York Times Editors’ Choice, one of Oprah Magazine’s Best LGBTQ Books of 2020, and a finalist for the PEN/Jean Stein Book Award. Her latest anthology, Between Certain Death and a Possible Future: Queer Writing on Growing Up with the AIDS Crisis, was named one of the “100 Most Influential Queer Books of All Time” by Bookriot. Her next book, Touching the Art, will be published by Soft Skull in November 2023. Sycamore lives in Seattle.",
+        "website": {
+            "title":"mattildabernsteinsycamore.com",
+            "url":"https://www.mattildabernsteinsycamore.com/"
+        }
+    },
+  {
+        "id":11,
+        "first": "Kevin",
+        "last": "Torigoe",
+        "insta": "kevtori",
+        "blurb": "Kevin Torigoe is a licensed clinical social worker residing in Cleveland, Ohio. He currently manages community mental health programs focused on childhood trauma and family acceptance of LGBTQ+ youth. Kevin enjoys taking photos of nature and travel and some of his photography can be found on his flickr account. ",
+        "website": {
+            "title":"www.flickr.com/photos/kevtori",
+            "url":"https://www.flickr.com/photos/kevtori"
+        }
+    },{
+        "id":12,
+        "first": "Cinthia",
+        "last": "Torres",
+        "insta": "life0fcin",
+        "blurb": "Cinthia Torres is a 20-something year old Chicana femme who resides in Los Angeles. Originally from Colorado, she moved to California in 2016 to pursue her bachelors in sociology, whereafter she began working for a legal firm, assisting injured workers throughout Southern California. She enjoys photography, cooking, and exploring new sights. "
+    },  {
+        "id":13,
+        "first": "Melanie",
+        "last": "Vandenbrouck",
+        "insta": "mvandenbrouck",
+        "blurb": "Dr. Melanie Vandenbrouck is a curator, writer and art historian based in the UK. Her multidisciplinary curatorial practice reflects her interests in the porosity between art forms and between forms of knowledge. She sees curating as storytelling and connecting people, and the curator’s role to champion creativity, amplify diverse voices and make space for conversations to thrive. She is happiest swimming in the sea in all seasons and volunteering at her local permaculture orchard with her family. She enjoys snapping the mundane and the ordinary with an old Leica."
+    },
+    {
+        "id":14,
+        "first": "Lenee",
+        "last": "Voss",
+        "insta": "dopegirlfresh",
+        "twitter": "dopegirlfresh",
+        "blurb": "A woo woo jawn since way back, Lenée A. Voss (she/her) is a grief companion, death doula, and reiki master. She hails from and lives in Philadelphia, where she has a lot of houseplants, Air Max 90s, and crystals. Lenée's body of work includes Hip Hop is For Lovers Radio, the #AnonymousCrowdfund, and her well-curated Twitter account. A featured writer at Complex, Feministe, and ColorBloq, Lenée is expanding her artist’s practice to include visual art and music.",
+        "website": {
+            "title":"sayheylenee.com",
+            "url":"https://www.sayheylenee.com/"
+        }
+    },
+    {
+        "id":15,
+        "first": "meg",
+        "last": "willing",
+        "insta": "megwilling",
+        "blurb": "meg willing (she/her) is a poet, editor, artist, and book designer. Her work has appeared in DIAGRAM, Hayden's Ferry Review, Colorado Review, The Collagist, and elsewhere. The former Managing Editor of Alice James Books, she currently serves as Art and Design Editor for Gigantic Sequins; Assistant Manager at Devaney, Doak, and Garrett Booksellers; Shop Assistant at Independent Auto Classic Volvo Repair; and, with Alana Dao, is Co-Founder / Co-Director of A CLEARING: A Maine Arts Community.",
+        "website": {
+            "title": "megwilling.com",
+            "url": "https://wwww.megwilling.com"
+        }
+    },
+    {
+        "id":16,
+        "first": "Jerome",
+        "last": "Marrow"
+    },
+    {
+        "id":17,
+        "first": "Christina",
+        "last": "Moresi"
+    },
+    {
+        "id":18,
+        "first": "Dee",
+        "last": "Lalley"
+    },
+    {
+        "id":19,
+        "first": "Theodore",
+        "last": "Alff"
     }
 ]

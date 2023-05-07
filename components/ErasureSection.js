@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+
 import { useState } from 'react';
 import { Carousel } from 'antd';
-import { useRouter } from 'next/router'
+
 import PoemContainer from './PoemContainer';
 import erasures from './../data/erasures.json';
+
+import { useRouter } from 'next/router'
 
 
 const ErasureSection = ({erasureIdx, stageIdx}) => {
@@ -46,8 +49,8 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
     return <div>
         <Carousel ref={setSliderRef} className="imageCarousel" {...settings}>
             {
-                erasures.items.map(e => <Slide>
-                    <PoemContainer key={e.id} erasureIdx={e.id}  stageIdx={(e.id===erasureId)?stageId:1}  setPoem={setPoem}/>
+                erasures.items.map(e => <Slide key={e.id}>
+                    <PoemContainer erasureIdx={e.id}  stageIdx={(e.id===erasureId)?stageId:1}  setPoem={setPoem}/>
                 </Slide>)
             }
         </Carousel>   

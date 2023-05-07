@@ -42,7 +42,7 @@ export const ContributorContainer = styled.div`
     }
     
     h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: bold;
     }
 
@@ -53,7 +53,8 @@ export const ContributorContainer = styled.div`
     }
 
     .contributorInfo {
-        padding: 1em
+        padding: 1em;
+        border: black 2px double;
     }
 `
 
