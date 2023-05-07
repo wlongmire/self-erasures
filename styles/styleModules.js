@@ -55,6 +55,10 @@ export const ContributorContainer = styled.div`
     .contributorInfo {
         padding: 1em;
         border: black 2px double;
+        width: 100%;
+        &.active {
+            background: #eeeeee;
+        }
     }
 `
 

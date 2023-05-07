@@ -1,15 +1,25 @@
 import contributors from './../data/contributions.json';
 import { ContributorContainer }  from './../styles/styleModules'
+import { useState, useEffect } from 'react';
+import {useRouter} from 'next/router';
 
 export default function contributorsPage() {
+    const [currentContributor, setCurrentContributor] = useState("")
+    const { asPath, isReady } = useRouter();
+
+    useEffect(()=> {
+        if (isReady) {
+            setCurrentContributor(asPath.substring(asPath.indexOf("#") + 1, asPath.length))
+        }
+    }, [isReady])
+    
     return(<div>
         <h1>The Contributors</h1>
         <p>This project would be impossible with the generous contributions of the following artists.</p>
         <hr/>
         {
             contributors.map(contributor => <ContributorContainer id={`${contributor.first}-${contributor.last}`}>
-                
-                <div className="contributorInfo">
+                <div className={`contributorInfo ${(currentContributor === `${contributor.first}-${contributor.last}`) && "active"}`}>
                     <h2>{contributor.first} {contributor.last}</h2>
                     <p>{contributor.blurb}</p>
                     
