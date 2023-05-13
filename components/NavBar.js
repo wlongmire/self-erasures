@@ -1,6 +1,10 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 export default function NavBar() {
+    const router = useRouter();
+
     return (<Header>
         <nav className="navbar fixed-top navbar-expand-lg bg-dark">
             <div className="container">
@@ -15,12 +19,12 @@ export default function NavBar() {
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-link active" aria-current="page" href="/blackouts/1/1">The Poems</a>
-                        <a className="nav-link" href="/series">The Series</a>
-                        <a className="nav-link" href="/poet">The Poet</a>
-                        <a className="nav-link" href="/developer">The Developer</a>
-                        <a className="nav-link" href="/contributors">The Contributors</a>
-                        <a className="nav-link" href="/playlist">The Playlist</a>
+                        <Link href="/blackouts/1/1"><a className={router.pathname.includes("blackouts") ? "nav-link active" : "nav-link"}  aria-current="page">The Poems</a></Link>
+                        <Link href="/series"><a className={router.pathname == "/series" ? "nav-link active" : "nav-link"} href="/series">The Series</a></Link>
+                        <Link href="/poet"><a className={router.pathname == "/poet" ? "nav-link active" : "nav-link"} href="/">The Poet</a></Link>
+                        <Link href="/developer"><a className={router.pathname == "/developer" ? "nav-link active" : "nav-link"} href="/developer">The Developer</a></Link>
+                        <Link href="/contributors"><a className={router.pathname == "/contributors" ? "nav-link active" : "nav-link"} href="/contributors">The Contributors</a></Link>
+                        <Link href="/playlist"><a className={router.pathname == "/playlist" ? "nav-link active" : "nav-link"} href="/playlist">The Playlist</a></Link>
                     </div>
                 </div>
             </div>
@@ -52,7 +56,12 @@ const Header = styled.header`
     }
 
     .navbar-nav .nav-link{
-        color:white !important;
+        color:white;
+
+        &.active {
+            color: white;
+            background: white;
+        }
 
         :hover {
             color: black !important;
@@ -60,6 +69,7 @@ const Header = styled.header`
         }
     }
 
+    
     @media (max-width: 540px){
         .navbar-brand {
             h2 {
