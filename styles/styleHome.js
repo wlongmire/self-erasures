@@ -44,6 +44,26 @@ export const B = styled.span`
   }
 `
 
+export const BlockErase = styled.span`
+  color:black;
+  background:black;
+  margin: 5px 0;
+  padding: 5px;
+  transition: background-color 500ms;
+  cursor: ${props => props.link? 'pointer':'inherit'};
+
+  &.first-child {
+    padding: 5px 5px 5px 0;
+  }
+
+  &:hover {
+    color:black !important;
+    background:white;
+    text-decoration: none;
+  }
+`
+
+
 export const TreeCardGroup = styled.div`
     display:flex;
     flex-flow: row nowrap;
