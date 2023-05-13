@@ -56,16 +56,19 @@ const Header = styled.header`
     }
 
     .navbar-nav .nav-link{
-        color:white;
+        color:grey;
 
         &.active {
             color: white;
-            background: white;
         }
 
         :hover {
-            color: black !important;
+            color: black;
             background-color: white;
+
+            &.active {
+                
+            }
         }
     }
 

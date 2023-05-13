@@ -50,7 +50,7 @@ export const BlockErase = styled.span`
   margin: 5px 0;
   padding: 5px;
   transition: background-color 500ms;
-  cursor: ${props => props.link? 'pointer':'inherit'};
+  cursor: 'pointer';
 
   &.first-child {
     padding: 5px 5px 5px 0;
@@ -63,6 +63,9 @@ export const BlockErase = styled.span`
   }
 `
 
+export const ContentBlock = styled.div`
+    border-left: 2px solid black;
+`
 
 export const TreeCardGroup = styled.div`
     display:flex;
