@@ -50,7 +50,8 @@ export const BlockErase = styled.span`
   margin: 5px 0;
   padding: 5px;
   transition: background-color 500ms;
-  cursor: 'pointer';
+  font-size: 1em;
+  cursor: pointer;
 
   &.first-child {
     padding: 5px 5px 5px 0;
