@@ -1,9 +1,10 @@
+import { useRef } from "react";
+
 import { useState } from 'react';
 import Link from 'next/link';
-import { Tree } from 'antd';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { Drawer } from 'antd';
+import { Drawer, Tree } from 'antd';
 import {  TreeCardGroup, TreeCard, PoemTitle } from './../styles/styleHome'
 
 const { DirectoryTree } = Tree;
@@ -32,22 +33,30 @@ export default function NavBar() {
     const poem_groups = generateGroups(erasures.items.length, erasures.items, (c, g_idx, idx)=> ({
         title: c.title,
         poem_id: c.id,
+        ref: useRef(),
         type: "erasureTitle",
         href:`/blackouts/${c.id}`,
-        key:`0-3-${c.id}`,
+        key:`${c.id}`,
         children: c.stages.map(stage => ({
             title: stage.title,
             poem_id: c.id,
             stage_id: stage.id,
             season: stage.season,
             type: "poemTitle",
-            key:`0-3-${c.id}-${stage.id}`,
+            key:`${c.id}-${stage.id}`,
             href: `/blackouts/${c.id}/${stage.id}`
         }))
     }))
 
     const handlePoemClick = () => {
-        setOpen(!open)
+        setOpen(true)
+        
+        setTimeout(() => {
+            const active = document.getElementsByClassName("activePoem")
+            if (active.length === 1) {
+                active[0].parentElement.parentElement.parentElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+            }
+        }, 500)
     }
 
     return (<Header>
@@ -64,7 +73,7 @@ export default function NavBar() {
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a onClick={handlePoemClick} className={router.pathname.includes("blackouts") ? "nav-link active" : "nav-link"}  aria-current="page">The Poems</a>
+                        <a onClick={handlePoemClick} className={router.pathname.includes("blackouts")? "poems nav-link active" : "poems nav-link"}  aria-current="page">The Poems</a>
                         <Link href="/series"><a className={router.pathname == "/series" ? "nav-link active" : "nav-link"} href="/series">The Series</a></Link>
                         <Link href="/poet"><a className={router.pathname == "/poet" ? "nav-link active" : "nav-link"} href="/">The Poet</a></Link>
                         <Link href="/developer"><a className={router.pathname == "/developer" ? "nav-link active" : "nav-link"} href="/developer">The Developer</a></Link>
@@ -80,18 +89,20 @@ export default function NavBar() {
                         poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
                             <DirectoryTree
                                 showLine
+                                ref={group.ref}
                                 width={"100%"}
                                 autoExpandParent={true}
+                                defaultExpandParent={true}
+                                defaultExpandedKeys={router.pathname.includes("blackouts")?[router.query.erasure]:[]}
                                 switcherIcon={<></>}
                                 showIcon={false}
                                 selectable={false}
                                 treeData={group}
-                                titleRender={({ title, href, poem_id, stage_id, season })=> <PoemTitle onClick={()=> {
+                                titleRender={({ title, href, poem_id, stage_id })=> <PoemTitle className={(router.pathname.includes("blackouts")  && router.query.erasure == poem_id && router.query.stage == stage_id ? `activePoem` : "")} onClick={()=> {
                                         if (stage_id) {
                                             setOpen(false)
                                             window.location = href
                                         }
-                                        
                                     }}>
                                     <span>{poem_id} | {stage_id} | {title} </span>
                                 </PoemTitle>
@@ -138,6 +149,11 @@ const Header = styled.header`
         font-family: 'Sorts Mill Goudy', serif !important;
     }
     
+    .poems {
+        border: #ffffff47 1px solid;
+        box-sizing: border-box;
+    }
+
     .navbar-nav .nav-link{
         color:grey;
     

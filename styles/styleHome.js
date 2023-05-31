@@ -24,11 +24,15 @@ export const ErasureTitle = styled.div`
 export const PoemTitle = styled.div` 
   font-family: 'Sorts Mill Goudy', serif;
   font-size: 1.1em;
-  line-height: 5em;
+  line-height: 3em;
   width: 100%;
-  margin: -10px;
+  padding: 0 0.25em;
   display: flex;
   justify-content: space-between;
+
+  &.activePoem {
+    background-color:#FDFF05;
+  }
 `
 
 export const B = styled.span`
@@ -72,6 +76,10 @@ export const TreeCardGroup = styled.div`
     display:flex;
     flex-flow: row nowrap;
     width: 100%;
+
+    &.active-poem {
+      background-color:#FDFF05;
+    }
 `
 
 export const TreeCard = styled.div`

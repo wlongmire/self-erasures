@@ -140,13 +140,13 @@ const home = () => {
               {
                 contrib_groups.map((group,index) => <TreeCard key={group.id} width={`${String(100/contrib_groups.length)}%`}>
                   <DirectoryTree
-                  showLine
-                  autoExpandParent={true}
-                  switcherIcon={<></>}
-                  showIcon={false}
-                  selectable={false}
-                  treeData={group}
-                  titleRender={(data)=> <TreeNode {...data} index={index}/>}
+                    showLine
+                    autoExpandParent={true}
+                    switcherIcon={<></>}
+                    showIcon={false}
+                    selectable={false}
+                    treeData={group}
+                    titleRender={(data)=> <TreeNode {...data} index={index}/>}
                   />
                 </TreeCard>)
               }
