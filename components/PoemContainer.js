@@ -5,8 +5,6 @@ import { Carousel } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-svg-icons'
 
-import ReactAudioPlayer from 'react-audio-player';
-
 import { PoemStyle, PoemIndex, PoemButton, ArrowContainer } from './../styles/styleModules';
 
 import { Layout } from "antd";

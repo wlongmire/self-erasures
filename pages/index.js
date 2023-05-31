@@ -24,10 +24,13 @@ const TreeNode = (props) => {
     "erasureTitle":<ErasureTitle>
       {poem_id} | {title}
     </ErasureTitle>,
-    "poemTitle":<PoemTitle>
-      <Link href={href}>
-          <span>{poem_id} | {stage_id} | {title} </span>
-      </Link>
+    "poemTitle":<PoemTitle onClick={()=> {
+      if (stage_id) {
+          window.location = href
+      }}}>
+      
+      <span>{poem_id} | {stage_id} | {title} </span>
+      
       <span><em>{season}</em></span> 
     </PoemTitle>
   }

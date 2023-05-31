@@ -4,7 +4,7 @@
     "items":[
         {
             "id":1,
-            "title":"BOX",
+            "title":"Wellness Plan/Mood Episode",
             "stages": [
                 {
                     "id": 1,
@@ -58,7 +58,7 @@
         },
         {
             "id":3,
-            "title":"Hey baby.",
+            "title":"tonight(baby)",
             "stages": [
                 {
                     "id": 1,
@@ -82,7 +82,7 @@
         },
         {
             "id":4,
-            "title":"Diamond Garden.",
+            "title":"The Miraculous Neil Diamond",
             "stages": [
                 {
                     "id": 1,
@@ -142,7 +142,7 @@
         },
         {
             "id":6,
-            "title":"Before",
+            "title":"Before You Were Born",
             "stages": [
                 {
                     "id": 1,
@@ -199,7 +199,7 @@
         },
         {
             "id":8,
-            "title":"Lumin",
+            "title":"Luminaria",
             "stages": [
                 {
                     "id": 1,
@@ -233,7 +233,7 @@
         },
         {
             "id":9,
-            "title":"72 Hours",
+            "title":"72 Hours Later",
             "stages": [
                 {
                     "id": 1,
@@ -249,7 +249,7 @@
         },
         {
             "id":10,
-            "title":"Orchard",
+            "title":"Sister, Excavator",
             "stages": [
                 {
                     "id": 1,

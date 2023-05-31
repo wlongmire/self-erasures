@@ -1,9 +1,54 @@
+import { useState } from 'react';
 import Link from 'next/link';
+import { Tree } from 'antd';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { Drawer } from 'antd';
+import {  TreeCardGroup, TreeCard, PoemTitle } from './../styles/styleHome'
+
+const { DirectoryTree } = Tree;
+
+import erasures from './../data/erasures.json';
 
 export default function NavBar() {
     const router = useRouter();
+    const [ open, setOpen] = useState(false);
+
+    const generateGroups = (numCards, content, bundleFn) => {
+        const groups = []
+        let g_idx = 0
+
+        content.forEach((c, idx)=> {
+            g_idx = Math.floor(idx / numCards)
+            if (!groups[g_idx])
+            groups.push([])
+        
+            groups[g_idx].push(bundleFn(c, g_idx, idx))
+        })
+
+        return groups
+    }
+
+    const poem_groups = generateGroups(erasures.items.length, erasures.items, (c, g_idx, idx)=> ({
+        title: c.title,
+        poem_id: c.id,
+        type: "erasureTitle",
+        href:`/blackouts/${c.id}`,
+        key:`0-3-${c.id}`,
+        children: c.stages.map(stage => ({
+            title: stage.title,
+            poem_id: c.id,
+            stage_id: stage.id,
+            season: stage.season,
+            type: "poemTitle",
+            key:`0-3-${c.id}-${stage.id}`,
+            href: `/blackouts/${c.id}/${stage.id}`
+        }))
+    }))
+
+    const handlePoemClick = () => {
+        setOpen(!open)
+    }
 
     return (<Header>
         <nav className="navbar fixed-top navbar-expand-lg bg-dark">
@@ -19,7 +64,7 @@ export default function NavBar() {
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link href="/blackouts/1/1"><a className={router.pathname.includes("blackouts") ? "nav-link active" : "nav-link"}  aria-current="page">The Poems</a></Link>
+                        <a onClick={handlePoemClick} className={router.pathname.includes("blackouts") ? "nav-link active" : "nav-link"}  aria-current="page">The Poems</a>
                         <Link href="/series"><a className={router.pathname == "/series" ? "nav-link active" : "nav-link"} href="/series">The Series</a></Link>
                         <Link href="/poet"><a className={router.pathname == "/poet" ? "nav-link active" : "nav-link"} href="/">The Poet</a></Link>
                         <Link href="/developer"><a className={router.pathname == "/developer" ? "nav-link active" : "nav-link"} href="/developer">The Developer</a></Link>
@@ -28,6 +73,34 @@ export default function NavBar() {
                     </div>
                 </div>
             </div>
+
+            <Drawer title="Basic Drawer" placement="right" onClose={()=> { setOpen(false)}} open={open}>
+                <TreeCardGroup className="pt-4">
+                    {
+                        poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
+                            <DirectoryTree
+                                showLine
+                                width={"100%"}
+                                autoExpandParent={true}
+                                switcherIcon={<></>}
+                                showIcon={false}
+                                selectable={false}
+                                treeData={group}
+                                titleRender={({ title, href, poem_id, stage_id, season })=> <PoemTitle onClick={()=> {
+                                        if (stage_id) {
+                                            setOpen(false)
+                                            window.location = href
+                                        }
+                                        
+                                    }}>
+                                    <span>{poem_id} | {stage_id} | {title} </span>
+                                </PoemTitle>
+                                }
+                            />      
+                        </TreeCard>)
+                    }
+                </TreeCardGroup>
+            </Drawer>
         </nav>
     </Header>);
 }
@@ -55,9 +128,19 @@ const Header = styled.header`
         flex-flow: row-reverse;
     }
 
+    .ant-space-item {
+        font-family: 'Sorts Mill Goudy', serif !important;
+        font-size: 16px;
+    }
+
+    .ant-dropdown-menu {
+        border-radius:0;
+        font-family: 'Sorts Mill Goudy', serif !important;
+    }
+    
     .navbar-nav .nav-link{
         color:grey;
-
+    
         &.active {
             color: white;
         }
