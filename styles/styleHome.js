@@ -149,7 +149,6 @@ export const NavHeader = styled.header`
 
     .navbar-nav .nav-link{
         color:grey;
-    
         &.active {
             color: white;
         }
@@ -175,6 +174,12 @@ export const NavHeader = styled.header`
             font-family: 'Sorts Mill Goudy', serif;
             font-size: 0.5em;
         }
+      }
+
+      .nav-link {
+        display:flex;
+        justify-content:center;
+        align-items:center;
       }
   }
 `
