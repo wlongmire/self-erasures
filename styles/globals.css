@@ -40,6 +40,12 @@ a {
     margin: 0 8vw;
 }
 
+@media (max-width:700px) {
+    .ant-layout{
+        margin: 0 2vw;
+    }
+}
+
 .ant-tree-title {
     font-family: 'Sorts Mill Goudy', serif;
 }
