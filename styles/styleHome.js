@@ -17,13 +17,13 @@ export const LinkTitle = styled.div`
 export const ErasureTitle = styled.div`
   font-family: 'Sorts Mill Goudy', serif;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 5em;
 `
 
 export const PoemTitle = styled.div` 
   font-family: 'Sorts Mill Goudy', serif;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 3em;
   width: 100%;
   padding: 0 0.25em;
