@@ -85,6 +85,7 @@ const home = () => {
   return <div>
     <Layout>
       <Header>
+        
         <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
         <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
         <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>

@@ -1,16 +1,12 @@
-import { useRef } from "react";
-
-import { useState } from 'react';
+import { useRef, useState } from "react";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
 import { Drawer, Tree } from 'antd';
-import {  TreeCardGroup, TreeCard, PoemTitle } from './../styles/styleHome'
-
-const { DirectoryTree } = Tree;
+import {  TreeCardGroup, TreeCard, PoemTitle, NavHeader } from './../styles/styleHome'
 
 import erasures from './../data/erasures.json';
 
+const { DirectoryTree } = Tree;
 export default function NavBar() {
     const router = useRouter();
     const [ open, setOpen] = useState(false);
@@ -59,7 +55,7 @@ export default function NavBar() {
         }, 500)
     }
 
-    return (<Header>
+    return (<NavHeader>
         <nav className="navbar fixed-top navbar-expand-lg bg-dark">
             <div className="container">
                 <div className="navbar-brand">
@@ -93,12 +89,12 @@ export default function NavBar() {
                                 width={"100%"}
                                 autoExpandParent={true}
                                 defaultExpandParent={true}
-                                defaultExpandedKeys={router.pathname.includes("blackouts")?[router.query.erasure]:[]}
+                                defaultExpandedKeys={router.pathname.includes("blackouts")?[router.query.poem]:[]}
                                 switcherIcon={<></>}
                                 showIcon={false}
                                 selectable={false}
                                 treeData={group}
-                                titleRender={({ title, href, poem_id, stage_id })=> <PoemTitle className={(router.pathname.includes("blackouts")  && router.query.erasure == poem_id && router.query.stage == stage_id ? `activePoem` : "")} onClick={()=> {
+                                titleRender={({ title, href, poem_id, stage_id })=> <PoemTitle className={(router.pathname.includes("blackouts")  && router.query.poem == poem_id && router.query.stage == stage_id ? `activePoem` : "")} onClick={()=> {
                                         if (stage_id) {
                                             setOpen(false)
                                             window.location = href
@@ -113,78 +109,5 @@ export default function NavBar() {
                 </TreeCardGroup>
             </Drawer>
         </nav>
-    </Header>);
+    </NavHeader>);
 }
-
-const Header = styled.header`
-    .navbar-brand {
-        color: white;
-        font-family: 'Rubik Mono One', sans-serif !important;
-        h2 {
-            font-size: 1.2em;
-            padding: 0;
-            margin: 0;
-        }
-
-        p {
-            font-family: 'Sorts Mill Goudy', serif;
-            font-size: 0.6em;
-            padding: 0;
-            margin: 0;
-        }
-    }
-
-    .navbar-collapse {
-        font-family: 'Sorts Mill Goudy', serif;
-        flex-flow: row-reverse;
-    }
-
-    .ant-space-item {
-        font-family: 'Sorts Mill Goudy', serif !important;
-        font-size: 16px;
-    }
-
-    .ant-dropdown-menu {
-        border-radius:0;
-        font-family: 'Sorts Mill Goudy', serif !important;
-    }
-    
-    .poems {
-        border: #ffffff47 1px solid;
-        box-sizing: border-box;
-    }
-
-    .navbar-nav .nav-link{
-        color:grey;
-    
-        &.active {
-            color: white;
-        }
-
-        :hover {
-            color: black;
-            background-color: white;
-
-            &.active {
-                
-            }
-        }
-    }
-
-    
-    @media (max-width: 540px){
-        .navbar-brand {
-            h2 {
-                font-size:0.8em
-            }
-
-            p {
-                font-family: 'Sorts Mill Goudy', serif;
-                font-size: 0.5em;
-                padding: 0;
-                margin: 0;
-            }
-        }
-    }
-
-`

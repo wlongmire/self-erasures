@@ -87,8 +87,10 @@ export const TreeCard = styled.div`
 `
 
 export const Header = styled.header`
-  padding: 3em;
-  text-align: center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 
   span#highlights, span#blackouts {
     font-family: 'Rubik Mono One', sans-serif !important;
@@ -105,25 +107,60 @@ export const Header = styled.header`
     font-size: calc(0.5rem + 0.8vw);
     padding-top: 1em;
   }
+`
 
-  @media only screen and (max-width : 1200px) {
-    padding: 1em 0 ;
+export const NavHeader = styled.header`
+    .navbar-brand {
+        color: white;
+        font-family: 'Rubik Mono One', sans-serif !important;
+        h2 {
+            font-size: 1.2em;
+            padding: 0;
+            margin: 0;
+        }
 
-    span#highlights, span#blackouts {
-      font-size: calc(1rem + 5.1vw);
+        p {
+            font-family: 'Sorts Mill Goudy', serif;
+            font-size: 0.6em;
+            padding: 0;
+            margin: 0;
+        }
     }
-  }
 
-  @media only screen and (max-width : 800px) {
-    padding: 1em 0 ;
-
-    span#highlights, span#blackouts {
-      font-family: 'Rubik Mono One', sans-serif !important;
-      font-size: calc(1.525rem + 4vw);
-      display:inline-block;
-      line-height:1.1;
-      padding:0;
-      margin:0;
+    .navbar-collapse {
+        font-family: 'Sorts Mill Goudy', serif;
+        flex-flow: row-reverse;
     }
-  }
+
+    .ant-space-item {
+        font-family: 'Sorts Mill Goudy', serif !important;
+        font-size: 16px;
+    }
+
+    .ant-dropdown-menu {
+        border-radius:0;
+        font-family: 'Sorts Mill Goudy', serif !important;
+    }
+    
+    .poems {
+        border: #ffffff47 1px solid;
+        box-sizing: border-box;
+    }
+
+    .navbar-nav .nav-link{
+        color:grey;
+    
+        &.active {
+            color: white;
+        }
+
+        :hover {
+            color: black;
+            background-color: white;
+
+            &.active {
+                
+            }
+        }
+    }
 `

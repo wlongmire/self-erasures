@@ -6,7 +6,6 @@ import { CommonContainer, Footer } from './../styles/styleModules'
 
 export default function Layout({children}) {
     const { pathname } = useRouter()
-    console.log("pathname: ", pathname)
     return(
         <div className="layout">
             <Head >
