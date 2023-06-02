@@ -31,7 +31,7 @@ const TreeNode = (props) => {
       
       <span>{poem_id} | {stage_id} | {title} </span>
       
-      <span><em>{season}</em></span> 
+      <span className="season"><em>{season}</em></span> 
     </PoemTitle>
   }
   

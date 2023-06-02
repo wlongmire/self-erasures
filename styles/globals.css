@@ -44,6 +44,10 @@ a {
     .ant-layout{
         margin: 0 2vw;
     }
+
+    .season {
+        display: none;
+    }
 }
 
 .ant-tree-title {
