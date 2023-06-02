@@ -167,10 +167,11 @@ export const NavHeader = styled.header`
     @media (max-width:700px) {
       .navbar-brand{
         h2 {
-            font-size: 1em;
+            font-size: 0.8em;
         }
 
         p {
+            display:none;
             font-family: 'Sorts Mill Goudy', serif;
             font-size: 0.5em;
         }
