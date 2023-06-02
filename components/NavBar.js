@@ -44,7 +44,7 @@ export default function NavBar() {
             season: stage.season,
             type: "poemTitle",
             key:`${c.id}-${stage.id}`,
-            href: `/blackouts/${c.id}/${stage.id}`
+            href: `/blackouts?poem=${c.id}&stage=${stage.id}`
         }))
     }))
 

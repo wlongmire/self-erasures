@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 import { useState } from 'react';
 import { Carousel } from 'antd';
+import { useRouter } from 'next/router';
 
 import PoemContainer from './PoemContainer';
 import erasures from './../data/erasures.json';
 
-import { useRouter } from 'next/router'
-
 
 const ErasureSection = ({erasureIdx, stageIdx}) => {
+    const router = useRouter();
     const [sliderRef, setSliderRef] = useState(null)
     const [erasureId, setErasureId] = useState(erasureIdx)
     const [stageId, setStageId] = useState(stageIdx)
@@ -22,9 +22,11 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
             stageValue = (stageValue <= 1) ? 1 : stageValue
             stageValue = (stageValue >= erasures.items[erasureValue-1].stages.length) ? erasures.items[erasureValue-1].stages.length:stageValue
     
-            setStageId(stageValue)
-            setErasureId(erasureValue)
 
+            setErasureId(erasureValue)
+            setStageId(stageValue)
+            
+            router.push(`/blackouts?poem=${erasureValue}&stage=${stageValue}`, undefined, { shallow: true });
             sliderRef?.goTo(erasureValue -1)
         }
     }
@@ -35,9 +37,9 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
         infinite:false, 
         draggable:false,
         easing: "easeInOutSine",
-        lasyLoad: true,
+        lazyLoad: true,
         dots:false, 
-        speed: 1000,
+        speed: 500,
         beforeChange: (current, next) => {
             if (current !== next) {
                 setPoem(next+1, 1)

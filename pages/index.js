@@ -66,7 +66,7 @@ const home = () => {
       title: c.title,
       poem_id: c.id,
       type: "erasureTitle",
-      href:`/blackouts/${c.id}`,
+      href:`/blackouts?poem=${c.id}&stage=1`,
       key:`0-3-${c.id}`,
       children: c.stages.map(stage => ({
         title: stage.title,
@@ -75,7 +75,7 @@ const home = () => {
         season: stage.season,
         type: "poemTitle",
         key:`0-3-${c.id}-${stage.id}`,
-        href: `/blackouts/${c.id}/${stage.id}`
+        href: `/blackouts?poem=${c.id}&stage=${stage.id}`
       }))
     })
   )
