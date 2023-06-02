@@ -125,15 +125,6 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                 <ArrowContainer>
                     <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
                 </ArrowContainer>
-                    
-                {/* <div>
-                    {
-                        audio && <>
-                            <ReactAudioPlayer src={`/audio/${audio.src}`} controls/>
-                            {getContributorLink(audio.contributor, "Audio")}
-                        </>
-                    } 
-                </div>    */}
             </div>           
         </PoemStyle>
     </Layout>;

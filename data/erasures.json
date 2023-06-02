@@ -104,7 +104,7 @@
                     "season": "Summer 2021",
                     "image": [{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/78j184jkouI?playlist=78j184jkouI&autoplay=1&mute=1&loop=1&controls=0",
+                        "src":"https://www.youtube.com/embed/78j184jkouI?playlist=78j184jkouI&loop=1",
                         "srcLink":" https://youtu.be/78j184jkouI",
                         "contributor": 7
                     }]
@@ -455,7 +455,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/VzGWutL8m-E?playlist=VzGWutL8m-E&autoplay=1&mute=1&loop=1&controls=0",
+                        "src":"https://www.youtube.com/embed/VzGWutL8m-E?playlist=VzGWutL8m-E&aloop=1",
                         "srcLink":"https://www.youtube.com/shorts/LMK1B-F-QdE",
                         "contributor": 3
                     }]
@@ -500,7 +500,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src": "https://www.youtube.com/embed/WZ4SZ_jnYmc?playlist=WZ4SZ_jnYmc&autoplay=1&mute=1&loop=1&controls=0"
+                        "src": "https://www.youtube.com/embed/WZ4SZ_jnYmc?playlist=WZ4SZ_jnYmc&loop=1"
                     }]
                 },
                 {
@@ -719,7 +719,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/3bMRt1eWAcQ?playlist=3bMRt1eWAcQ&autoplay=1&mute=1&loop=1&controls=0",
+                        "src":"https://www.youtube.com/embed/3bMRt1eWAcQ?playlist=3bMRt1eWAc&loop=1",
                         "srcLink":"https://www.youtube.com/watch?v=3bMRt1eWAcQ",
                         "contributor": 2
                     }]
@@ -769,7 +769,7 @@
                     "season": "Summer 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/s8B6c9JBdnE?playlist=s8B6c9JBdnE&autoplay=1&mute=1&loop=1&controls=0",
+                        "src":"https://www.youtube.com/embed/s8B6c9JBdnE?playlist=s8B6c9JBdnE&loop=1",
                         "srcLink":"https://www.youtube.com/watch?v=s8B6c9JBdnE",
                         "contributor": 7
                     }]
