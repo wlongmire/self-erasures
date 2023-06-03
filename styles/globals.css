@@ -1,5 +1,6 @@
 html,
 body {
+    min-width:375px;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -40,16 +41,6 @@ a {
     margin: 0 8vw;
 }
 
-@media (max-width:700px) {
-    .ant-layout{
-        margin: 0 2vw;
-    }
-
-    .season {
-        display: none;
-    }
-}
-
 .ant-tree-title {
     font-family: 'Sorts Mill Goudy', serif;
 }
@@ -76,4 +67,32 @@ a {
 
 .ant-tree-title {
     width:100%;
+}
+
+@media (max-width:700px) {
+    .ant-layout{
+        margin: 0 2vw;
+    }
+
+    .season {
+        display: none;
+    }
+}
+
+#erasureDesktop {
+    display:block;
+}
+
+#erasurePhone {
+    display:none;
+}
+
+@media (max-width:1200px) {
+    #erasureDesktop {
+        display:none;
+    }
+
+    #erasurePhone {
+        display:block;
+    }
 }

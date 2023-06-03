@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-import { Carousel } from 'antd';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-svg-icons'
@@ -9,70 +7,10 @@ import { PoemStyle, PoemIndex, PoemButton, ArrowContainer } from './../styles/st
 
 import { Layout } from "antd";
 
-import contributions from './../data/contributions';
+import BlackoutDisplay from './BlackoutDisplay';
+import ImageHandler from './ImageHandler';
+
 import erasures from './../data/erasures.json';
-
-const range = (start, stop, step = 1) =>
-  Array.from({ length: Math.ceil((stop - start) / step) }, (_, i) => start + i * step);
-
-
-const ImageHTML = ({image}) => {
-    return (image.video) ? 
-        <iframe width="500" height="500" src={`${image.src}`} title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>:
-        <Image className="sideImage" src={`/images/${image.src}`} width="500" height="500" alt={image.src}/>
-}
-
-const ImageHandler = ({image}) => {
-    const getContributorLink = (contributorId, type) => {
-        if (contributorId) {
-            const {first, last} = contributions[contributorId]
-            return <p className="image_contributor"><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
-        } else {
-            return <p className="image_contributor"><a href={`/poet`}>{type} By Heather Bowlan</a></p>
-        }
-        
-    }
-    
-    if (!image) {
-        return <>
-             <Image className="sideImage" src={`/images/paper_background.jpeg`} width="500" height="500" alt={"image"}/>
-        </>
-    } else if (image.length === 1) {
-        return <>
-            <ImageHTML image={image[0]}/>
-            <span>{getContributorLink(image[0].contributor, "Image")}</span>
-        </>
-    } else {
-        return <Carousel dotPosition="right" className="imageCarousel" autoplay="true" draggable autoplaySpeed={5000} effect="fade">
-            {
-                image.map(i => <div>
-                    <ImageHTML image={i}/>
-                    {
-                        <span>{getContributorLink(i.contributor, "Image")}</span>
-                    }
-                </div>)
-            }
-        </Carousel>   
-    }
-}
-
-const BlackoutDisplay = ({id, currentStage}) => {
-    if (currentStage.pages) {
-        return <Carousel changeSlide={(e)=>{console.log(e)}}dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
-            {
-                range(1, currentStage.pages + 1).map(page => <div key={page}>
-                    <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500" height="500"/>
-                </div>)
-            }
-        </Carousel>
-    } else {
-        return <>
-            {
-                <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.png`} width="500" height="500"/>
-            }
-        </>
-    }
-}
 
 const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const totalErasures = erasures.items.length;

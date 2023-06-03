@@ -1,10 +1,9 @@
-import styled from 'styled-components';
-
 import { useState } from 'react';
+
 import { Carousel } from 'antd';
 import { useRouter } from 'next/router';
 
-import PoemContainer from './PoemContainer';
+// import PoemContainer from './PoemContainer';
 import erasures from './../data/erasures.json';
 
 
@@ -48,11 +47,11 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
       };
 
 
-    return <div id="erasureDesktop">
+    return <div id="erasurePhone">
         <Carousel ref={setSliderRef} className="imageCarousel" {...settings}>
             {
                 erasures.items.map(e => <div key={e.id}>
-                    <PoemContainer erasureIdx={e.id}  stageIdx={(e.id===erasureId)?stageId:1}  setPoem={setPoem}/>
+                    {e.title}
                 </div>)
             }
         </Carousel>   

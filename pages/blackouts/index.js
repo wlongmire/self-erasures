@@ -1,5 +1,6 @@
-import erasures from './../../data/erasures.json';
 import ErasureSection from './../../components/ErasureSection';
+import ErasureSectionPhone from './../../components/ErasureSectionPhone';
+
 import {useRouter} from 'next/router'
 
 const StageSelection = ()=> {
@@ -11,6 +12,7 @@ const StageSelection = ()=> {
     
     return <>
         <ErasureSection erasureIdx={parseInt(poem)} stageIdx={parseInt(stage)}/>
+        <ErasureSectionPhone erasureIdx={parseInt(poem)} stageIdx={parseInt(stage)}/>
     </>
 }
 
