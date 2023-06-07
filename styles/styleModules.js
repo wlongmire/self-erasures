@@ -96,7 +96,7 @@ export const ArrowContainer = styled.div`
 
 export const SwitchButtonContainer = styled.div`
     display:flex;
-    font-size:3em;
+    font-size:2.5em;
     min-width:2em;
     background: #2258CA;
     padding: 10px;
