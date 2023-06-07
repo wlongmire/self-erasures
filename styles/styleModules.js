@@ -232,12 +232,12 @@ export const PoemStylePhone = styled.div`
                 font-family: 'Sorts Mill Goudy', serif !important;
                 padding:0 2px;
                 margin:0;
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
 
             h2 {
                 font-family: 'Sorts Mill Goudy', serif !important;;
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }
