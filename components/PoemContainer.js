@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareCaretRight,  faSquareCaretLeft} from '@fortawesome/free-solid-svg-icons'
 
 import { PoemStyle, PoemIndex, PoemButton, ArrowContainer } from './../styles/styleModules';
-
 import { Layout } from "antd";
 
 import BlackoutDisplay from './BlackoutDisplay';

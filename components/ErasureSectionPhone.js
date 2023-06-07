@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Carousel } from 'antd';
 import { useRouter } from 'next/router';
 
-// import PoemContainer from './PoemContainer';
+import PoemContainerPhone from './PoemContainerPhone';
 import erasures from './../data/erasures.json';
 
 
@@ -35,6 +35,7 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
         initialSlide:erasureId-1, 
         infinite:false, 
         draggable:false,
+        touchMove: false,
         easing: "easeInOutSine",
         lazyLoad: true,
         dots:false, 
@@ -51,7 +52,7 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
         <Carousel ref={setSliderRef} className="imageCarousel" {...settings}>
             {
                 erasures.items.map(e => <div key={e.id}>
-                    {e.title}
+                    <PoemContainerPhone erasureIdx={e.id}  stageIdx={(e.id===erasureId)?stageId:1}  setPoem={setPoem}/>
                 </div>)
             }
         </Carousel>   

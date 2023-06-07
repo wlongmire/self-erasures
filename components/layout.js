@@ -23,7 +23,7 @@ export default function Layout({children}) {
             
             <Footer>
                 <div className="container">
-                    <div>Highlights&Blackouts</div>
+                    <div id="footerTitle">Highlights&Blackouts</div>
                     <div class="publisher">_mix_lit 2023</div>
                 </div>
             </Footer>

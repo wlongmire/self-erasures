@@ -10,8 +10,7 @@ const ImageHandler = ({image}) => {
             return <p className="image_contributor"><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
         } else {
             return <p className="image_contributor"><a href={`/poet`}>{type} By Heather Bowlan</a></p>
-        }
-        
+        }   
     }
     
     if (!image) {
