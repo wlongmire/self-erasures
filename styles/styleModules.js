@@ -83,6 +83,20 @@ export const PoemButton = styled.button`
         background: blue;
     }
 `
+export const PoemButtonPhone = styled.button`
+    flex:1;
+    
+    font-size: 0.9em;
+    border-radius: 8px;
+    border-width: 1px;
+
+    h5 {
+        font-size: 1.3em;
+    }
+    &:hover {
+        background: blue;
+    }
+`
 
 export const ArrowContainer = styled.div`
     display:flex;

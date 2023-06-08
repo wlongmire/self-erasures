@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareCaretRight,  faSquareCaretLeft, faImage, faChevronLeft, faChevronRight, faBook} from '@fortawesome/free-solid-svg-icons'
 
-import { PoemStylePhone, PoemIndex, PoemButton, ArrowContainer, SwitchButtonContainer } from '../styles/styleModules';
+import { PoemStylePhone, PoemIndex, PoemButtonPhone, ArrowContainer, SwitchButtonContainer } from '../styles/styleModules';
 import { Layout, Carousel } from "antd";
 
 import BlackoutDisplay from './BlackoutDisplay';
@@ -78,6 +78,21 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                 </div>
             </Carousel>
 
+            
+            <div className="footer">
+                {
+                    stages.map(stage => <PoemButtonPhone key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} 
+                        onClick={
+                            ()=> {
+                                setPoem(erasureIdx, stage.id)
+                            }
+                        }>
+                        <h5 className="m-0 p-0">{stage.title}</h5>
+                        <div><em>{stage.season}</em></div>
+                    </PoemButtonPhone>)
+                }
+            </div>
+
              <div id="header">
                 <ArrowContainer>
                     <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
@@ -87,20 +102,6 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                     <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
                 </ArrowContainer>
             </div>
-
-            {/* <div className="footer">
-                {
-                    stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} 
-                        onClick={
-                            ()=> {
-                                setPoem(erasureIdx, stage.id)
-                            }
-                        }>
-                        <h5 className="m-0 p-0">{stage.title}</h5>
-                        <div><em>{stage.season}</em></div>
-                    </PoemButton>)
-                }
-            </div> */}
             
             {/* <div className="poemContainer">
                 <BlackoutDisplay id={id} currentStage={currentStage} />
