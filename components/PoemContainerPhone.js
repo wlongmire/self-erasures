@@ -38,7 +38,7 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
 
     const settings = {
         dotPosition:"none",
-        dots: true,
+        dots: false,
         draggable:true,
         easing: "easeInOutSine",
         lazyLoad: true,
@@ -55,23 +55,28 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                 </div>
                 {
                     showPoem ? (
-                        <SwitchButtonContainer onClick={()=>setShowPoem(false)}>     
-                            <FontAwesomeIcon className="icon" icon={faChevronLeft}/> <FontAwesomeIcon className="icon" icon={faImage}/>
+                        <SwitchButtonContainer onClick={()=>{
+                            setShowPoem(false)
+                            sliderRef?.goTo(1)
+                        }}>     
+                            <FontAwesomeIcon className="icon" icon={faImage}/>
+                            <FontAwesomeIcon className="icon" icon={faChevronRight}/> 
                         </SwitchButtonContainer>) : (
-                        <SwitchButtonContainer onClick={()=>setShowPoem(true)}>                    
-                            <FontAwesomeIcon className="icon" icon={faBook}/> <FontAwesomeIcon className="icon" icon={faChevronRight}/>
+                        <SwitchButtonContainer onClick={()=>{
+                            setShowPoem(true)
+                            sliderRef?.goTo(0)
+                        }}>
+                             <FontAwesomeIcon className="icon" icon={faChevronLeft}/><FontAwesomeIcon className="icon" icon={faBook}/>
                         </SwitchButtonContainer>)
                 }
                 
             </div>
             
             <Carousel ref={setSliderRef} {...settings}>
-                {/* <BlackoutDisplay id={id} currentStage={currentStage} />
+                <BlackoutDisplay id={id} currentStage={currentStage} />
                 <div className="sideImageContainer">
                     <ImageHandler image={image}/>
-                    <h1 className="sideImageTitle">{currentStage.title}</h1>
                 </div>
-                */}
             </Carousel>
 
             {/* <div id="header">
