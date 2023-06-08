@@ -43,7 +43,7 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
         easing: "easeInOutSine",
         lazyLoad: true,
         touchMove: false,
-        speed: 100
+        speed: 200
       };
     
     return <Layout>
