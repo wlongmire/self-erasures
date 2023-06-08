@@ -44,7 +44,9 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
         speed: 500
       };
     
-    
+    //temperary
+    image = undefined;
+
     return <Layout>
         <PoemStylePhone>
             <div id="header">

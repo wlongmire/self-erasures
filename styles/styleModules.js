@@ -317,6 +317,7 @@ export const PoemStylePhone = styled.div`
 
     .imageCarousel {
         width:500px
+        height:500px;
     }
 
     .arrow {
