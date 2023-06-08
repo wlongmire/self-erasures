@@ -85,7 +85,7 @@ export const PoemButton = styled.button`
 `
 export const PoemButtonPhone = styled.button`
     flex:1;
-    
+
     font-size: 0.9em;
     border-radius: 8px;
     border-width: 1px;
@@ -303,7 +303,6 @@ export const PoemStylePhone = styled.div`
         flex:1
         height:140px;
         gap: 1em;
-        padding-top: 2em;
     }
 
     .poemScrub {

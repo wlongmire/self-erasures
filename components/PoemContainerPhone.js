@@ -81,7 +81,7 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
             
             <div className="footer">
                 {
-                    stages.map(stage => <PoemButtonPhone key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} 
+                    stages.map(stage => <PoemButtonPhone key={stage.id} className={`btn btn-outline-dark ${(stage.id === currentStage.id) && "active_stage"}`} 
                         onClick={
                             ()=> {
                                 setPoem(erasureIdx, stage.id)
@@ -102,37 +102,6 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                     <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
                 </ArrowContainer>
             </div>
-            
-            {/* <div className="poemContainer">
-                <BlackoutDisplay id={id} currentStage={currentStage} />
-                
-                <div className="sideImageContainer">
-                    <ImageHandler image={image}/>
-                    <h1 className="sideImageTitle">{currentStage.title}</h1>
-                </div>
-
-            </div>
-            
-            <div className="footer">
-                <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
-                </ArrowContainer>
-
-                {
-                    stages.map(stage => <PoemButton key={stage.id} className={`btn btn-outline-dark p-3 ${(stage.id === currentStage.id) && "active_stage"}`} 
-                        onClick={
-                            ()=> {
-                                setPoem(erasureIdx, stage.id)
-                            }
-                        }>
-                        <h5 className="m-0 p-0">{stage.title}</h5>
-                        <div><em>{stage.season}</em></div>
-                    </PoemButton>)
-                }
-                <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
-                </ArrowContainer>
-            </div>            */}
         </PoemStylePhone>
     </Layout>;
 
