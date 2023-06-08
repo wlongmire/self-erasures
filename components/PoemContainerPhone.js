@@ -41,7 +41,6 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
         dots: false,
         draggable:true,
         easing: "easeInOutSine",
-        lazyLoad: true,
         touchMove: false,
         speed: 300
       };
