@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import ImageHTML from './ImageHTML'
+import { Carousel } from "antd";
 
 import contributions from './../data/contributions';
 

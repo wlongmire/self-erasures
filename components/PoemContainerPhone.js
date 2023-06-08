@@ -45,15 +45,16 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
         speed: 300
       };
     
+    
     return <Layout>
         <PoemStylePhone>
             <div id="header">
                 <div id="titleContainer">
                     <h1>{currentErasure.title}</h1>
-                    <h2>{erasureIdx}.{stageIdx}:{currentStage.title}</h2>
+                    <h2>{erasureIdx}.{stageIdx} : {currentStage.title}</h2>
                 </div>
                 {
-                    showPoem ? (
+                    image && (showPoem ? (
                         <SwitchButtonContainer onClick={()=>{
                             setShowPoem(false)
                             sliderRef?.goTo(1)
@@ -66,16 +67,17 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                             sliderRef?.goTo(0)
                         }}>
                              <FontAwesomeIcon className="icon" icon={faChevronLeft}/><FontAwesomeIcon className="icon" icon={faBook}/>
-                        </SwitchButtonContainer>)
+                        </SwitchButtonContainer>))
                 }
                 
             </div>
             
             <Carousel ref={setSliderRef} {...settings}>
                 <BlackoutDisplay id={id} currentStage={currentStage} />
-                <div className="sideImageContainer">
-                    <ImageHandler image={image}/>
-                </div>
+                {
+                    image && <div className="sideImageContainer"><ImageHandler image={image}/> </div>
+                }
+                
             </Carousel>
 
             
