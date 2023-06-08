@@ -236,8 +236,8 @@ export const PoemStylePhone = styled.div`
             }
 
             h2 {
-                font-family: 'Sorts Mill Goudy', serif !important;;
-                font-size: 1.5rem;
+                font-family: 'Sorts Mill Goudy', serif !important;
+                font-size: 1.3rem;
             }
         }
     }
