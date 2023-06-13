@@ -244,9 +244,12 @@ export const PoemStylePhone = styled.div`
 
             h1 {
                 font-family: 'Sorts Mill Goudy', serif !important;
-                padding:0 2px;
                 margin:0;
                 font-size: 1rem;
+                width: fit-content;
+                padding: 4px;
+                margin-bottom: 5px;
+                background: #F6D54D
             }
 
             h2 {
@@ -316,7 +319,7 @@ export const PoemStylePhone = styled.div`
     }
 
     .imageCarousel {
-        width:500px
+        width:500px;
         height:500px;
     }
 

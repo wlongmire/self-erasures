@@ -88,6 +88,9 @@ a {
 }
 
 @media (max-width:1200px) {
+    /* .container {
+        padding-top: 4em;
+    } */
     #erasureDesktop {
         display:none;
     }
