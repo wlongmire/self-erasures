@@ -7,7 +7,7 @@ const range = (start, stop, step = 1) =>
 
 const BlackoutDisplay = ({id, currentStage}) => {
     if (currentStage.pages) {
-        return <Carousel changeSlide={(e)=>{console.log(e)}}dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
+        return <Carousel changeSlide={(e)=>{console.log(e)}} dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
             {
                 range(1, currentStage.pages + 1).map(page => <div key={page}>
                     <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500px" height="500px"/>

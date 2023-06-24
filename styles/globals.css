@@ -88,9 +88,6 @@ a {
 }
 
 @media (max-width:1200px) {
-    /* .container {
-        padding-top: 4em;
-    } */
     #erasureDesktop {
         display:none;
     }
@@ -101,5 +98,16 @@ a {
 
     #footerTitle {
         display:none;
+    }
+
+    #content-container {
+        flex-direction: column;
+    }
+
+    #content-container img {
+        width: 100%;
+        height: 50vh;
+        object-fit:cover;
+        object-position: 50% 0%;
     }
 }
