@@ -189,6 +189,7 @@
                 },
                 {
                     "id": 3,
+                    "pages": 2,
                     "title":"Swing, HUM",
                     "season": "Winter 2021",
                     "image": [{
@@ -294,6 +295,7 @@
                 },
                 {
                     "id": 3,
+                    "pages":2,
                     "title":"THE DAY I TOLD",
                     "season": "Fall 2021",
                     "image": [{
@@ -355,6 +357,7 @@
                 },
                 {
                     "id": 3,
+                    "pages":2,
                     "title":"The Stilled Sweetness",
                     "season": "Fall 2021",
                     "image":[{
@@ -383,6 +386,19 @@
                     "season": "Summer 2021",
                     "image":[{
                         "src":"scissored.jpg"
+                    }]
+                },
+                {
+                    "id": 3,
+                    "pages":2,
+                    "title":"TRANSFUSE",
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"transfuse_1.jpg"
+                    },{
+                        "src":"transfuse_2.jpg"
+                    },{
+                        "src":"transfuse_3.jpg"
                     }]
                 }
             ]
@@ -430,11 +446,13 @@
                 },
                 {
                     "id": 2,
+                    "pages":2,
                     "title":"Their Children",
                     "season": "Summer 2021"
                 },
                 {
                     "id": 3,
+                    "pages":2,
                     "title":"Theirs",
                     "season": "Summer 2021"
                 }
@@ -539,6 +557,7 @@
                 {
                     "id": 3,
                     "title":"The Rival",
+                    "pages":2,
                     "season": "Winter 2021"
                 }
             ]
@@ -555,6 +574,7 @@
                 },
                 {
                     "id": 2,
+                    "pages":2,
                     "title":"Voluntary",
                     "season": "Summer 2021"
                 },
@@ -566,16 +586,25 @@
                 },
                 {
                     "id": 4,
-                    "pages": 2,
-                    "title":"Rapid Cycling",
-                    "season": "Summer 2021"
+                    "title":"THIS SHUT TUNNEL MY BODY",
+                    "season": "Fall 2021",
+                    "image":[{
+                        "src":"this_shut_tunnel_my_body.jpg",
+                        "contributor": 0
+                    }]
                 },
                 {
                     "id": 5,
-                    "title":"THIS SHUT TUNNEL MY BODY",
-                    "season": "Summer 2021",
+                    "title":"Too close too",
+                    "season": "Fall 2021",
                     "image":[{
-                        "src":"this_shut_tunnel_my_body.jpg",
+                        "src":"TOO_CLOSE_TOO/1.jpg",
+                        "contributor": 0
+                    },{
+                        "src":"TOO_CLOSE_TOO/1.jpg",
+                        "contributor": 0
+                    },{
+                        "src":"TOO_CLOSE_TOO/1.jpg",
                         "contributor": 0
                     }]
                 }
@@ -603,6 +632,7 @@
                 },
                 {
                     "id": 3,
+                    "pages":2,
                     "title":"A Block From Nature",
                     "season": "Fall 2021"
                 }
@@ -630,7 +660,7 @@
                 },
                 {
                     "id": 3,
-                    "pages": 2,
+                    "pages": 3,
                     "title":"I Finally Hallucinate",
                     "season": "Summer 2021"
                 }
@@ -843,6 +873,7 @@
                 },
                 {
                     "id": 3,
+                    "pages": 2,
                     "title":"Ragged tailgate beat",
                     "season": "Fall 2021",
                     "image":[{

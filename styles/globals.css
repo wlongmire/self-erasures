@@ -87,6 +87,17 @@ a {
     display:none;
 }
 
+#content-container img {
+    object-fit:cover;
+    object-position: 50% 50%;
+}
+
+#content-container img.contributor-img {
+    object-fit:none;
+    object-position: 0% 0%;
+}
+
+
 @media (max-width:1200px) {
     #erasureDesktop {
         display:none;
@@ -107,7 +118,6 @@ a {
     #content-container img {
         width: 100%;
         height: 50vh;
-        object-fit:cover;
-        object-position: 50% 0%;
+        object-position: 0% 0%;
     }
 }

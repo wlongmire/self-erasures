@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { TreeHeader, LinkTitle, ErasureTitle, PoemTitle, B,  TreeCardGroup, TreeCard, Header} from './../styles/styleHome'
 
 import { Tree } from 'antd';
@@ -82,33 +84,43 @@ const home = () => {
 
   let router= useRouter()
 
+
+  const [showHeading, setShowHeading] = useState(false)
+
   return <div>
     <Layout>
       <Header>
         
         <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
         <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
-        <p>A Self-Erasure Series By <Link href="/poet"><B link>Heather Bowlan</B></Link> & <Link href="/developer"><B link>Warren C. Longmire</B></Link></p>
+        <p>A <a href="#" className="subheading-link" onMouseEnter={()=>setShowHeading(true)} onMouseLeave={()=>setShowHeading(false)}>Self-Erasure Series</a> By <Link href="/poet"><span className="highlight">Heather Bowlan</span></Link> & <Link href="/developer"><span className="highlight">Warren C. Longmire</span></Link></p>
+        {/* <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">info</a>
+        <div class="collapse" id="collapseExample">
+          <p className="subheading-text">Sometimes the only way to discover the self is by carving away what's no long nessisary. Compiled over 10 years, each poem in Highlights and Blackouts has been erased by the author years after it's writing and set against the music, images and videos of the author and those around the her orbit. Explore. Linger. Enjoy.</p>
+        </div> */}
+        {
+          showHeading && <p className="subheading-text">Sometimes the only way to discover the self is by carving away what's no long nessisary. Compiled over 10 years, each poem in Highlights and Blackouts has been erased by the author years after it's writing and set against the music, images and videos of the author and those around the her orbit. Explore. Linger. Enjoy.</p>
+        }
       </Header>
 
       <Collapse ghost>
-        <Panel header="The Poems" key="1">
-              <TreeCardGroup>
-              {
-                  poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
-                    <DirectoryTree
-                      showLine
-                      width={"100%"}
-                      autoExpandParent={true}
-                      switcherIcon={<></>}
-                      showIcon={false}
-                      selectable={false}
-                      treeData={group}
-                      titleRender={(data)=> <TreeNode {...data} group={group}/>}
-                    />      
-                  </TreeCard>)
-                }
-              </TreeCardGroup>
+        <Panel header="The Poems" key="1">  
+          <TreeCardGroup>
+            {
+                poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
+                  <DirectoryTree
+                    showLine
+                    width={"100%"}
+                    autoExpandParent={true}
+                    switcherIcon={<></>}
+                    showIcon={false}
+                    selectable={false}
+                    treeData={group}
+                    titleRender={(data)=> <TreeNode {...data} group={group}/>}
+                  />      
+                </TreeCard>)
+              }
+            </TreeCardGroup>
           </Panel>
 
           <Panel header="The Series" key="2">

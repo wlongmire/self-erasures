@@ -106,6 +106,35 @@ export const Header = styled.header`
     text-align:center;
     font-size: calc(0.5rem + 0.8vw);
     padding-top: 1em;
+    margin: 0px;
+  }
+
+  .highlight {
+    padding: 0 2px;
+    background: black;
+    cursor: pointer;
+  }
+
+  .highlight:hover {
+    text-decoration: underline;
+    background: white;
+  }
+
+  .subheading-link {
+    text-decoration: underline;
+    color:black
+  }
+
+  .subheading-link:hover {
+    background: white;
+    text-decoration: none;
+  }
+  
+
+  .subheading-text {
+    text-align: left;
+    margin: 0px;
+    padding:5px
   }
 `
 
