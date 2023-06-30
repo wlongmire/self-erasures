@@ -45,7 +45,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
             
             <div className="footer">
                 <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> (erasureIdx > 1) && setPoem(erasureIdx - 1, 1)}/>
                 </ArrowContainer>
 
                 {
@@ -60,7 +60,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                     </PoemButton>)
                 }
                 <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> (erasureIdx < erasures.items.length) && setPoem(erasureIdx + 1, 1)}/>
                 </ArrowContainer>
             </div>           
         </PoemStyle>

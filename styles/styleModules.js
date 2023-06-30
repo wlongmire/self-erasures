@@ -149,10 +149,25 @@ export const PoemStyle = styled.div`
         position: relative;
         top: -3em;
         left: 1em;
-        color: white;
-        opacity: 0.6;
+        opacity: 0.3;
         font-family: 'Sorts Mill Goudy', serif;
+        transition: all 1s ease-in-out;
+    }
 
+    .image_contributor:hover {
+        opacity: 1;
+    }
+
+    .image_contributor a {
+        color: white;
+        background:black;
+        padding: 3px;
+        transition: all 1s ease-in-out;
+        
+        &:hover {
+            color: black;
+            background:#F6D54C;
+        }
     }
 
     .slick-dots li button{
@@ -278,10 +293,25 @@ export const PoemStylePhone = styled.div`
         position: relative;
         top: -3em;
         left: 1em;
-        color: white;
-        opacity: 0.6;
+        opacity: 0.3;
         font-family: 'Sorts Mill Goudy', serif;
+        transition: all 1s ease-in-out;
+    }
 
+    .image_contributor:hover {
+        opacity: 1;
+    }
+
+    .image_contributor a {
+        color: white;
+        background:black;
+        padding: 3px;
+        transition: all 1s ease-in-out;
+        
+        &:hover {
+            color: black;
+            background:#F6D54C;
+        }
     }
 
     .slick-dots li button{

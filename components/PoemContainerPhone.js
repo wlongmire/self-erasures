@@ -98,11 +98,11 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
 
              <div id="header">
                 <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> setPoem(erasureIdx - 1, 1)}/>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> (erasureIdx > 1) && setPoem(erasureIdx - 1, 1)}/>
                 </ArrowContainer>
                 <PoemIndex>{id} / {totalErasures}</PoemIndex>
                 <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> setPoem(erasureIdx + 1, 1)}/>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> (erasureIdx < erasures.items.length) && setPoem(erasureIdx + 1, 1)}/>
                 </ArrowContainer>
             </div>
         </PoemStylePhone>

@@ -394,11 +394,11 @@
                     "title":"TRANSFUSE",
                     "season": "Fall 2021",
                     "image":[{
-                        "src":"transfuse_1.jpg"
+                        "src":"TRANSFUSE/transfuse_1.jpg"
                     },{
-                        "src":"transfuse_2.jpg"
+                        "src":"TRANSFUSE/transfuse_2.jpg"
                     },{
-                        "src":"transfuse_3.jpg"
+                        "src":"TRANSFUSE/transfuse_3.jpg"
                     }]
                 }
             ]
