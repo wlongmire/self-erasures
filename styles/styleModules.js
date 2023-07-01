@@ -28,7 +28,9 @@ export const Footer = styled.div`
             font-family: 'Sorts Mill Goudy', serif;
         }
 
-        
+        #footerTitle {
+            color: #EDD776;
+        }
     }
 `
 

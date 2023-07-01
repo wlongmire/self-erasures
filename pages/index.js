@@ -84,7 +84,6 @@ const home = () => {
 
   let router= useRouter()
 
-
   const [showHeading, setShowHeading] = useState(false)
 
   return <div>
@@ -93,14 +92,10 @@ const home = () => {
         
         <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
         <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
-        <p>A <a href="#" className="subheading-link" onMouseEnter={()=>setShowHeading(true)} onMouseLeave={()=>setShowHeading(false)}>Self-Erasure Series</a> By <Link href="/poet"><span className="highlight">Heather Bowlan</span></Link> & <Link href="/developer"><span className="highlight">Warren C. Longmire</span></Link></p>
-        {/* <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">info</a>
-        <div class="collapse" id="collapseExample">
-          <p className="subheading-text">Sometimes the only way to discover the self is by carving away what's no long nessisary. Compiled over 10 years, each poem in Highlights and Blackouts has been erased by the author years after it's writing and set against the music, images and videos of the author and those around the her orbit. Explore. Linger. Enjoy.</p>
-        </div> */}
-        {
-          showHeading && <p className="subheading-text">Sometimes the only way to discover the self is by carving away what's no long nessisary. Compiled over 10 years, each poem in Highlights and Blackouts has been erased by the author years after it's writing and set against the music, images and videos of the author and those around the her orbit. Explore. Linger. Enjoy.</p>
-        }
+        <p>A <a href="#" className="blackout" onMouseEnter={()=>setShowHeading(true)} onMouseLeave={()=>setShowHeading(false)}>Self-Erasure Series</a> By <Link href="/poet"><span className="highlight">Heather Bowlan</span></Link> & <Link href="/developer"><span className="highlight">Warren C. Longmire</span></Link></p>
+
+        <p className={`subheading-text ${showHeading && "display"}`}>Sometimes the only way to discover the self is by carving away what's no long nessisary. Compiled over 10 years, each poem in <em>Highlights and Blackouts</em> has been erased by the author years after it's writing and set against the music, images and videos of the author and those around the her orbit. Explore. Linger. Enjoy.</p>
+        
       </Header>
 
       <Collapse ghost>

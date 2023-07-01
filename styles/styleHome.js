@@ -127,15 +127,31 @@ export const Header = styled.header`
     margin: 0px;
   }
 
-  .highlight {
+  .blackout {
     padding: 0 2px;
     background: black;
+    color: black;
     cursor: pointer;
+    transition: background 0.5s;
+  }
+
+  .blackout:hover {
+    text-decoration: underline;
+    background: white;
+    color: black;
+  }
+
+  .highlight {
+    padding: 0 5px;
+    background: #F1D665;
+    color: black;
+    cursor: pointer;
+    transition: background 0.5s;
   }
 
   .highlight:hover {
-    text-decoration: underline;
     background: white;
+    color: black;
   }
 
   .subheading-link {
@@ -151,8 +167,18 @@ export const Header = styled.header`
 
   .subheading-text {
     text-align: left;
-    margin: 0px;
-    padding:5px
+    margin: 0 2rem;
+    padding:5px;
+    display:block;
+    opacity:0;
+    font-size:0;
+    transition: all 0.5s;
+
+    &.display {
+      display:block;
+      opacity:1;
+      font-size:1.2em;
+    }
   }
 `
 

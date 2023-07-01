@@ -15,7 +15,6 @@ import erasures from '../data/erasures.json';
 const Header = styled.div`
     display:flex;
     width:100%;
-
 `
 
 const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
@@ -44,7 +43,7 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
         speed: 500
       };
     
-    //temperary
+    
     image = undefined;
 
     return <Layout>
