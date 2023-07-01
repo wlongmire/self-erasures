@@ -200,7 +200,7 @@ export const PoemStyle = styled.div`
         flex:1
         height:140px;
         gap: 1em;
-        padding-top: 2em;
+        padding: 2em 0;
     }
 
     .poemScrub {

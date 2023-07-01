@@ -11,7 +11,7 @@ const BlackoutDisplay = ({id, currentStage}) => {
     return <Carousel dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
         {
             range(1, pages + 1).map(page => <div key={page}>
-                <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500px" height="500px"/>
+                <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}${pages > 1?`.${page}`:""}.png`} width="500px" height="500px"/>
             </div>)
         }
     </Carousel>
