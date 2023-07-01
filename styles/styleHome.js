@@ -31,7 +31,8 @@ export const PoemTitle = styled.div`
   justify-content: space-between;
 
   &.activePoem {
-    background-color:#FDFF05;
+    background-color:rgb(0,0,0,0.3);
+    color:#F6D54C;
   }
 `
 
@@ -76,14 +77,31 @@ export const TreeCardGroup = styled.div`
     display:flex;
     flex-flow: row nowrap;
     width: 100%;
+    background: #F6D54C;
 
     &.active-poem {
-      background-color:#FDFF05;
+      background-color: black
+    }
+`
+export const TreeCardGroupDrawer = styled.div`
+    display:flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    background: #F6D54C;
+
+    
+    .ant-tree, .ant-tree-list, .ant-tree-switcher, .ant-tree-indent{
+      background: #F6D54C !important;
+    }  
+  
+    &.active-poem {
+      background-color: black
     }
 `
 
 export const TreeCard = styled.div`
     flex-grow:1;
+    background: none;
 `
 
 export const Header = styled.header`
@@ -140,8 +158,9 @@ export const Header = styled.header`
 
 export const NavHeader = styled.header`
     .navbar-brand {
-        color: white;
+        color: #F6D54C;
         font-family: 'Rubik Mono One', sans-serif !important;
+        
         h2 {
             font-size: 1.2em;
             padding: 0;
@@ -172,27 +191,33 @@ export const NavHeader = styled.header`
     }
     
     .poems {
-        border: #ffffff47 1px solid;
+        border-radius: 3px;
+        border: #F1D66599 2px solid;
         box-sizing: border-box;
     }
 
     .navbar-nav .nav-link{
         color:grey;
+        margin: 2px; 
+        border-radius: 3px;
+
         &.active {
-            color: white;
+            color: #F6D54C;
         }
 
         :hover {
             color: black;
-            background-color: white;
+            background-color: #F6D54C;
+            
 
             &.active {
-                
+              background-color: #F6D54C;
+              color:black;
             }
         }
     }
 
-    @media (max-width:700px) {
+    @media (max-width:1000px) {
       .navbar-brand{
         h2 {
             font-size: 0.8em;
@@ -206,9 +231,7 @@ export const NavHeader = styled.header`
       }
 
       .nav-link {
-        display:flex;
-        justify-content:center;
-        align-items:center;
+        padding-left: 1em;
       }
   }
 `

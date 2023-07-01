@@ -80,7 +80,9 @@ export const PoemButton = styled.button`
     border-width: 1px;
 
     &:hover {
-        background: blue;
+        border-color: white;
+        background: #F6D54C;
+        color:black;
     }
 `
 export const PoemButtonPhone = styled.button`
@@ -93,8 +95,11 @@ export const PoemButtonPhone = styled.button`
     h5 {
         font-size: 1.3em;
     }
+
     &:hover {
-        background: blue;
+        border-color: white;
+        background: #F6D54C;
+        color:black;
     }
 `
 
@@ -198,11 +203,12 @@ export const PoemStyle = styled.div`
     .poemScrub {
         font-size:5em;
         color: black;
+        transition: all 0.2s ease-in-out;
     }
 
     .poemScrub:hover {
         font-size:5em;
-        color: blue;
+        color: #F6D54C;
     }
 
     .imageCarousel {
@@ -235,7 +241,7 @@ export const PoemStyle = styled.div`
             color: ${(props) => (props.titleColor) ? props.titleColor : "white"};
             font-size: 4em;
             width: 500px;
-            opacity: 0.5;
+            opacity: ${(props) => (props.titleAlpha) ? props.titleAlpha : 0.5};
         }
     }
 `
@@ -262,9 +268,10 @@ export const PoemStylePhone = styled.div`
                 margin:0;
                 font-size: 1rem;
                 width: fit-content;
-                padding: 4px;
+                padding: 5px;
                 margin-bottom: 5px;
-                background: #F6D54D
+                background: #F6D54D;
+                border-radius: 3px;
             }
 
             h2 {
@@ -341,11 +348,12 @@ export const PoemStylePhone = styled.div`
     .poemScrub {
         font-size:5em;
         color: black;
+        transition: all 0.2s ease-in-out;
     }
 
     .poemScrub:hover {
         font-size:5em;
-        color: blue;
+        color: #F6D54C;
     }
 
     .imageCarousel {

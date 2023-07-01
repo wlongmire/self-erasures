@@ -16,7 +16,7 @@ const ImageHandler = ({image}) => {
     
     if (!image) {
         return <>
-             <Image className="sideImage" src={`/images/paper_background.jpeg`} width="500" height="500" alt={"image"}/>
+             <Image className="sideImage" src={`/images/paper_background.jpg`} width="500" height="500" alt={"image"}/>
         </>
     } else if (image.length === 1) {
         return <>

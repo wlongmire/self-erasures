@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Drawer, Tree } from 'antd';
-import {  TreeCardGroup, TreeCard, PoemTitle, NavHeader } from './../styles/styleHome'
+import {  TreeCardGroupDrawer, TreeCard, PoemTitle, NavHeader } from './../styles/styleHome'
 
 import erasures from './../data/erasures.json';
 
@@ -56,7 +56,7 @@ export default function NavBar() {
     }
 
     return (<NavHeader>
-        <nav className="navbar fixed-top navbar-expand-lg bg-dark">
+        <nav className="navbar fixed-top navbar-expand-xl bg-dark">
             <div className="container">
                 <div className="navbar-brand">
                     <a href="/"><h2>Highlights&Blackouts</h2></a>
@@ -80,7 +80,7 @@ export default function NavBar() {
             </div>
 
             <Drawer title="Basic Drawer" placement="right" onClose={()=> { setOpen(false)}} open={open}>
-                <TreeCardGroup className="pt-4">
+                <TreeCardGroupDrawer className="pt-4">
                     {
                         poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
                             <DirectoryTree
@@ -106,7 +106,7 @@ export default function NavBar() {
                             />      
                         </TreeCard>)
                     }
-                </TreeCardGroup>
+                </TreeCardGroupDrawer>
             </Drawer>
         </nav>
     </NavHeader>);
