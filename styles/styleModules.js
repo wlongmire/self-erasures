@@ -136,7 +136,8 @@ export const SwitchButtonContainer = styled.div`
 export const PoemStyle = styled.div`
     font-family: 'Sorts Mill Goudy', serif;
     margin-top: 2em;
-    width: ${(props) => (props.poemWidth) ? props.poemWidth : 1000}px;
+    width: 100%;
+    /* width: ${(props) => (props.poemWidth) ? props.poemWidth : 1000}px; */
 
     h4 {
         padding-left: 15px;
@@ -214,7 +215,7 @@ export const PoemStyle = styled.div`
     }
 
     .imageCarousel {
-        width:500px
+        width: 500px;
     }
 
     .arrow {
