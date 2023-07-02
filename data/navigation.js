@@ -15,7 +15,7 @@ export const treeData = {
         key: '0-0-1'
       },
       {
-        title: 'The Writing Process',
+        title: 'Building the Experience',
         href:"/series#tech_design",
         type: "link",
         key: '0-0-2'

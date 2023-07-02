@@ -45,14 +45,24 @@ export default function NavBar() {
     }))
 
     const handlePoemClick = () => {
-        setOpen(true)
-        
-        setTimeout(() => {
-            const active = document.getElementsByClassName("activePoem")
-            if (active.length === 1) {
-                active[0].parentElement.parentElement.parentElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
-            }
-        }, 500)
+        if (open) {
+            setOpen(false)
+        } else {
+            setOpen(true)
+
+        setTimeout(() => {    
+                const active = document.getElementsByClassName("activePoem")
+                if (active.length === 1) {
+                    active[0].parentElement.parentElement.parentElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+                }
+                
+            }, 500)
+        }
+    }
+
+    const navigateTo = (path) => {
+        setOpen(false)
+        router.push(path)
     }
 
     return (<NavHeader>
@@ -69,12 +79,12 @@ export default function NavBar() {
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a onClick={handlePoemClick} className={router.pathname.includes("blackouts")? "poems nav-link active" : "poems nav-link"}  aria-current="page">The Poems</a>
-                        <Link href="/series"><a className={router.pathname == "/series" ? "nav-link active" : "nav-link"} href="/series">The Series</a></Link>
-                        <Link href="/poet"><a className={router.pathname == "/poet" ? "nav-link active" : "nav-link"} href="/">The Poet</a></Link>
-                        <Link href="/developer"><a className={router.pathname == "/developer" ? "nav-link active" : "nav-link"} href="/developer">The Developer</a></Link>
-                        <Link href="/contributors"><a className={router.pathname == "/contributors" ? "nav-link active" : "nav-link"} href="/contributors">The Contributors</a></Link>
-                        <Link href="/playlist"><a className={router.pathname == "/playlist" ? "nav-link active" : "nav-link"} href="/playlist">The Playlist</a></Link>
+                        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onClick={handlePoemClick} className={router.pathname.includes("blackouts")? "poems nav-link active" : "poems nav-link"}  aria-current="page">The Poems</a>
+                        <Link href="/series"><a href="/series" onClick={()=>navigateTo("series")} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" className={router.pathname == "/series" ? "nav-link active" : "nav-link"} >The Series</a></Link>
+                        <Link href="/poet"><a href="/poet" onClick={()=>navigateTo("poet")} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" className={router.pathname == "/poet" ? "nav-link active" : "nav-link"}>The Poet</a></Link>
+                        <Link href="/developer"><a href="/developer"  onClick={()=>navigateTo("developer")} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" className={router.pathname == "/developer" ? "nav-link active" : "nav-link"}>The Developer</a></Link>
+                        <Link href="/contributors"><a href="/contributors"  onClick={()=>navigateTo("contributors")} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" className={router.pathname == "/contributors" ? "nav-link active" : "nav-link"}>The Contributors</a></Link>
+                        <Link href="/playlist"><a href="/playlist" onClick={()=>navigateTo("playlist")} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" className={router.pathname == "/playlist" ? "nav-link active" : "nav-link"}>The Playlist</a></Link>
                     </div>
                 </div>
             </div>
