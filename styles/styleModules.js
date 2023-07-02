@@ -124,13 +124,27 @@ export const SwitchButtonContainer = styled.div`
     border-radius: 5px;
     color:white;
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
-    transition: all 1s;
+    transition: all 0.5s;
     cursor: pointer;
 
     &:hover {
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
         background: #AADAFA;
     }
+`
+
+export const SwitchButtonContainerInactive = styled.div`
+    display:flex;
+    font-size:2.5em;
+    min-width:2em;
+    justify-content: center;
+    background: grey;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color:white;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
 `
 
 export const PoemStyle = styled.div`
@@ -159,7 +173,7 @@ export const PoemStyle = styled.div`
         left: 1em;
         opacity: 0.3;
         font-family: 'Sorts Mill Goudy', serif;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
 
     .image_contributor:hover {
@@ -170,7 +184,7 @@ export const PoemStyle = styled.div`
         color: white;
         background:black;
         padding: 3px;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
         
         &:hover {
             color: black;
@@ -305,7 +319,7 @@ export const PoemStylePhone = styled.div`
         left: 1em;
         opacity: 0.3;
         font-family: 'Sorts Mill Goudy', serif;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
 
     .image_contributor:hover {
@@ -316,7 +330,7 @@ export const PoemStylePhone = styled.div`
         color: white;
         background:black;
         padding: 3px;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
         
         &:hover {
             color: black;

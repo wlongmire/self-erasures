@@ -39,7 +39,7 @@ export const PoemTitle = styled.div`
 export const B = styled.span`
   color:black;
   background:black;
-  transition: background-color 500ms;
+  transition: background-color 0.5s;
   cursor: ${props => props.link? 'pointer':'inherit'};
 
   &:hover {
@@ -54,7 +54,7 @@ export const BlockErase = styled.span`
   background:black;
   margin: 5px 0;
   padding: 5px;
-  transition: background-color 500ms;
+  transition: background-color 0.5s;
   font-size: 1em;
   cursor: pointer;
 

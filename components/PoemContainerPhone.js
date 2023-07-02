@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareCaretRight,  faSquareCaretLeft, faImage, faChevronLeft, faChevronRight, faBook} from '@fortawesome/free-solid-svg-icons'
 
-import { PoemStylePhone, PoemIndex, PoemButtonPhone, ArrowContainer, SwitchButtonContainer } from '../styles/styleModules';
+import { PoemStylePhone, PoemIndex, PoemButtonPhone, ArrowContainer, SwitchButtonContainer, SwitchButtonContainerInactive } from '../styles/styleModules';
 import { Layout, Carousel } from "antd";
 
 import BlackoutDisplay from './BlackoutDisplay';
@@ -40,11 +40,8 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
         dots: false,
         draggable:true,
         touchMove: false,
-        speed: 500
-      };
-    
-    
-    image = undefined;
+        speed: 300
+    };
 
     return <Layout>
         <PoemStylePhone>
@@ -54,8 +51,8 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                     <h2>{erasureIdx}.{stageIdx} : {currentStage.title}</h2>
                 </div>
                 {
-                    image && (showPoem ? (
-                        <SwitchButtonContainer onClick={()=>{
+                    (image ? (showPoem ? (
+                        <SwitchButtonContainer active={false} onClick={()=>{
                             setShowPoem(false)
                             sliderRef?.goTo(1)
                         }}>     
@@ -66,8 +63,8 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                             setShowPoem(true)
                             sliderRef?.goTo(0)
                         }}>
-                             <FontAwesomeIcon className="icon" icon={faChevronLeft}/><FontAwesomeIcon className="icon" icon={faBook}/>
-                        </SwitchButtonContainer>))
+                             <FontAwesomeIcon active={false} className="icon" icon={faChevronLeft}/><FontAwesomeIcon className="icon" icon={faBook}/>
+                        </SwitchButtonContainer>)) : <SwitchButtonContainerInactive><FontAwesomeIcon className="icon" icon={faBook}/></SwitchButtonContainerInactive>)
                 }
                 
             </div>
@@ -77,7 +74,6 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                 {
                     image && <div className="sideImageContainer"><ImageHandler image={image}/> </div>
                 }
-                
             </Carousel>
 
             

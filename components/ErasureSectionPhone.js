@@ -47,7 +47,6 @@ const ErasureSection = ({erasureIdx, stageIdx}) => {
         }
       };
 
-
     return <div id="erasurePhone">
         <Carousel ref={setSliderRef} className="imageCarousel" {...settings}>
             {
