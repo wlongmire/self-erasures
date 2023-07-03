@@ -18,11 +18,6 @@ const ImageHandler = ({image}) => {
         return <>
              <Image className="sideImage" src={`/images/paper_background.jpg`} width="500" height="500" alt={"image"}/>
         </>
-    } else if (image.length === 1) {
-        return <>
-            <ImageHTML image={image[0]}/>
-            <span>{getContributorLink(image[0].contributor, "Image")}</span>
-        </>
     } else {
         return <Carousel dotPosition="right" className="imageCarousel" autoplay="true" draggable autoplaySpeed={5000} effect="fade">
             {

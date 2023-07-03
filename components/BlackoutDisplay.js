@@ -16,21 +16,6 @@ const BlackoutDisplay = ({id, currentStage}) => {
         }
     </Carousel>
 
-    // if (currentStage.pages) {
-    //     return <Carousel changeSlide={(e)=>{console.log(e)}} dotPosition="bottom" infinite={false} draggable dots="dotClass" className="imageCarousel">
-    //         {
-    //             range(1, currentStage.pages + 1).map(page => <div key={page}>
-    //                 <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.${page}.png`} width="500px" height="500px"/>
-    //             </div>)
-    //         }
-    //     </Carousel>
-    // } else {
-    //     return <>
-    //         {
-    //             <Image className="poemImage" src={`/poems/poem.${id}.${currentStage.id}.png`} width="500px" height="500px"/>
-    //         }
-    //     </>
-    // }
 }
 
 export default BlackoutDisplay;

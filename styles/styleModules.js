@@ -151,7 +151,10 @@ export const PoemStyle = styled.div`
     font-family: 'Sorts Mill Goudy', serif;
     margin-top: 2em;
     width: 100%;
-    /* width: ${(props) => (props.poemWidth) ? props.poemWidth : 1000}px; */
+    
+    .slick-track {
+        height:500px !important;
+    }
 
     h4 {
         padding-left: 15px;
@@ -209,6 +212,7 @@ export const PoemStyle = styled.div`
 
     .footer {
         display: flex;
+        z-index: 100;
         justify-content: center;
         align-items: stretch;
         flex:1
@@ -360,6 +364,7 @@ export const PoemStylePhone = styled.div`
         flex:1
         height:140px;
         gap: 1em;
+        padding: 1em 0;
     }
 
     .poemScrub {
