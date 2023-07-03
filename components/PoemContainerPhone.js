@@ -75,6 +75,8 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                     stages.map(stage => <PoemButtonPhone key={stage.id} className={`btn btn-outline-dark ${(stage.id === currentStage.id) && "active_stage"}`} 
                         onClick={
                             ()=> {
+                                setShowPoem(true); 
+                                sliderRef?.goTo(0); 
                                 setPoem(erasureIdx, stage.id)
                             }
                         }>
@@ -86,11 +88,11 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
 
              <div id="header">
                 <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> (erasureIdx > 1) && setPoem(erasureIdx - 1, 1)}/>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === 1) && "inactive"}`} icon={faSquareCaretLeft}  onClick={()=> {(erasureIdx > 1) && setPoem(erasureIdx - 1, 1)}}/>
                 </ArrowContainer>
                 <PoemIndex>{id} / {totalErasures}</PoemIndex>
                 <ArrowContainer>
-                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> (erasureIdx < erasures.items.length) && setPoem(erasureIdx + 1, 1)}/>
+                    <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> {(erasureIdx < erasures.items.length) && setPoem(erasureIdx + 1, 1)}}/>
                 </ArrowContainer>
             </div>
         </PoemStylePhone>
