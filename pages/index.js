@@ -94,7 +94,7 @@ const home = () => {
         <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
         <p>A Self-Erasure Series By <Link href="/poet"><span className="highlight">Heather Bowlan</span></Link> & <Link href="/developer"><span className="highlight">Warren C. Longmire</span></Link></p>
 
-        <p className="text-start mx-5 mb-4">Experince <B>memory, art, and selfhood in</B> process <B>This collection of poems, written over a 15-year period and</B> paired <B>with</B> erasures <B>completed years later, interrogates experience and aesthetics with the help of music, images, and videos by the author and a</B> wide <B>circle of artists and</B> friends.</p>
+        <p className="text-start mx-5 mb-4">Experince <B>memory, art, and selfhood in</B> process. <B>This collection of poems, written over a 15-year period and</B> paired <B>with</B> erasures <B>completed years later, interrogates experience and aesthetics with the help of music, images, and videos by the author and a</B> wide <B>circle of artists and</B> friends.</p>
         
       </Header>
 
