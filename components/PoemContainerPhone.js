@@ -28,13 +28,6 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
     const { stages, id } = currentErasure;
     const { image, audio } = currentStage;
     
-    const handleScrub = (e) => {
-        const inc = parseInt(e.target.dataset.direction)
-        const { type } = e.target.dataset
-        
-        setPoem(erasureIdx + inc, 1)
-    }
-
     const settings = {
         dotPosition:"none",
         dots: false,
@@ -64,7 +57,7 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
                             sliderRef?.goTo(0)
                         }}>
                              <FontAwesomeIcon active={false} className="icon" icon={faChevronLeft}/><FontAwesomeIcon className="icon" icon={faBook}/>
-                        </SwitchButtonContainer>)) : <SwitchButtonContainerInactive><FontAwesomeIcon className="icon" icon={faBook}/></SwitchButtonContainerInactive>)
+                        </SwitchButtonContainer>)) : <span></span>)
                 }
                 
             </div>
@@ -72,7 +65,7 @@ const PoemContainerPhone = ({ erasureIdx, stageIdx, setPoem }) => {
             <Carousel ref={setSliderRef} {...settings}>
                 <BlackoutDisplay id={id} currentStage={currentStage} />
                 {
-                    image && <div className="sideImageContainer"><ImageHandler image={image}/> </div>
+                    image ? <div className="sideImageContainer"><ImageHandler image={image}/> </div> :<span></span>
                 }
             </Carousel>
 

@@ -146,11 +146,12 @@ export const Header = styled.header`
     background: #F1D665;
     color: black;
     cursor: pointer;
-    transition: background 0.5s;
+    text-decoration none;
+    transition: text-decoration 0.5s;
   }
 
   .highlight:hover {
-    background: white;
+    text-decoration: underline;
     color: black;
   }
 
