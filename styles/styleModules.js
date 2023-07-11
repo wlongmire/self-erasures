@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const LayoutStyle = styled.div`
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+`
 
 export const CommonContainer = styled.div`
     main {
@@ -14,11 +19,15 @@ export const CommonContainer = styled.div`
     }
 `
 
+
 export const Footer = styled.div`
+    margin-top:100px;
+    
     font-family: 'Rubik Mono One', sans-serif !important;
     background-color:black;
     color: white;
     padding: 1em;
+    
 
     .container {
         display:flex;
@@ -413,3 +422,4 @@ export const PoemStylePhone = styled.div`
         }
     }
 `
+
