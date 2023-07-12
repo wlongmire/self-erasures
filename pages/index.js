@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { TreeHeader, LinkTitle, ErasureTitle, PoemTitle, B,  TreeCardGroup, TreeCard, Header} from './../styles/styleHome'
+import { PoemButton } from './../styles/styleModules';
 
 import { Tree } from 'antd';
 import { Collapse } from 'antd';
@@ -110,14 +111,14 @@ const home = () => {
               <div className="d-flex">
                 <img className="p-2 btn" height="250px" src="/images/cover.png"/>
                 <div className="p-2">
-                  <p>Please support the artists by purchasing the accompanying chapbook.</p>
+                  <p>Please support the artists by purchasing the accompanying book.</p>
                   <p>For more performances, print and web experiences working at the intersection of tech, music and literature, checkout _mixlit.</p>
                 </div>
               </div>
               <hr/>
-              <div className="d-flex">
-                  <button className="btn p-2 btn-primary"><a href="#">Purchase HIGHLIGHTS & BLACKOUTS CHAPBOOK</a></button>
-                  <button className="btn  p-2 btn-primary"><a href="http://mixlit.io">Visit _mixlit</a></button>
+              <div className="d-flex flex-column">
+                  <PoemButton className="basicButton p-1 m-1"><a href="#">Purchase Book</a></PoemButton>
+                  <PoemButton className="basicButton p-1 m-1"><a href="http://mixlit.io">Visit _mixlit</a></PoemButton>
                 </div>
               <hr/>
               

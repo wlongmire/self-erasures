@@ -97,7 +97,15 @@ a {
     margin: 0 1rem;
 }
 
+.basics .basicButton {
+    font-size: 1rem;
+}
+
 @media (max-width:700px) {
+    .basics {
+        font-size: 2rem;
+    }
+
     .ant-layout{
         margin: 0 2vw;
     }
@@ -113,9 +121,6 @@ a {
 
 
 @media (max-width:1200px) {
-    .basics {
-        font-size: 2rem;
-    }
     
     #titleContainer, .imageCarousel {
         margin: 0 auto;
