@@ -122,8 +122,8 @@ export const Header = styled.header`
   p {
     font-family: 'Sorts Mill Goudy', serif;
     text-align:center;
-    font-size: 1rem;
-    padding-top: 1em;
+    font-size: clamp(0.9rem, calc(0.6rem + 0.8vw), 1.4rem);
+    padding: 1em 0;
     margin: 0px;
   }
 
