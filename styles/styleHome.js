@@ -112,7 +112,7 @@ export const Header = styled.header`
 
   span#highlights, span#blackouts {
     font-family: 'Rubik Mono One', sans-serif !important;
-    font-size: clamp(3.2rem, calc(1rem + 6.5vw), 10rem);
+    font-size: clamp(3.2rem, calc(1rem + 6.5vw), 7rem);
     display:inline-block;
     line-height:1.1;
     padding:0;
@@ -122,7 +122,7 @@ export const Header = styled.header`
   p {
     font-family: 'Sorts Mill Goudy', serif;
     text-align:center;
-    font-size: clamp(0.9rem, calc(0.6rem + 0.8vw), 3rem);
+    font-size: 1rem;
     padding-top: 1em;
     margin: 0px;
   }
