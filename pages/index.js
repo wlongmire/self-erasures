@@ -87,6 +87,8 @@ const home = () => {
 
   const [showHeading, setShowHeading] = useState(false)
 
+  console.log(poem_groups)
+
   return <div>
     <Layout>
       <Header className="homeHeader">

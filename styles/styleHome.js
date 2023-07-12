@@ -181,6 +181,15 @@ export const Header = styled.header`
     }
 
     @media (max-width:700px) {
+      span#highlights, span#blackouts {
+        font-family: 'Rubik Mono One', sans-serif !important;
+        font-size: clamp(3rem, calc(1rem + 6.5vw), 10rem);
+        display:inline-block;
+        line-height:1.1;
+        padding:0;
+        margin:0;
+      }
+      
       p {
         font-size: clamp(1rem, calc(0.8rem + 0.8vw), 4rem);
       }
