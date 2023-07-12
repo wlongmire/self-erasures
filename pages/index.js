@@ -103,14 +103,28 @@ const home = () => {
             <div className="basics">
               <p>HIGHLIGHTS & BLACKOUTS is a chapbook and web experience written by Heather Bowlan, developed by Warren C. Longmire and contributed to by a wide range of artists and poets.</p>
               <hr/>
-              <p>To start your experience, select a poem below. Each poem is seperated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
+              <p>To start your experience, <a href="#poems">select a poem.</a></p>
+              <p>Each poem is seperated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
               <p>Beside many of poems, observe the images, videos and sounds that occompany each stage.</p>
               <hr/>
-              <p>Please support the artists by purchasing the accompanying chapbook <a href="#">here.</a></p>
+              <div className="d-flex">
+                <img className="p-2 btn" height="250px" src="/images/cover.png"/>
+                <div className="p-2">
+                  <p>Please support the artists by purchasing the accompanying chapbook.</p>
+                  <p>For more performances, print and web experiences working at the intersection of tech, music and literature, checkout _mixlit.</p>
+                </div>
+              </div>
+              <hr/>
+              <div className="d-flex">
+                  <button className="btn p-2 btn-primary"><a href="#">Purchase HIGHLIGHTS & BLACKOUTS CHAPBOOK</a></button>
+                  <button className="btn  p-2 btn-primary"><a href="http://mixlit.io">Visit _mixlit</a></button>
+                </div>
+              <hr/>
+              
             </div>
         </Panel>
 
-        <Panel header="The Poems" key="2">
+        <Panel id="poems" header="The Poems" key="2">
           <TreeCardGroup>
             {
                 poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
