@@ -101,8 +101,8 @@ const home = () => {
         
       </Header>
 
-      <Collapse ghost>
-        <Panel header="The Basics" key="1">
+      <Collapse accordion ghost>
+        <Panel header="The Experience" key="1">
             <div className="basics">
               <p>HIGHLIGHTS & BLACKOUTS is a chapbook and web experience written by Heather Bowlan, developed by Warren C. Longmire and contributed to by a wide range of artists and poets.</p>
               <hr/>
