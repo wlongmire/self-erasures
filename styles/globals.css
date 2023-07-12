@@ -97,13 +97,9 @@ a {
     margin: 0 1rem;
 }
 
-.basics .basicButton {
-    font-size: 1rem;
-}
-
 @media (max-width:700px) {
     .basics {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .ant-layout{
