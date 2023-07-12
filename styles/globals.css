@@ -93,7 +93,7 @@ a {
 
 .basics {
     font-family: 'Sorts Mill Goudy', serif;
-    font-size: calc(0.6rem + 1vw);
+    font-size: clamp(1.3rem, calc(0.6rem + 1vw), 3rem);
     margin: 0 1rem;
 }
 
