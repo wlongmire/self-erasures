@@ -88,18 +88,29 @@ const home = () => {
 
   return <div>
     <Layout>
-      <Header>
+      <Header className="homeHeader">
         
         <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
         <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
         <p>A Self-Erasure Series By <Link href="/poet"><span className="highlight">Heather Bowlan</span></Link> & <Link href="/developer"><span className="highlight">Warren C. Longmire</span></Link></p>
 
-        <p className="text-start mx-5 mb-4">Experience <B>memory, art, and selfhood in</B> process. <B>This collection of</B> poems, <B>written over a 15-year period and paired with</B> erasures <B>completed years later, interrogates experience and aesthetics with the help of</B> music, images, and videos <B>by the author and a wide circle of artists and friends.</B></p>
+        <p className="description text-start mx-5 mb-4">Experience <B>memory, art, and selfhood in</B> process. <B>This collection of</B> poems, <B>written over a 15-year period and paired with</B> erasures <B>completed years later, interrogates experience and aesthetics with the help of</B> music, images, and videos <B>by the author and a wide circle of artists and friends.</B></p>
         
       </Header>
 
       <Collapse ghost>
-        <Panel header="The Poems" key="1">  
+        <Panel header="The Basics" key="1">
+            <div className="basics">
+              <p>HIGHLIGHTS & BLACKOUTS is a chapbook and web experience written by Heather Bowlan, developed by Warren C. Longmire and contributed to by a wide range of artists and poets.</p>
+              <hr/>
+              <p>To start your experience, select a poem below. Each poem is seperated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
+              <p>Beside many of poems, observe the images, videos and sounds that occompany each stage.</p>
+              <hr/>
+              <p>Please support the artists by purchasing the accompanying chapbook <a href="#">here.</a></p>
+            </div>
+        </Panel>
+
+        <Panel header="The Poems" key="2">
           <TreeCardGroup>
             {
                 poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
@@ -118,7 +129,7 @@ const home = () => {
             </TreeCardGroup>
           </Panel>
 
-          <Panel header="The Series" key="2">
+          <Panel header="The Series" key="3">
             <DirectoryTree
               showLine
               autoExpandParent={true}
@@ -131,7 +142,7 @@ const home = () => {
             />
           </Panel>
 
-          <Panel header="The Artists" key="3">
+          <Panel header="The Artists" key="4">
             <DirectoryTree
               showLine
               autoExpandParent={true}
@@ -143,7 +154,7 @@ const home = () => {
             />
           </Panel>
 
-          <Panel header="The Contributors" key="4">
+          <Panel header="The Contributors" key="5">
             <TreeCardGroup>
               {
                 contrib_groups.map((group,index) => <TreeCard key={group.id} width={`${String(100/contrib_groups.length)}%`}>
@@ -163,7 +174,7 @@ const home = () => {
 
           <Panel onClick={()=> {
             router.push(`/playlist`)
-          }} header="The Playlist" key="5"></Panel>
+          }} header="The Playlist" key="6"></Panel>
           
       </Collapse>
     </Layout>

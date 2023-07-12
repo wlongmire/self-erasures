@@ -165,7 +165,6 @@ export const Header = styled.header`
     text-decoration: none;
   }
   
-
   .subheading-text {
     text-align: left;
     margin: 0 2rem;
