@@ -179,6 +179,12 @@ export const Header = styled.header`
       opacity:1;
       font-size:1.2em;
     }
+
+    @media (max-width:700px) {
+      p {
+        font-size: clamp(1rem, calc(0.8rem + 0.8vw), 4rem);
+      }
+    }
   }
 `
 
