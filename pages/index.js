@@ -112,7 +112,7 @@ const home = () => {
               <hr/>
               <div className="d-flex">
                 <img className="p-2 btn" height="250px" src="/images/cover.png"/>
-                <div className="p-2">
+                <div className="p-2 d-flex flex-column justify-content-center">
                   <p>Please support the artists by purchasing the accompanying book.</p>
                   <p>For more performances, print and web experiences working at the intersection of tech, music and literature, checkout _mixlit.</p>
                 </div>
