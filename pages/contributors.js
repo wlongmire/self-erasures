@@ -26,7 +26,7 @@ export default function contributorsPage() {
                 <p>Warren, thank you for being my friend at first sight all those years ago on a lonely night in London. And for all of our adventures since. And for this amazing collaboration–I’m in awe of your brilliant vision, talent, and energy and how this work together has deepened our friendship.</p>
                 <p>Thank you to my parents for taking my writing seriously, always. Thank you to my sister Emily for your gigantic heart, your music, and for everything you teach me. Thank you forever to Ted and Elliot for our life together and all the expected and unexpected joys. </p>
             </div>
-            <div className="pt-0 p-1">
+            <div className="p-1-lg">
                 {
                     contributors.filter(c => c.blurb).map(contributor => <ContributorContainer key={`${contributor.first}-${contributor.last}`} id={`${contributor.first}-${contributor.last}`}>
                         <div className={`contributorInfo ${(currentContributor === `${contributor.first}-${contributor.last}`) && "active"}`}>
