@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { TreeHeader, LinkTitle, ErasureTitle, PoemTitle, B,  TreeCardGroup, TreeCard, Header} from './../styles/styleHome'
-import { PoemButton, CollageFrameMobile } from './../styles/styleModules';
+import { PoemButton } from './../styles/styleModules';
 
 import { Tree } from 'antd';
 import { Collapse } from 'antd';
@@ -87,19 +87,10 @@ const home = () => {
 
   const [showHeading, setShowHeading] = useState(false)
 
-  const images = [
-    "v1/574f88123c44d86f06c2bc65/1683213529929-ECXBOTGRRZCJAQ6O0V58/Bowlan+Precarious+Survival+1.jpg",
-    "v1/574f88123c44d86f06c2bc65/1683213529848-U36IANXJ8JCXXF0GLJNN/Bowlan+Precarious+Survival+2.jpg",
-    "v1/574f88123c44d86f06c2bc65/1683213528326-6XGQ3Q9EQ1L5I9YO8RKI/Bowlan+Precarious+Survival+3.jpg",
-    "v1/574f88123c44d86f06c2bc65/1683213528374-B0MBQBHUQ3X09D8AU587/Bowlan+Precarious+Survival+4.jpg"
-  ]
-
 
   return <div>
     <Layout>
       <div>
-        <CollageFrameMobile height={150} image={images[2]} position={Math.floor(Math.random()*100)} className="collageFrameMobile"/>
-        
         <Header className="homeHeader">
           
           <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
@@ -110,7 +101,6 @@ const home = () => {
           
         </Header>
 
-        <CollageFrameMobile height={30} image={images[2]} position={Math.floor(Math.random()*100)} className="collageFrameMobile"/>
         
         <Collapse accordion ghost>
           <Panel header="The Experience" key="1">
@@ -210,9 +200,7 @@ const home = () => {
             
         </Collapse>
       </div>
-
-      <CollageFrameMobile height={150} image={images[2]} position={Math.floor(Math.random()*100)} className="collageFrameMobile"/>
-        
+  
     </Layout>
   </div>
 }

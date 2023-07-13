@@ -7,10 +7,11 @@ export const LayoutStyle = styled.div`
 
 export const CommonContainer = styled.div`
     display:flex;
-    min-height:100vh;
+    /* min-height:100vh; */
     
     main {
         padding-top: 4rem;
+        padding-bottom: 3rem;
         font-family: 'Sorts Mill Goudy', serif;
 
         h1 {
@@ -30,8 +31,8 @@ export const CollageFrameMobile = styled.div`
     background: ${(props) => `url('https://images.squarespace-cdn.com/content/${props.image}?format=1500w')`};
     background-size: auto;
     background-position: ${(props) => `${props.position}% 0`};
-    height: ${(props) => `${props.height}px`};
-    margin: 2em 0;
+    height: ${(props) => `${props.height ? props.height : 30}px`};
+    margin: ${(props) => `${props.margin ? props.margin : 3}px`}; 0;
 `
 
 export const Footer = styled.div`
