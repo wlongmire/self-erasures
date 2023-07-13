@@ -48,9 +48,9 @@ export default function Layout({children}) {
                 (pathname !== "/") && <NavBar/>
             }
             
-            <CommonContainer>
+            <CommonContainer className="commonContainer">
                 <CollageFrame position={position} image={image1} className="collageFrame"/>
-                <main className="container d-flex justify-content-center align-items-center">{children}</main>
+                <main className="container">{children}</main>
                 <CollageFrame position={position} image={image2} className="collageFrame"/>
             </CommonContainer>
             

@@ -104,9 +104,20 @@ a {
     width:20vw;
 }
 
+.commonContainer main {
+    display:flex;
+    justify-content:center; 
+    align-items:center;
+}
+
+
 @media (max-width:700px) {
     .collageFrame {
         display:none;
+    }
+
+    .commonContainer main {
+        display:block !important;
     }
 
     .basics {
@@ -132,10 +143,6 @@ a {
     #titleContainer, .imageCarousel {
         margin: 0 auto;
         width:500px;
-    }
-
-    main {
-        display:block;
     }
 
     .ant-layout {
