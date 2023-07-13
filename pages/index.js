@@ -17,7 +17,7 @@ import contributors from '../data/contributions';
 import { treeData } from '../data/navigation';
 
 const TreeNode = (props) => {
-  const { title, type, href, poem_id, stage_id, season }= props;
+  const { title, type, href, poem_id, stage_id, season } = props;
   
   const renderTypes = {
     "header":<TreeHeader>
@@ -87,113 +87,113 @@ const home = () => {
 
   const [showHeading, setShowHeading] = useState(false)
 
-  console.log(poem_groups)
-
   return <div>
     <Layout>
-      <Header className="homeHeader">
-        
-        <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
-        <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
-        <p>A Self-Erasure Series By <Link href="/poet"><span className="highlight">Heather Bowlan</span></Link> & <Link href="/developer"><span className="highlight">Warren C. Longmire</span></Link></p>
+      <div>
+        <Header className="homeHeader">
+          
+          <span id="highlights">H<B>I</B>GH<B>L</B>IGHTS</span>
+          <span id="blackouts">&B<B>L</B>ACKO<B>U</B>TS</span>
+          <p>A Self-Erasure Series By <Link href="/poet"><span className="highlight">Heather Bowlan</span></Link> & <Link href="/developer"><span className="highlight">Warren C. Longmire</span></Link></p>
 
-        <p className="description text-start mx-5 mb-4">Experience <B>memory, art, and selfhood in</B> process. <B>This collection of</B> poems, <B>written over a 15-year period and paired with</B> erasures <B>completed years later, interrogates experience and aesthetics with the help of</B> music, images, and videos <B>by the author and a wide circle of artists and friends.</B></p>
-        
-      </Header>
+          <p className="description text-start mx-5 mb-4">Experience <B>memory, art, and selfhood in</B> process. <B>This collection of</B> poems, <B>written over a 15-year period and paired with</B> erasures <B>completed years later, interrogates experience and aesthetics with the help of</B> music, images, and videos <B>by the author and a wide circle of artists and friends.</B></p>
+          
+        </Header>
 
-      <Collapse accordion ghost>
-        <Panel header="The Experience" key="1">
-            <div className="basics">
-              <p>HIGHLIGHTS & BLACKOUTS is a chapbook and web experience written by Heather Bowlan, developed by Warren C. Longmire and contributed to by a wide range of artists and poets.</p>
-              <hr/>
-              <p>To start your experience, <a href="#poems">select a poem.</a></p>
-              <p>Each poem is seperated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
-              <p>Beside many of poems, observe the images, videos and sounds that occompany each stage.</p>
-              <hr/>
-              <div className="d-flex">
-                <img className="p-2 btn" height="250px" src="/images/cover.png"/>
-                <div className="p-2 d-flex flex-column justify-content-center">
-                  <p>Please support the artists by purchasing the accompanying book.</p>
-                  <p>For more performances, print and web experiences working at the intersection of tech, music and literature, checkout _mixlit.</p>
+        <Collapse accordion ghost>
+          <Panel header="The Experience" key="1">
+              <div className="basics">
+                <p>HIGHLIGHTS & BLACKOUTS is a chapbook and web experience written by Heather Bowlan, developed by Warren C. Longmire and contributed to by a wide range of artists and poets.</p>
+                <hr/>
+                <p>To start your experience, <a href="#poems">select a poem.</a></p>
+                <p>Each poem is seperated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
+                <p>Beside many of poems, observe the images, videos and sounds that occompany each stage.</p>
+                <hr/>
+                <div className="d-flex">
+                  <img className="p-2 btn" height="250px" src="/images/cover.png"/>
+                  <div className="p-2 d-flex flex-column justify-content-center">
+                    <p>Please support the artists by purchasing the accompanying book.</p>
+                    <p>For more performances, print and web experiences working at the intersection of tech, music and literature, checkout _mixlit.</p>
+                  </div>
                 </div>
+                <hr/>
+                <div className="d-flex flex-column">
+                    <PoemButton className="basicButton p-1 m-1"><a href="#">Purchase Book</a></PoemButton>
+                    <PoemButton className="basicButton p-1 m-1"><a href="http://mixlit.io">Visit _mixlit</a></PoemButton>
+                  </div>
+                <hr/>
+                
               </div>
-              <hr/>
-              <div className="d-flex flex-column">
-                  <PoemButton className="basicButton p-1 m-1"><a href="#">Purchase Book</a></PoemButton>
-                  <PoemButton className="basicButton p-1 m-1"><a href="http://mixlit.io">Visit _mixlit</a></PoemButton>
-                </div>
-              <hr/>
-              
-            </div>
-        </Panel>
-
-        <Panel id="poems" header="The Poems" key="2">
-          <TreeCardGroup>
-            {
-                poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
-                  <DirectoryTree
-                    showLine
-                    width={"100%"}
-                    autoExpandParent={true}
-                    switcherIcon={<></>}
-                    showIcon={false}
-                    selectable={false}
-                    treeData={group}
-                    titleRender={(data)=> <TreeNode {...data} group={group}/>}
-                  />      
-                </TreeCard>)
-              }
-            </TreeCardGroup>
           </Panel>
 
-          <Panel header="The Series" key="3">
-            <DirectoryTree
-              showLine
-              autoExpandParent={true}
-              switcherIcon={<></>}
-              showIcon={false}
-              selectable={false}
-              treeData={treeData.series}
-              blockNode={true}
-              titleRender={(data)=> <TreeNode {...data}/>}
-            />
-          </Panel>
-
-          <Panel header="The Artists" key="4">
-            <DirectoryTree
-              showLine
-              autoExpandParent={true}
-              switcherIcon={<></>}
-              showIcon={false}
-              selectable={false}
-              treeData={treeData.artists}
-              titleRender={(data)=> <TreeNode {...data}/>}
-            />
-          </Panel>
-
-          <Panel header="The Contributors" key="5">
+          <Panel id="poems" header="The Poems" key="2">
             <TreeCardGroup>
               {
-                contrib_groups.map((group,index) => <TreeCard key={group.id} width={`${String(100/contrib_groups.length)}%`}>
-                  <DirectoryTree
-                    showLine
-                    autoExpandParent={true}
-                    switcherIcon={<></>}
-                    showIcon={false}
-                    selectable={false}
-                    treeData={group}
-                    titleRender={(data)=> <TreeNode {...data} index={index}/>}
-                  />
-                </TreeCard>)
-              }
-            </TreeCardGroup>
-          </Panel>
+                  poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
+                    <DirectoryTree
+                      showLine
+                      width={"100%"}
+                      autoExpandParent={true}
+                      switcherIcon={<></>}
+                      showIcon={false}
+                      selectable={false}
+                      treeData={group}
+                      titleRender={(data)=> <TreeNode {...data} group={group}/>}
+                    />      
+                  </TreeCard>)
+                }
+              </TreeCardGroup>
+            </Panel>
 
-          <Panel onClick={()=> {
-            router.push(`/playlist`)
-          }} header="The Playlist" key="6"></Panel>
-          
-      </Collapse>
+            <Panel header="The Series" key="3">
+              <DirectoryTree
+                showLine
+                autoExpandParent={true}
+                switcherIcon={<></>}
+                showIcon={false}
+                selectable={false}
+                treeData={treeData.series}
+                blockNode={true}
+                titleRender={(data)=> <TreeNode {...data}/>}
+              />
+            </Panel>
+
+            <Panel header="The Artists" key="4">
+              <DirectoryTree
+                showLine
+                autoExpandParent={true}
+                switcherIcon={<></>}
+                showIcon={false}
+                selectable={false}
+                treeData={treeData.artists}
+                titleRender={(data)=> <TreeNode {...data}/>}
+              />
+            </Panel>
+
+            <Panel header="The Contributors" key="5">
+              <TreeCardGroup>
+                {
+                  contrib_groups.map((group,index) => <TreeCard key={group.id} width={`${String(100/contrib_groups.length)}%`}>
+                    <DirectoryTree
+                      showLine
+                      autoExpandParent={true}
+                      switcherIcon={<></>}
+                      showIcon={false}
+                      selectable={false}
+                      treeData={group}
+                      titleRender={(data)=> <TreeNode {...data} index={index}/>}
+                    />
+                  </TreeCard>)
+                }
+              </TreeCardGroup>
+            </Panel>
+
+            <Panel onClick={()=> {
+              router.push(`/playlist`)
+            }} header="The Playlist" key="6"></Panel>
+            
+        </Collapse>
+      </div>
     </Layout>
   </div>
 }

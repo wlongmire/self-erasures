@@ -13,7 +13,7 @@ export default function contributorsPage() {
         }
     }, [isReady])
     
-    return(<div>
+    return(<div className="px-3">
         <h1>The Contributors</h1>
         <div id="content-container" className="d-flex">
             <div>

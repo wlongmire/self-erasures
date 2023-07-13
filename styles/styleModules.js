@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const LayoutStyle = styled.div`
-    min-height:100vh;
     display: flex;
     flex-direction: column;
 `
 
 export const CommonContainer = styled.div`
+    display:flex;
+    min-height:100vh;
     main {
-        min-height: 95vh;
         padding-top: 6em;
         font-family: 'Sorts Mill Goudy', serif;
 
@@ -18,11 +18,14 @@ export const CommonContainer = styled.div`
         }
     }
 `
-
+export const CollageFrame = styled.div`
+    background: ${(props) => `url('https://images.squarespace-cdn.com/content/${props.image}?format=1500w')`};
+    background-size: auto;
+    background-position: ${(props) => `${props.position}% 0`};
+    width: 30vw;
+`
 
 export const Footer = styled.div`
-    margin-top:100px;
-    
     font-family: 'Rubik Mono One', sans-serif !important;
     background-color:black;
     color: white;
