@@ -82,8 +82,13 @@ export const ContributorContainer = styled.div`
         padding: 1em;
         border: black 2px double;
         width: 100%;
+        
         &.active {
             background: #eeeeee;
+        }
+
+        a {
+            text-decoration: underline;
         }
     }
 `
