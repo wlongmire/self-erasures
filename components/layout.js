@@ -44,7 +44,7 @@ export default function Layout({children}) {
             }
             
             {
-                pathname === "/" && <CollageFrameMobile margin={0} height={60} position={position} image={image1} className="collageFrameMobile"/>
+                pathname !== "blackouts" && <CollageFrameMobile margin={0} height={60} position={position} image={image1} className="collageFrameMobile"/>
             }
             
 
