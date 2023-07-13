@@ -24,7 +24,7 @@ export const ErasureTitle = styled.div`
 export const PoemTitle = styled.div` 
   font-family: 'Sorts Mill Goudy', serif;
   font-size: 1.3em;
-  line-height: 3em;
+  line-height: 1.5em;
   width: 100%;
   padding: 0 0.25em;
   display: flex;
