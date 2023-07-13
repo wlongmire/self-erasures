@@ -110,10 +110,18 @@ a {
     align-items:center;
 }
 
+.collageFrameMobile {
+    display: none;
+}
+
 
 @media (max-width:700px) {
     .collageFrame {
         display:none;
+    }
+
+    .collageFrameMobile {
+        display: block;
     }
 
     .commonContainer main {

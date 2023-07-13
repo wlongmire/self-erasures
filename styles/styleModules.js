@@ -26,6 +26,14 @@ export const CollageFrame = styled.div`
     width: 30vw;
 `
 
+export const CollageFrameMobile = styled.div`
+    background: ${(props) => `url('https://images.squarespace-cdn.com/content/${props.image}?format=1500w')`};
+    background-size: auto;
+    background-position: ${(props) => `${props.position}% 0`};
+    height: ${(props) => `${props.height}px`};
+    margin: 2em 0;
+`
+
 export const Footer = styled.div`
     font-family: 'Rubik Mono One', sans-serif !important;
     background-color:black;

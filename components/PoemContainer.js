@@ -32,7 +32,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
             <div className="header">
                 <PoemIndex>{id} / {totalErasures}</PoemIndex>
             </div >
-
+            
             <div className="poemContainer">
                 <BlackoutDisplay id={id} currentStage={currentStage} />
                 
