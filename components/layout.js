@@ -50,7 +50,8 @@ export default function Layout({children}) {
             
             <CommonContainer>
                 <CollageFrame position={position} image={image1} className="collageFrame"/>
-                <main className="container">{children}</main>
+                <main className="container d-flex justify-content-center align-items-center pt-4">{children}</main>
+                {/* <main className="container">{children}</main> */}
                 <CollageFrame position={position} image={image2} className="collageFrame"/>
             </CommonContainer>
             

@@ -9,7 +9,6 @@ export const CommonContainer = styled.div`
     display:flex;
     min-height:100vh;
     main {
-        padding-top: 6em;
         font-family: 'Sorts Mill Goudy', serif;
 
         h1 {
