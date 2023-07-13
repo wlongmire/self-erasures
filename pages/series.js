@@ -5,7 +5,7 @@ export default function seriesPage() {
         <div id="content-container" className="d-flex">
             <img className="pr-3" width="20%" min-width="600px" src="https://images.squarespace-cdn.com/content/v1/574f88123c44d86f06c2bc65/1683213528374-B0MBQBHUQ3X09D8AU587/Bowlan+Precarious+Survival+4.jpg?format=1500w" alt="Bowlan+Precarious+Survival+1"/>
             <div className="display-7">
-                <div id="poem" className="py-1">
+                <div id="poem" className="py-2">
                     <h1>The Poem Making Process</h1>
                     <div>
                         <ContentBlock className="p-3 m-2">
@@ -19,7 +19,7 @@ export default function seriesPage() {
                     </div>
                 </div>
 
-                <div id="colaborations" className="py-1">
+                <div id="colaborations" className="py-2">
                     <h1>Collaborations</h1>
                     <ContentBlock className="p-3 m-2">
                         <h5>Experience always happens within a shared context.</h5>
@@ -30,7 +30,7 @@ export default function seriesPage() {
                         <BlockErase link="pointer">It's been an amazing experience to see these collaborations unfold, to expand my own understanding of what it means to be an artist, to resist the idea of one voice or one perfect poem and instead open the space to openly acknowledge the influence of others.</BlockErase>
                     </ContentBlock>
                 </div>
-                <div id="tech_design" className="py-1">
+                <div id="tech_design" className="py-2">
                     <h1>Building the Experience</h1>
                     <ContentBlock className="p-3 m-2">
                         <h5>Shifting my perspective about my writing pushed me to reimagine how to share it.</h5>
@@ -43,7 +43,7 @@ export default function seriesPage() {
                         <BlockErase link="pointer">Even more, it resonates with the goals of the collection to collaborate with a friend who’s witnessed my growth as a writer and a person for most of my adult life, and vice versa.</BlockErase>
                     </ContentBlock>
                 </div>
-                <h1 className="py-3">Thank you for exploring and lingering with me!</h1>
+                <h1 className="py-2">Thank you for exploring and lingering with me!</h1>
             </div>
             
         </div>
