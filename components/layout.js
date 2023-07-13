@@ -26,7 +26,7 @@ export default function Layout({children}) {
     const positionMap = {
         "/": Math.floor(Math.random()*100),
         "/poet":Math.floor(Math.random()*100),
-        "/series":Math.floor(Math.random()*100),
+        "/series":30,
         "/developer":Math.floor(Math.random()*100),
         "/contributors":Math.floor(Math.random()*100),
         "/playlist":Math.floor(Math.random()*100),

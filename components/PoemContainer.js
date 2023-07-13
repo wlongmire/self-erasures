@@ -28,10 +28,11 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     
     return <Layout>
         <PoemStyle titleColor={image ? "white" : "#F6D54C"} titleAlpha={image ? 0.5 : 0.8}  titlePosition={image ? -9.5:-8.9}>
+            
+            
             <div className="header">
                 <PoemIndex>{id} / {totalErasures}</PoemIndex>
             </div >
-            
 
             <div className="poemContainer">
                 <BlackoutDisplay id={id} currentStage={currentStage} />
@@ -42,6 +43,8 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                 </div>
 
             </div>
+            
+            
             
             <div className="footer">
                 <ArrowContainer>

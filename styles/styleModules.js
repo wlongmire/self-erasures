@@ -217,9 +217,10 @@ export const PoemStyle = styled.div`
 
     .header {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
         margin:0;
+        padding-bottom:1em;
     }
 
     .footer {
@@ -255,6 +256,7 @@ export const PoemStyle = styled.div`
 
     .poemContainer {
         display:flex;
+        justify-content: center;
         max-height: 500px;
 
         .poemImage {
