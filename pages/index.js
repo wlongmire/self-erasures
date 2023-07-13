@@ -57,7 +57,7 @@ const home = () => {
     return groups
   }
 
-  const contrib_groups = generateGroups(contributors.length, contributors, (c, g_idx, idx)=> ({
+  const contrib_groups = generateGroups(contributors.length, contributors.filter(c => c.blurb), (c, g_idx, idx)=> ({
       title: `${c.first} ${c.last}`,
       href: `/contributors#${c.first}-${c.last}`,
       type: "link",
