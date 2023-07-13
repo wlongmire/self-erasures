@@ -33,6 +33,10 @@ export default function Layout({children}) {
         "/blackouts":0,
     }
 
+    const image1 = imageMap[pathname]?imageMap[pathname][0]:images[0]
+    const image2 = imageMap[pathname]?imageMap[pathname][0]:images[0]
+    const position = imageMap[pathname]?imagpositionMapeMap[pathname][0]:0
+
     return(
         <LayoutStyle>
             <Head>
@@ -45,9 +49,9 @@ export default function Layout({children}) {
             }
             
             <CommonContainer>
-                <CollageFrame position={positionMap[pathname]} image={imageMap[pathname][0]} className="collageFrame"/>
+                <CollageFrame position={position} image={image1} className="collageFrame"/>
                 <main className="container">{children}</main>
-                <CollageFrame position={positionMap[pathname]} image={imageMap[pathname][1]} className="collageFrame"/>
+                <CollageFrame position={position} image={image2} className="collageFrame"/>
             </CommonContainer>
             
             <Footer>
