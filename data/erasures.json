@@ -44,10 +44,12 @@
                     "id": 1,
                     "title":"When My Number's Up",
                     "season": "Winter 2013",
-                    "audio": {
-                        "src":"When-My-Numbers-Up.mp3",
-                        "contributor": 8
-                    }
+                    "image": [{
+                        "video":true,
+                        "src":"https://www.youtube.com/embed/BmRrPHjJD9k?playlist=BmRrPHjJD9k&loop=1&controls=0",
+                        "srcLink":" https://youtu.be/BmRrPHjJD9k",
+                        "contributor": 7
+                    }]
                 },
                 {
                     "id": 2,
@@ -104,7 +106,7 @@
                     "season": "Summer 2021",
                     "image": [{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/78j184jkouI?playlist=78j184jkouI&loop=1",
+                        "src":"https://www.youtube.com/embed/78j184jkouI?playlist=78j184jkouI&loop=1&controls=0",
                         "srcLink":" https://youtu.be/78j184jkouI",
                         "contributor": 7
                     }]
@@ -476,7 +478,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/VzGWutL8m-E?playlist=VzGWutL8m-E&aloop=1",
+                        "src":"https://www.youtube.com/embed/VzGWutL8m-E?playlist=VzGWutL8m-E&loop=1&controls=0",
                         "srcLink":"https://www.youtube.com/shorts/LMK1B-F-QdE",
                         "contributor": 3
                     }]
@@ -521,7 +523,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src": "https://www.youtube.com/embed/WZ4SZ_jnYmc?playlist=WZ4SZ_jnYmc&loop=1"
+                        "src": "https://www.youtube.com/embed/WZ4SZ_jnYmc?playlist=WZ4SZ_jnYmc&loop=1&controls=0"
                     }]
                 },
                 {
@@ -752,7 +754,7 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                       "src":"https://www.youtube.com/embed/sIlyU866Gpw??playlist=sIlyU866Gpw&loop=1",
+                        "src":"https://www.youtube.com/embed/sIlyU866Gpw??playlist=sIlyU866Gpw&loop=1&controls=0",
                         "srcLink":"https://www.youtube.com/watch?v=sIlyU866Gpw",
                         "contributor": 2
                     }]
@@ -802,7 +804,7 @@
                     "season": "Summer 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/s8B6c9JBdnE?playlist=s8B6c9JBdnE&loop=1",
+                        "src":"https://www.youtube.com/embed/s8B6c9JBdnE?playlist=s8B6c9JBdnE&loop=1&controls=0",
                         "srcLink":"https://www.youtube.com/watch?v=s8B6c9JBdnE",
                         "contributor": 7
                     }]

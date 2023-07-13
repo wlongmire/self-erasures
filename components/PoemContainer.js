@@ -19,12 +19,20 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const { stages, id } = currentErasure;
     const { image, audio } = currentStage;
     
+    const titleRemoval = [
+        {erasureIdx: 31, stageIdx:3},
+        {erasureIdx: 2, stageIdx:1},
+        {erasureIdx: 4, stageIdx:3},
+    ]
+
     const handleScrub = (e) => {
         const inc = parseInt(e.target.dataset.direction)
         const { type } = e.target.dataset
         
         setPoem(erasureIdx + inc, 1)
     }
+
+    const showTitle = titleRemoval.filter(c => (c.erasureIdx === erasureIdx && c.stageIdx === stageIdx)).length === 0
     
     return <Layout>
         <PoemStyle titleColor={image ? "white" : "#F6D54C"} titleAlpha={image ? 0.5 : 0.8}  titlePosition={image ? -9.5:-8.9}>
@@ -38,7 +46,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                 
                 <div className="sideImageContainer">
                     <ImageHandler image={image}/>
-                    { !(erasureIdx === 31 && stageIdx === 3) && <h1 className="sideImageTitle">{currentStage.title}</h1> }
+                    { showTitle && <h1 className="sideImageTitle">{currentStage.title}</h1> }
                 </div>
                 
             </div>
@@ -59,6 +67,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                         <div><em>{stage.season}</em></div>
                     </PoemButton>)
                 }
+                
                 <ArrowContainer>
                     <FontAwesomeIcon className={`arrow poemScrub ${(erasureIdx === erasures.items.length) && "inactive"}`}  icon={faSquareCaretRight}  onClick={()=> (erasureIdx < erasures.items.length) && setPoem(erasureIdx + 1, 1)}/>
                 </ArrowContainer>

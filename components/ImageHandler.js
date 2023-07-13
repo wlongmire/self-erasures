@@ -7,7 +7,7 @@ import contributions from './../data/contributions';
 const ImageHandler = ({image}) => {
     const getContributorLink = (contributorId, type) => {
         if (contributorId !== undefined) {
-            const {first, last} = contributions[contributorId]
+            const {first, last} = contributions.filter(c => c.id === contributorId)[0]
             return <p className="image_contributor"><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
         } else {
             return <p className="image_contributor"><a href={`/poet`}>{type} By Heather Bowlan</a></p>
