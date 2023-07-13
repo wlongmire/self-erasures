@@ -142,7 +142,7 @@ a {
     
     #titleContainer, .imageCarousel {
         margin: 0 auto;
-        width: clamp(474px, 90vw, 500px);
+        width: clamp(460px, 90vw, 500px);
     }
 
     .ant-layout {
