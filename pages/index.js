@@ -107,10 +107,14 @@ const home = () => {
                 <hr/>
                 <p>To start your experience, <a href="#poems">select a poem.</a></p>
                 <p>Each poem is seperated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
-                <p>Beside many of poems, observe the images, videos and sounds that occompany each stage.</p>
+                <hr/>
+                <p>Alongside many of poems, observe the images, videos and sounds that occompany each stage.</p>
                 <hr/>
                 <div className="d-flex">
-                  <img className="p-2 btn" height="250px" src="/images/cover.png"/>
+                  <div className="p-2 d-flex justify-content-center">
+                    <img height="250px" src="/images/cover.png"/>
+                  </div>
+                  
                   <div className="p-2 d-flex flex-column justify-content-center">
                     <p>Please support the artists by purchasing the accompanying book.</p>
                     <p>For more performances, print and web experiences working at the intersection of tech, music and literature, checkout _mixlit.</p>

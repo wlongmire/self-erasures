@@ -39,9 +39,9 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
                 
                 <div className="sideImageContainer">
                     <ImageHandler image={image}/>
-                    <h1 className="sideImageTitle">{currentStage.title}</h1>
+                    { !(erasureIdx === 31 && stageIdx === 3) && <h1 className="sideImageTitle">{currentStage.title}</h1> }
                 </div>
-
+                
             </div>
             
             

@@ -41,7 +41,7 @@ export default function Layout({children}) {
         <LayoutStyle>
             <Head>
                 <title>Highlights and Blackouts - Heather Bowlan</title> 
-                <meta name = "description" content="" />
+                <meta name = "description" content="“a _mixlit digital poetry experience" />
                 <link rel = "icon" href = "/favicon.ico" />
             </Head>
             {

@@ -20,7 +20,7 @@ export default function seriesPage() {
                 </div>
 
                 <div id="colaborations" className="py-1">
-                    <h1>Playing with others</h1>
+                    <h1>Collaborations</h1>
                     <ContentBlock className="p-3 m-2">
                         <h5>Experience always happens within a shared context.</h5>
                         <BlockErase className="first-child" link="pointer">That’s what I kept returning to when I thought about how to share these poems after completing a few cycles of highlights and blackouts.</BlockErase>
@@ -33,7 +33,7 @@ export default function seriesPage() {
                 <div id="tech_design" className="py-1">
                     <h1>Building the Experience</h1>
                     <ContentBlock className="p-3 m-2">
-                        <h5>Experience always happens within a shared context.</h5>
+                        <h5>Shifting my perspective about my writing pushed me to reimagine how to share it.</h5>
                         <BlockErase className="first-child" link="pointer">HIGHLIGHTS AND BLACKOUTS began as an almost meditative exercise and my plans to share the results were very informal and spontaneous – primarily through the posts on my Instagram account.</BlockErase>
                         <BlockErase link="pointer">As I started posting, Warren C. Longmire, an accomplished poet, web developer, and dear friend for nearly 20 years, published his first book <a href="https://www.radiatorpress.com/product/open-source-by-warren-c-longmire">Open Source</a>, with a major interactive online element threaded through the poems.</BlockErase>
                         <BlockErase link="pointer">It was a question of right trajectory, right time(s). Warren was curious about exploring the intersection of poetry and technology and its possibilities.</BlockErase>

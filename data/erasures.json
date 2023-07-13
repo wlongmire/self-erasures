@@ -394,11 +394,14 @@
                     "title":"TRANSFUSE",
                     "season": "Fall 2021",
                     "image":[{
-                        "src":"TRANSFUSE/transfuse_1.jpg"
+                        "src":"TRANSFUSE/transfuse_1.jpg",
+                        "contributor": 20
                     },{
-                        "src":"TRANSFUSE/transfuse_2.jpg"
+                        "src":"TRANSFUSE/transfuse_2.jpg",
+                        "contributor": 20
                     },{
-                        "src":"TRANSFUSE/transfuse_3.jpg"
+                        "src":"TRANSFUSE/transfuse_3.jpg",
+                        "contributor": 20
                     }]
                 }
             ]
@@ -491,7 +494,7 @@
                 },
                 {
                     "id": 2,
-                    "title":"Breathe. Machine",
+                    "title":"Breath. Machine.",
                     "season": "Fall 2022",
                     "image":[{
                         "src":"BREATHE_MACHINE/1.jpg"
@@ -523,7 +526,7 @@
                 },
                 {
                     "id": 3,
-                    "title":"Guilded",
+                    "title":"Gilded",
                     "season": "Fall 2021"
                 }
             ]
@@ -749,8 +752,8 @@
                     "season": "Fall 2021",
                     "image":[{
                         "video":true,
-                        "src":"https://www.youtube.com/embed/3bMRt1eWAcQ?playlist=3bMRt1eWAc&loop=1",
-                        "srcLink":"https://www.youtube.com/watch?v=3bMRt1eWAcQ",
+                       "src":"https://www.youtube.com/embed/sIlyU866Gpw??playlist=sIlyU866Gpw&loop=1",
+                        "srcLink":"https://www.youtube.com/watch?v=sIlyU866Gpw",
                         "contributor": 2
                     }]
                 }
@@ -877,17 +880,13 @@
                     "title":"Ragged tailgate beat",
                     "season": "Fall 2021",
                     "image":[{
-                        "src":"RAGGED_TAILGATE_BEAT/1.jpg",
-                        "contributor": 1
+                        "src":"RAGGED_TAILGATE_BEAT/1.jpg"
                     },{
-                        "src":"RAGGED_TAILGATE_BEAT/2.jpg",
-                        "contributor": 1
+                        "src":"RAGGED_TAILGATE_BEAT/2.jpg"
                     },{
-                        "src":"RAGGED_TAILGATE_BEAT/3.jpg",
-                        "contributor": 1
+                        "src":"RAGGED_TAILGATE_BEAT/3.jpg"
                     },{
-                        "src":"RAGGED_TAILGATE_BEAT/4.jpg",
-                        "contributor": 1
+                        "src":"RAGGED_TAILGATE_BEAT/4.jpg"
                     }]
                 }
             ]
@@ -906,18 +905,12 @@
                     "title":"BENEDICTION",
                     "season": "Summer 2021",
                     "image":[{
-                        "src":"RAGGED_TAILGATE_BEAT/1.jpg"
-                    },{
-                        "src":"RAGGED_TAILGATE_BEAT/2.jpg"
-                    },{
-                        "src":"RAGGED_TAILGATE_BEAT/3.jpg"
-                    },{
-                        "src":"RAGGED_TAILGATE_BEAT/4.jpg"
+                        "src":"photo_for_BENEDICTION.jpg"
                     }]
                 },
                 {
                     "id": 3,
-                    "title":"The first word blurs as it forms and I bite my tougue",
+                    "title":"The first word blurs as it forms and I bite my tongue",
                     "season": "Fall 2021",
                     "image":[{
                         "src":"THE_FIRST_WORD_BLURS/1.jpg",

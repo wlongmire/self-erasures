@@ -6,7 +6,7 @@ import contributions from './../data/contributions';
 
 const ImageHandler = ({image}) => {
     const getContributorLink = (contributorId, type) => {
-        if (contributorId) {
+        if (contributorId !== undefined) {
             const {first, last} = contributions[contributorId]
             return <p className="image_contributor"><a href={`/contributors#${first}-${last}`}>{type} By {first} {last}</a></p>
         } else {
