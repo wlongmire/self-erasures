@@ -33,11 +33,12 @@ export default function Layout({children}) {
         "/blackouts":0,
     }
 
-    const image1 = imageMap[pathname]?imageMap[pathname][0]:images[0]
-    const image2 = imageMap[pathname]?imageMap[pathname][0]:images[0]
-    const position = positionMap[pathname]?positionMap[pathname][0]:0
+    const image1 = pathname?imageMap[pathname][0]:images[0]
+    const image2 = pathname?imageMap[pathname][1]:images[0]
+    const position = pathname?positionMap[pathname]:0
 
     console.log("pathname: ", pathname)
+    console.log("pathname: ", position)
 
 
     return(
