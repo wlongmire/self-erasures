@@ -20,7 +20,7 @@ export default function contributorsPage() {
                 
                 <hr/>
                 {
-                    contributors.map(contributor => <ContributorContainer id={`${contributor.first}-${contributor.last}`}>
+                    contributors.map(contributor => <ContributorContainer key={`${contributor.first}-${contributor.last}`} id={`${contributor.first}-${contributor.last}`}>
                         <div className={`contributorInfo ${(currentContributor === `${contributor.first}-${contributor.last}`) && "active"}`}>
                             <h2>{contributor.first} {contributor.last}</h2>
                             <p>{contributor.blurb}</p>
