@@ -16,7 +16,7 @@ export const LinkTitle = styled.div`
 
 export const ErasureTitle = styled.div`
   font-family: 'Sorts Mill Goudy', serif;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 1.3em;
   line-height: 5em;
 `
