@@ -134,6 +134,10 @@ a {
         width:500px;
     }
 
+    main {
+        display:block;
+    }
+
     .ant-layout {
         margin:0;
     }
