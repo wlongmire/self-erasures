@@ -3,11 +3,14 @@ import styled from 'styled-components';
 export const LayoutStyle = styled.div`
     display: flex;
     flex-direction: column;
+    max-width:100vw;
 `
 
 export const CommonContainer = styled.div`
     display:flex;
     min-height:100vh;
+    padding-top: 4rem;
+    
     main {
         font-family: 'Sorts Mill Goudy', serif;
 
