@@ -18,6 +18,16 @@ export default function Layout({children}) {
         "/blackouts":[images[0], images[0]],
     }
 
+    const imageMobileMap = {
+        "/":[images[1], images[3]],
+        "/poet":[images[2], images[3]],
+        "/series":[images[0], images[2]],
+        "/developer":[images[3], images[1]],
+        "/contributors":[images[1], images[1]],
+        "/playlist":[images[1], images[0]],
+        "/blackouts":[images[3], images[2]],
+    }
+
     const positionMap = {
         "/": Math.floor(Math.random()*100),
         "/poet":Math.floor(Math.random()*100),
@@ -32,6 +42,8 @@ export default function Layout({children}) {
     const image2 = imageMap[pathname]?imageMap[pathname][1]:images[0]
     const position = positionMap[pathname]?positionMap[pathname]:0
 
+    const imageM1 = imageMobileMap[pathname]?imageMobileMap[pathname][0]:images[0]
+    const imageM2 = imageMobileMap[pathname]?imageMobileMap[pathname][1]:images[0]
     return(
         <LayoutStyle>
             <Head>
@@ -44,7 +56,7 @@ export default function Layout({children}) {
             }
             
             {
-                pathname !== "blackouts" && <CollageFrameMobile margin={0} height={100} position={position} image={image1} className="collageFrameMobile"/>
+                pathname !== "blackouts" && <CollageFrameMobile margin={0} height={100} position={position} image={imageM1} className="collageFrameMobile"/>
             }
             
 
@@ -54,7 +66,7 @@ export default function Layout({children}) {
                 <CollageFrame position={position} image={image2} className="collageFrame"/>
             </CommonContainer>
             
-            <CollageFrameMobile margin={0} height={130} position={position} image={image2} className="collageFrameMobile"/>
+            <CollageFrameMobile margin={0} height={130} position={position + 60} image={imageM2} className="collageFrameMobile"/>
 
             <Footer>
                 <div className="container">

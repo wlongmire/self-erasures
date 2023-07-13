@@ -1,10 +1,10 @@
 import { BlockErase, ContentBlock } from "../styles/styleHome"
 
 export default function seriesPage() {
-    return(<div className="px-3-lg">
+    return(<div className="p-md-4">
         <div id="content-container" className="d-flex">
-            <img className="pr-3-lg" width="20%" min-width="600px" src="https://images.squarespace-cdn.com/content/v1/574f88123c44d86f06c2bc65/1683213528374-B0MBQBHUQ3X09D8AU587/Bowlan+Precarious+Survival+4.jpg?format=1500w" alt="Bowlan+Precarious+Survival+1"/>
-            <div className="display-7">
+            <img className="pr-3" width="20%" min-width="600px" src="https://images.squarespace-cdn.com/content/v1/574f88123c44d86f06c2bc65/1683213528374-B0MBQBHUQ3X09D8AU587/Bowlan+Precarious+Survival+4.jpg?format=1500w" alt="Bowlan+Precarious+Survival+1"/>
+            <div className="px-lg-3 display-7">
                 <div id="poem" className="py-2">
                     <h1>The Poem Making Process</h1>
                     <div>

@@ -1,7 +1,7 @@
 import { BlockErase, ContentBlock } from "../styles/styleHome"
 
 export default function poetPage() {
-    return(<div className="px-3-lg">
+    return(<div className="p-md-4">
         <h1>The Poet</h1>
         <div id="content-container" className="d-flex">
             <img className="pr-3 pt-3" width="30%" min-width="600px" src="/images/heather_headshot.jpeg" alt="poet_headshot"/>

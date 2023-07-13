@@ -1,5 +1,5 @@
 export default function playlistPage() {
-    return(<div>
+    return(<div className="p-md-3">
         <h1>The Playlist</h1>
         <p>Every project has a playlist. Song included here were on heavy rotation during 1) the experiences that inspired the poems, 2) the writing of the original poems, and/or 3) the erasure and collaboration process.</p>
         
