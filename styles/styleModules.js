@@ -9,9 +9,9 @@ export const LayoutStyle = styled.div`
 export const CommonContainer = styled.div`
     display:flex;
     min-height:100vh;
-    padding-top: 4rem;
     
     main {
+        padding-top: 4rem;
         font-family: 'Sorts Mill Goudy', serif;
 
         h1 {
