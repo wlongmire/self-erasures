@@ -55,9 +55,8 @@ export default function Layout({children}) {
                 (pathname !== "/") && <NavBar/>
             }
             
-            {
-                pathname !== "blackouts" && <CollageFrameMobile margin={0} height={100} position={position} image={imageM1} className="collageFrameMobile"/>
-            }
+            <CollageFrameMobile margin={0} height={(pathname !== "/blackouts") ? 100 : 50} position={position} image={imageM1} className="collageFrameMobile"/>
+            
             
 
             <CommonContainer className="commonContainer">
