@@ -37,7 +37,7 @@ export default function Layout({children}) {
     const image2 = imageMap[pathname]?imageMap[pathname][0]:images[0]
     const position = positionMap[pathname]?positionMap[pathname][0]:0
 
-    console.log("pathname: ", position)
+    console.log("pathname: ", pathname)
 
 
     return(
