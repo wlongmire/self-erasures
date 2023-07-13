@@ -2,7 +2,7 @@ import { BlockErase, ContentBlock } from "../styles/styleHome"
 
 
 export default function developerPage() {
-    return(<div className="px-3">
+    return(<div className="px-3-lg">
         <h1>The Developer</h1>
         <div id="content-container" className="d-flex">
             <img className="pr-3 pt-3" width="30%" min-width="600px" src="/images/warren_headshot.png" alt="poet_headshot"/>
