@@ -8,7 +8,7 @@ export const TreeHeader = styled.h2`
 
 export const LinkTitle = styled.div`
   font-family: 'Sorts Mill Goudy', serif;
-  font-size: 1.1em;
+  font-size: 1.3em;
   line-height: 1.5em;
   line-height: 5em;
 `
