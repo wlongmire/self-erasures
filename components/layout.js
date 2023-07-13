@@ -35,7 +35,7 @@ export default function Layout({children}) {
 
     const image1 = imageMap[pathname]?imageMap[pathname][0]:images[0]
     const image2 = imageMap[pathname]?imageMap[pathname][0]:images[0]
-    const position = imageMap[pathname]?imagpositionMapeMap[pathname][0]:0
+    const position = positionMap[pathname]?positionMap[pathname][0]:0
 
     return(
         <LayoutStyle>
