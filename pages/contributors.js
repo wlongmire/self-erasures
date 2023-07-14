@@ -17,7 +17,7 @@ export default function contributorsPage() {
         <h1>The Contributors</h1>
         <hr/>
         <div id="content-container" className="d-flex">
-            <div>
+            <div className="pe-md-3">
                 <p>Thank you, whoever you are, reading this. I’m grateful that we’ve encountered each other here in this space.</p>
                 <p>Many thanks to the publications where some of these works appeared, often in earlier versions: BlazeVOX, BOAAT, Chicago Quarterly Review, Codex Journal, Gigantic Sequins, Interim, make/shift, Nashville Review, New Ohio Revivew, Sugar House Review, and Walter.</p>
                 <p>Thanks to the wonderful humans who contributed their photos, collages, music, and videos to this project. This group ranges from writers whose work I admire to friends who have known me for 20 years or more and everything in between. Thank you to Cassandra Lopez for your excellent and detailed work digitizing the erasures. And special thanks to Kevin Torigoe for the photos from Hawaii. It’s very special to include images of that time and place in this project.</p>
