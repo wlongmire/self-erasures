@@ -23,8 +23,9 @@ export const CommonContainer = styled.div`
 export const CollageFrame = styled.div`
     background: ${(props) => `url('https://images.squarespace-cdn.com/content/${props.image}?format=1500w')`};
     background-size: auto;
-    background-position: ${(props) => `${props.position}% 0`};
-    width: 30vw;
+    background-position: ${(props) => `${props.horizontal?props.position:0}% ${!props.horizontal?props.position:0}%`};
+    width: ${(props) => !props.horizontal ? '10vw' : 'auto'};
+    height: ${(props) => props.horizontal ? '10vh' : 'auto'};
 `
 
 export const CollageFrameMobile = styled.div`
