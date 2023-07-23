@@ -48,6 +48,7 @@ export default function Layout({children}) {
     const router = useRouter()
 
     const [showModal, setShowModal] = useState(false)
+    const [modalWidth, setModalWidth] = useState(60)
     const [modalInfoOpen, setModalInfoOpen] = useState(false)
     const [modalInput, setModalInput] = useState(undefined)
 
@@ -80,10 +81,13 @@ export default function Layout({children}) {
             }
         }
         
+        setModalWidth((window.innerWidth < 1000)?85:60)
+
         const loggedIn = Boolean(window.localStorage.getItem("loggedIn"));
         setShowModal(!loggedIn);
     }, [])
 
+    
     return(
         <LayoutStyle>
             <Head>
@@ -130,7 +134,7 @@ export default function Layout({children}) {
                         containerStyle={
                             {borderRadius: "0px"}
                         }
-                        width={"60vw"}
+                        width={`${modalWidth}vw`}
                     >
                         <div className="d-flex flex-column align-items-center">
                             <p>Welcome To</p>
@@ -140,8 +144,8 @@ export default function Layout({children}) {
 
                         <div className="d-flex flex-column">
                             <div className="d-flex">
-                                <input className="m-2 p-2 flex-grow-1 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/>
-                                <ModalButton className="btn btn-outline-dark py-4 m-2">
+                                <input className="m-2 p-2 flex-grow-3 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/>
+                                <ModalButton className="btn flex-grow-1 btn-outline-dark py-4 m-2">
                                     <h5 className="m-0 p-0" onClick={handleReadClick}>Read</h5>
                                 </ModalButton>
                             </div>
