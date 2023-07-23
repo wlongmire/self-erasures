@@ -163,7 +163,7 @@ export default function Layout({children}) {
 
                             <div class="collapse" id="infoCollapse">
                                 <div class="card card-body m-2">
-                                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/iWlEeDj4AnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    {/* <iframe width="100%" height="500px" src="https://www.youtube.com/embed/iWlEeDj4AnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                                     <p>HIGHLIGHTS & BLACKOUTS is a chapbook and code poem experience written by Heather Bowlan and developed by Warren C. Longmire, with contributions by a wide range of artists and poets.</p>
                                     <p>Both the code poem and the chapbook are presented as literary works by the author and publisher.</p>
                                     <p>All proceeds from the chapbook and code poem go to the artists and the continued support of projects are intersection of poetry and technology.</p>
