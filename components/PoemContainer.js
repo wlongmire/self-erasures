@@ -20,6 +20,7 @@ const PoemContainer = ({ erasureIdx, stageIdx, setPoem }) => {
     const { image, audio } = currentStage;
     
     const titleRemoval = [
+        {erasureIdx: 28, stageIdx:2},
         {erasureIdx: 31, stageIdx:3},
         {erasureIdx: 2, stageIdx:1},
         {erasureIdx: 4, stageIdx:3},

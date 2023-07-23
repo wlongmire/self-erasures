@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { TreeHeader, LinkTitle, ErasureTitle, PoemTitle, B,  TreeCardGroup, TreeCard, Header} from './../styles/styleHome'
+import { TreeHeader, LinkTitle, ErasureTitle, PoemTitle, B, BlockErase, TreeCardGroup, TreeCard, Header} from './../styles/styleHome'
 import { PoemButton } from './../styles/styleModules';
 
 import { Tree } from 'antd';
@@ -109,6 +109,8 @@ const home = () => {
               <div className="basics">
                 <p>HIGHLIGHTS & BLACKOUTS is a chapbook and code poem experience written by Heather Bowlan, developed by Warren C. Longmire, with contributions by a wide range of artists and poets.</p>
                 <hr/>
+                <iframe width="100%" height="500px" src="https://www.youtube.com/embed/JWvP4rpCg6I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <hr/>               
                 <p>To start, <a href="#poems">select a poem from below.</a></p>
                 <p>Each poem is separated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
                 <p>If you're viewing on mobile, look for the blue image icon in the top right to switch between the media and the accompanying text.</p>
@@ -119,17 +121,11 @@ const home = () => {
                   </div>
                   
                   <div className="p-2 d-flex flex-column justify-content-center">
-                    <p>Please support the artists by purchasing the accompanying book.</p>
-                    <p>For more performances, print and web experiences working at the intersection of tech, music and literature, check out _mixlit.</p>
+                    <p>Please support the artists by spreading the word on our <BlockErase><a target="_blank" href="https://www.amazon.com/dp/B0C9SBVQ29">accompanying chapbook.</a></BlockErase></p>
+                    <p>For more performances, print and web experiences working at the intersection of tech, music and literature, please visit <BlockErase><a target="_blank" href="https://www.mixlit.io/">_mixlit.io</a></BlockErase></p>
                   </div>
                 </div>
-                <hr/>
-                <div className="d-flex flex-column">
-                    <PoemButton className="basicButton p-1 m-1"><a href="#">Purchase Book</a></PoemButton>
-                    <PoemButton className="basicButton p-1 m-1"><a href="http://mixlit.io">Visit _mixlit</a></PoemButton>
-                  </div>
-                <hr/>
-                
+                <hr/>                
               </div>
           </Panel>
 
