@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Script from 'next/script'
+
 import dayjs from 'dayjs';
 
 import { useState, useEffect } from 'react';
@@ -61,6 +63,10 @@ export default function Layout({children}) {
     
     const handleReadClick = (e) => {
         if (bookCodes.includes(modalInput.value.replace("-", ""))) {
+            if (modalInput.value === "friendpreview") {
+                window.localStorage.setItem("preview", true)
+            }
+
             router.push('/')
             window.localStorage.setItem("loggedIn", true)
             window.localStorage.setItem("loggedInTimeStamp", dayjs().format())
@@ -74,10 +80,12 @@ export default function Layout({children}) {
     useEffect(()=> {
         if (window.localStorage.getItem("loggedInTimeStamp")) {
             const loggedInTime = dayjs(window.localStorage.getItem("loggedInTimeStamp"))
+            const preview = Boolean(window.localStorage.getItem("preview"))
 
-            if (dayjs().diff(loggedInTime, "month") > 3) {
+            if (dayjs().diff(loggedInTime, "month") > 3 || (preview && dayjs().diff(loggedInTime, "day") > 1)) {
                 window.localStorage.removeItem("loggedIn")
                 window.localStorage.removeItem("loggedInTimeStamp")
+                window.localStorage.removeItem("preview")
             }
         }
         
@@ -94,6 +102,18 @@ export default function Layout({children}) {
                 <meta name = "description" content="“a _mixlit digital poetry experience" />
                 <link rel = "icon" href = "/favicon.ico" />
             </Head>
+
+            <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+            <Script id="google-analytics">
+                {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+        
+                gtag('config', 'GA_MEASUREMENT_ID');
+                `}
+            </Script>
+            
             {
                 (pathname !== "/") && <NavBar/>
             }
