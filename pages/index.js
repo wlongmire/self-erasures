@@ -6,7 +6,9 @@ import { PoemButton } from './../styles/styleModules';
 import { Tree } from 'antd';
 import { Collapse } from 'antd';
 import { Layout } from "antd";
-import { useRouter } from 'next/router'
+
+import { useRouter } from 'next/router';
+
 const { Panel } = Collapse;
 const { DirectoryTree } = Tree;
 
@@ -105,9 +107,9 @@ const home = () => {
         <Collapse accordion ghost>
           <Panel header="The Experience" key="1">
               <div className="basics">
-                <p>HIGHLIGHTS & BLACKOUTS is a chapbook and web experience written by Heather Bowlan, developed by Warren C. Longmire, with contributions by a wide range of artists and poets.</p>
+                <p>HIGHLIGHTS & BLACKOUTS is a chapbook and code poem experience written by Heather Bowlan, developed by Warren C. Longmire, with contributions by a wide range of artists and poets.</p>
                 <hr/>
-                <p>To start your experience, <a href="#poems">select a poem from below.</a></p>
+                <p>To start, <a href="#poems">select a poem from below.</a></p>
                 <p>Each poem is separated into stages erased with time and reflection. Note that each poem stage may have multiple pages that can be swiped between.</p>
                 <p>If you're viewing on mobile, look for the blue image icon in the top right to switch between the media and the accompanying text.</p>
                 <hr/>

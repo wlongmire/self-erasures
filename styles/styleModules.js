@@ -103,6 +103,21 @@ export const PoemIndex = styled.div`
     font-size: 1.3em;
 `
 
+export const ModalButton = styled.button`
+    font-family: 'Sorts Mill Goudy', serif;
+    flex:1;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border-width: 0px;
+    background: #F6D54C;
+
+    &:hover {
+        border-color: white;
+        background: black;
+        color:white;
+    }
+`
+
 export const PoemButton = styled.button`
     flex:1;
     font-size: 1.1em;
@@ -444,3 +459,12 @@ export const PoemStylePhone = styled.div`
     }
 `
 
+export const RegisterModal = styled.div`
+    .text {
+        font-size: 5rem !important;
+    }
+
+    .ant-modal-close {
+        display: none;
+    }
+`

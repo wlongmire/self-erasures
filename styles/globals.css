@@ -115,6 +115,43 @@ a {
     display: none;
 }
 
+.ant-modal-close-x {
+    display:none !important;
+}
+
+.ant-modal-body p {
+    font-size: 2rem;
+    font-family: 'Sorts Mill Goudy', serif !important;
+}
+
+.ant-modal-content {
+    border-radius: 0 !important;
+    outline-style: solid;
+    outline-color: white;
+    outline-width: 10px;
+    text-align: center;
+    border: 2px solid silver !important;
+}
+
+.ant-modal-body p.signature {
+    font-size: 1rem;
+    font-family: 'Sorts Mill Goudy', serif !important;
+}
+
+.ant-modal-body input {
+    font-family: 'Sorts Mill Goudy', serif !important;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.ant-modal-body .card-body p {
+    padding: 1rem 0;
+    font-family: 'Sorts Mill Goudy', serif !important;
+    font-size: 1.5em !important;
+    font-family: 'Sorts Mill Goudy', serif !important;
+    text-align: left;
+}
+
 @media (max-width:700px) {
     .collageFrame {
         display:none;
@@ -150,7 +187,6 @@ a {
 
 
 @media (max-width:1200px) {
-    
     #titleContainer, .imageCarousel {
         margin: 0 auto;
         width: clamp(460px, 90vw, 500px);

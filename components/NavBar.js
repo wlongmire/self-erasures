@@ -92,7 +92,7 @@ export default function NavBar() {
             <Drawer title="Basic Drawer" placement="right" onClose={()=> { setOpen(false)}} open={open}>
                 <TreeCardGroupDrawer className="pt-4">
                     {
-                        poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
+                        poem_groups.map((group) => <TreeCard key={group.key} width={`${String(100)}%`}>
                             <DirectoryTree
                                 showLine
                                 ref={group.ref}
