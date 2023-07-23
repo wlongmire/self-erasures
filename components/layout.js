@@ -103,17 +103,17 @@ export default function Layout({children}) {
                 <link rel = "icon" href = "/favicon.ico" />
             </Head>
 
-            <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-D45PWDMD8Q" />
             <Script id="google-analytics">
                 {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
         
-                gtag('config', 'GA_MEASUREMENT_ID');
+                gtag('config', 'G-D45PWDMD8Q');
                 `}
             </Script>
-            
+
             {
                 (pathname !== "/") && <NavBar/>
             }
