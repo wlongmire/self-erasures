@@ -153,6 +153,12 @@ a {
 }
 
 @media (max-width:700px) {
+    .ant-modal-body p {
+        font-size: 1rem;
+        font-family: 'Sorts Mill Goudy', serif !important;
+    }
+
+    
     .collageFrame {
         display:none;
     }
