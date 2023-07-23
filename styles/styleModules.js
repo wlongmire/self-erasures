@@ -111,12 +111,23 @@ export const ModalButton = styled.button`
     border-width: 0px;
     background: #F6D54C;
 
+    &.read {
+        background: #cccccc;
+        color: white;
+    }
+
     &:hover {
         border-color: white;
         background: black;
         color:white;
     }
+
+    &.read:hover {
+        background: black;
+        color:white;
+    }
 `
+
 
 export const PoemButton = styled.button`
     flex:1;

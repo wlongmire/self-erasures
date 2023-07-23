@@ -144,7 +144,7 @@ export default function Layout({children}) {
                         <div className="d-flex flex-column">
                             <div className={`d-flex flex-${(modalWidth===85)?"column":"row"}`}>
                                 <input className="m-2 p-2 flex-grow-1 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/>
-                                <ModalButton className="btn flex-grow-1 btn-outline-dark py-4 m-2">
+                                <ModalButton className="read btn flex-grow-1 btn-outline-dark py-4 m-2">
                                     <h5 className="m-0 p-0" onClick={handleReadClick}>Read</h5>
                                 </ModalButton>
                             </div>
@@ -160,6 +160,7 @@ export default function Layout({children}) {
                             }}>
                                 <h5 className="m-0 p-0">{(modalInfoOpen)?"See Less":"Learn More"}</h5>
                             </ModalButton>
+
                             <div class="collapse" id="infoCollapse">
                                 <div class="card card-body m-2">
                                     <iframe width="100%" height="500px" src="https://www.youtube.com/embed/iWlEeDj4AnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
