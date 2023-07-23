@@ -81,7 +81,7 @@ export default function Layout({children}) {
             }
         }
         
-        setModalWidth((window.innerWidth < 1000)?85:60)
+        setModalWidth((window.innerWidth < 1000)?90:60)
 
         const loggedIn = Boolean(window.localStorage.getItem("loggedIn"));
         setShowModal(!loggedIn);
@@ -137,12 +137,12 @@ export default function Layout({children}) {
                     >
                         <div className="d-flex flex-column align-items-center">
                             <p>Welcome To</p>
-                            <img width={`${(modalWidth===85)?"100":"80"}%`}src="./images/modalTitle.png"/>
+                            <img width={`${(modalWidth===90)?"100":"80"}%`}src="./images/modalTitle.png"/>
                             <p className="p-3 signature">a self-erasure series by <a href="https://www.heatherbowlan.com/">Heather Bowlan</a></p>
                         </div>                        
 
                         <div className="d-flex flex-column">
-                            <div className={`d-flex flex-${(modalWidth===85)?"column":"row"}`}>
+                            <div className={`d-flex flex-${(modalWidth===90)?"column":"row"}`}>
                                 <input className="m-2 p-2 flex-grow-1 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/>
                                 <ModalButton className="read btn flex-grow-1 btn-outline-dark py-4 m-2">
                                     <h5 className="m-0 p-0" onClick={handleReadClick}>Read</h5>
