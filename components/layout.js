@@ -87,7 +87,6 @@ export default function Layout({children}) {
         setShowModal(!loggedIn);
     }, [])
 
-    
     return(
         <LayoutStyle>
             <Head>
@@ -143,8 +142,8 @@ export default function Layout({children}) {
                         </div>                        
 
                         <div className="d-flex flex-column">
-                            <div className="d-flex">
-                                <input className="m-2 p-2 flex-grow-3 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/>
+                            <div className={`d-flex flex-${(modalWidth===85)?"column":"row"}`}>
+                                <input className="m-2 p-2 flex-grow-1 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/>
                                 <ModalButton className="btn flex-grow-1 btn-outline-dark py-4 m-2">
                                     <h5 className="m-0 p-0" onClick={handleReadClick}>Read</h5>
                                 </ModalButton>
