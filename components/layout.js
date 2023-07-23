@@ -138,7 +138,7 @@ export default function Layout({children}) {
                     >
                         <div className="d-flex flex-column align-items-center">
                             <p>Welcome To</p>
-                            <img width={"80%"}src="./images/modaltitle.png"/>
+                            <img width={"80%"}src="./images/modalTitle.png"/>
                             <p className="p-3 signature">a self-erasure series by <a href="https://www.heatherbowlan.com/">Heather Bowlan</a></p>
                         </div>                        
 
