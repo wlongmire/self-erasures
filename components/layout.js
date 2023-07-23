@@ -60,7 +60,7 @@ export default function Layout({children}) {
     const imageM2 = imageMobileMap[pathname]?imageMobileMap[pathname][1]:images[0]
     
     const handleReadClick = (e) => {
-        if (bookCodes.includes(modalInput.value)) {
+        if (bookCodes.includes(modalInput.value.replace("-", ""))) {
             router.push('/')
             window.localStorage.setItem("loggedIn", true)
             window.localStorage.setItem("loggedInTimeStamp", dayjs().format())
