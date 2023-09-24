@@ -62,19 +62,24 @@ export default function Layout({children}) {
     const imageM2 = imageMobileMap[pathname]?imageMobileMap[pathname][1]:images[0]
     
     const handleReadClick = (e) => {
-        if (bookCodes.includes(modalInput.value.replace("-", ""))) {
-            if (modalInput.value === "friendpreview") {
-                window.localStorage.setItem("preview", true)
-            }
+        setShowModal(false)
+        router.push('/')
+        window.localStorage.setItem("loggedIn", true)
+        window.localStorage.setItem("loggedInTimeStamp", dayjs().format())
+    
+        // if (bookCodes.includes(modalInput.value.replace("-", ""))) {
+        //     if (modalInput.value === "friendpreview") {
+        //         window.localStorage.setItem("preview", true)
+        //     }
 
-            router.push('/')
-            window.localStorage.setItem("loggedIn", true)
-            window.localStorage.setItem("loggedInTimeStamp", dayjs().format())
-            setShowModal(false)
+        //     router.push('/')
+        //     window.localStorage.setItem("loggedIn", true)
+        //     window.localStorage.setItem("loggedInTimeStamp", dayjs().format())
+        //     setShowModal(false)
             
-        } else {
-            console.error("Not an ISBN")
-        }
+        // } else {
+        //     console.error("Not an ISBN")
+        // }
     }
 
     useEffect(()=> {
@@ -131,7 +136,7 @@ export default function Layout({children}) {
             <Footer>
                 <div className="container">
                     <div id="footerTitle">Highlights&Blackouts</div>
-                    <div class="publisher">_mix_lit 2023</div>
+                    <div className="publisher">_mix_lit 2023</div>
                 </div>
             </Footer>
 
@@ -157,13 +162,13 @@ export default function Layout({children}) {
                     >
                         <div className="d-flex flex-column align-items-center">
                             <p>Welcome To</p>
-                            <img width={`${(modalWidth===90)?"100":"80"}%`}src="./images/modalTitle.png"/>
+                            <img alt="header" width={`${(modalWidth===90)?"100":"80"}%`}src="./images/modalTitle.png"/>
                             <p className="p-3 signature">a self-erasure series by <a href="https://www.heatherbowlan.com/">Heather Bowlan</a></p>
                         </div>                        
 
                         <div className="d-flex flex-column">
                             <div className={`d-flex flex-${(modalWidth===90)?"column":"row"}`}>
-                                <input className="m-2 p-2 flex-grow-1 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/>
+                                {/* <input className="m-2 p-2 flex-grow-1 rounded-2" ref={setModalInput} placeholder="Enter your book ISBN"/> */}
                                 <ModalButton className="read btn flex-grow-1 btn-outline-dark py-4 m-2">
                                     <h5 className="m-0 p-0" onClick={handleReadClick}>Read</h5>
                                 </ModalButton>

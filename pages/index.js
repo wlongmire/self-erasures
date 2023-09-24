@@ -135,6 +135,7 @@ const home = () => {
                   poem_groups.map((group) => <TreeCard width={`${String(100)}%`}>
                     <DirectoryTree
                       showLine
+                      key={group.poem_id}
                       width={"100%"}
                       autoExpandParent={true}
                       switcherIcon={<></>}
